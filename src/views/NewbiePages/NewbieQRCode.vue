@@ -58,7 +58,6 @@
             font-style: normal;
             line-height: normal;
             text-align: center;
-            padding: 0 16px;
             font-feature-settings: 'clig' off, 'liga' off;
         }
 
@@ -76,6 +75,7 @@
             font-size: 15px;
             font-weight: 400;
             letter-spacing: 0.188px;
+            padding: 0 16px;
             color: $description-text-color;
         }
     }
