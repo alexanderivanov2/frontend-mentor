@@ -34,7 +34,7 @@
     background-color: $bg-color;
 
     .qr-code-card {
-        height: 497px;
+        height: 465px;
         width: 320px;
         background-color: $bg-card-color;
         border-radius: 20px;
