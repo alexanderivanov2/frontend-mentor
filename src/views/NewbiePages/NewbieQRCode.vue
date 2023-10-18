@@ -12,13 +12,19 @@
 
 <script setup>
     import { ref } from 'vue';
-    import qrCodeImage from '../../assets/images/image-qr-code.png'
+    import qrCodeImage from '../../../public/assets/images/image-qr-code.png'
      
     const img = ref(qrCodeImage)
 </script>
 
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Playfair+Display:ital,wght@1,900&family=Roboto:ital,wght@1,300&display=swap');
+
+@media (max-height: 530px) {
+    #newbieQrCode {
+        padding: 12px 0;
+    }   
+}
 
 #newbieQrCode {
     $bg-color: #D5E1EF;
@@ -39,6 +45,7 @@
         background-color: $bg-card-color;
         border-radius: 20px;
         padding: 16px;
+        box-shadow: 0px 25px 25px 0px rgba(0, 0, 0, 0.05);
 
         .qr-code-img-wrapper {
            height: 288px;
@@ -75,7 +82,6 @@
             font-size: 15px;
             font-weight: 400;
             letter-spacing: 0.188px;
-            padding: 0 16px;
             color: $description-text-color;
         }
     }

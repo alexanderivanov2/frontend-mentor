@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../views/HomePage.vue'
-import NewbieQRCode from '../views/NewbiePages/NewbieQRCode.vue'
+// import NewbieQRCode from '../views/NewbiePages/NewbieQRCode.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,7 +13,7 @@ const router = createRouter({
     {
       path: '/newbie/QR-code',
       name: 'NewbieQRCode',
-      component: NewbieQRCode
+      component: () => import('../views/NewbiePages/NewbieQRCode.vue')
     }
   ]
 })
