@@ -1,4 +1,14 @@
-const newbieCards = {
-    cardName: 'QRCode',
-    routeName: 'NewbieQRCode',
+const newbieCardsList = [
+    {
+        cardName: 'QRCode',
+        routeName: 'NewbieQRCode',    
+    },
+    {
+        cardName: 'Product Preview Card',
+        routeName: 'ProductPreviewCard',
+    }
+]
+
+export {
+    newbieCardsList,
 }
