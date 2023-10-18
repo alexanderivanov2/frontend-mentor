@@ -24,7 +24,7 @@ watchEffect(() => {
     width: 25px;
     height: 25px;
     padding: 0.5rem 1rem 1rem;
-    background-color: #DEDDE3;
+    background-color: #4282B3;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     text-align: center;
