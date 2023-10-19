@@ -181,7 +181,6 @@ $product-desktop-img: '../../../../public/assets/images/productPreview/image-pro
                     width: 236px;
                 }
             }
-
         }
     }
 }
