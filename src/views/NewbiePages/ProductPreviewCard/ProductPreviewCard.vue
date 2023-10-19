@@ -11,8 +11,8 @@
                     <p class="product-preview-card-price">{{ productPrice }}</p>
                     <p class="product-preview-card-old-price">{{ productOldPrice }}</p>
                 </div>
+                <button class="product-preview-card-button"><img :src="cartSVG" alt="shoping cart"> {{ buttonText }}</button>
             </div>
-            <button class="product-preview-card-button"><img :src="cartSVG" alt="shoping cart"> {{ buttonText }}</button>
         </div>
     </section>
 </template>
@@ -39,6 +39,7 @@ $green: #3D8168;
 $dark-green: #1A4031;
 $border-radius: 10px;
 $product-mobile-img: '../../../../public/assets/images/productPreview/image-product-mobile.jpg';
+$product-desktop-img: '../../../../public/assets/images/productPreview/image-product-desktop.jpg';
 
 #productPreviewCard {
     height: 100%;
@@ -73,7 +74,7 @@ $product-mobile-img: '../../../../public/assets/images/productPreview/image-prod
 
         .product-preview-card-content-wrapper {
             width: 295px;
-            margin: 24px auto 20px;
+            margin: 24px auto 0px;
 
             .product-preview-card-tag {
                 color: $light-text-color;
@@ -103,6 +104,7 @@ $product-mobile-img: '../../../../public/assets/images/productPreview/image-prod
                 display: flex;
                 align-items: center;
                 gap: 19px;
+                margin-bottom: 20px;
 
                 .product-preview-card-price {
                     color: $green;
@@ -119,28 +121,67 @@ $product-mobile-img: '../../../../public/assets/images/productPreview/image-prod
                     line-height: 23px;
                 }
             }
+            .product-preview-card-button {
+                width: 295px;
+                background-color: $green;
+                color: white;
+                border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+                border-radius: 8px;
+                margin: auto;
+                padding: 16px 0;
+                font-size: 14px;
+                font-weight: 700;
+                transition: background-color ease-in-out 250ms;
+    
+                &:hover {
+                    background-color: $dark-green;
+                    cursor: pointer;
+                }
+            }
         }
 
-        .product-preview-card-button {
-            width: 295px;
-            background-color: $green;
-            color: white;
-            border: none;
+        @media (min-width: 1440px) {
+            width: 600px;
+            height: 450px;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            border-radius: 8px;
-            margin: auto;
-            padding: 16px 0;
-            font-size: 14px;
-            font-weight: 700;
-            transition: background-color ease-in-out 250ms;
+            align-items: stretch;
 
-            &:hover {
-                background-color: $dark-green;
-                cursor: pointer;
+            .product-preview-card-img {
+                width: 337px;
+                height: 100%;
+                background-color: white;
+                background-image: url($product-desktop-img);
+                border-bottom-left-radius: $border-radius;
+                border-top-right-radius: 0px;
             }
+
+            .product-preview-card-content-wrapper {
+                width: 236px;
+                padding: 32px;
+                margin-top: 0;
+
+                .product-preview-card-tag {
+                    margin-bottom: 20px;
+                }
+                .product-preview-card-title {
+                    margin-bottom: 24px;
+                }
+                .product-preview-card-description {
+                    margin-bottom: 29px;
+                }
+
+                .product-preview-card-price-wrapper {
+                    margin-bottom: 30px;
+                }
+                .product-preview-card-button {
+                    width: 236px;
+                }
+            }
+
         }
     }
 }
