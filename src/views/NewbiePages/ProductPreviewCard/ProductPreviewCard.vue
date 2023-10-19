@@ -161,7 +161,7 @@ $product-desktop-img: '../../../../public/assets/images/productPreview/image-pro
 
             .product-preview-card-content-wrapper {
                 width: 236px;
-                padding: 34px;
+                padding: 34px 30px;
                 margin-top: 0;
 
                 .product-preview-card-tag {
