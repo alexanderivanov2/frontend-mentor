@@ -63,7 +63,7 @@ $product-desktop-img: '../../../../public/assets/images/productPreview/image-pro
             border-top-right-radius: $border-radius;
             background-image: url($product-mobile-img);
             background-color: lightgrey;
-            background-size: contain;
+            background-size: cover;
             background-repeat: no-repeat;
         }
 
