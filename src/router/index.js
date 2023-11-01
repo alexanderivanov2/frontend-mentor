@@ -19,6 +19,11 @@ const router = createRouter({
       path: '/newbie/product-preview-card',
       name: 'ProductPreviewCard',
       component: () => import('../views/NewbiePages/ProductPreviewCard/ProductPreviewCard.vue')
+    },
+    {
+      path: '/newbie/results-summary',
+      name: 'ResultsSummary',
+      component: () => import('../views/NewbiePages/ResultsSummary/ResultsSummary.vue')
     }
   ]
 })

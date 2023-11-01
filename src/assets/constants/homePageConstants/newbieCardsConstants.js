@@ -6,6 +6,10 @@ const newbieCardsList = [
     {
         cardName: 'Product Preview Card',
         routeName: 'ProductPreviewCard',
+    },
+    {
+        cardName: 'Results Summary',
+        routeName: 'ResultsSummary',
     }
 ]
 
