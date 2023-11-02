@@ -18,6 +18,7 @@ const props = defineProps({
     iconPath: String,
     colorClass: String,
 })
+
 const { category, score, iconPath } = toRefs(props)
 </script>
 
@@ -71,8 +72,19 @@ $colors: (
     .summary-skill-score-total {
         opacity: 0.5;
     }
-    
 }
 
+@media screen and (min-width: 768px) {
+    .summary-skill-wrapper {
+        .summary-skill-category .summary-skill-category-name {
+            font-size: 18px;
+        }
+
+        .summary-skill-score-current,
+        .summary-skill-score-total {
+            font-size: 18px;
+        }
+    }
+}
 
 </style>
