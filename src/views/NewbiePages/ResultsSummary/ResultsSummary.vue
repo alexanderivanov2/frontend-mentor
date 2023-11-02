@@ -12,7 +12,7 @@
             </div>
             <div class="results-summary-card-summary">
                 <div class="results-summary-card-content">
-                    <h3 class="results-summary-card-conten-title">Summary</h3>
+                    <h3 class="results-summary-card-content-title">Summary</h3>
                     <ResultsSummarySkill
                         v-for="skill in data"
                         :key="skill.category"
@@ -89,6 +89,7 @@ $gradient-score: linear-gradient(180deg, #4D21C9 0%, rgba(37, 33, 201, 0.00) 100
                 color: $purple-light;
                 font-size: 16px;
                 font-weight: 500;
+                opacity: 0.5;
             }
         }
 
@@ -101,7 +102,7 @@ $gradient-score: linear-gradient(180deg, #4D21C9 0%, rgba(37, 33, 201, 0.00) 100
 
         &-info {
             width: 260px;
-            margin: 0 auto 0px;
+            margin: 0 auto;
             color: $purple-light;
             font-size: 16px;
             font-weight: normal;
@@ -113,13 +114,12 @@ $gradient-score: linear-gradient(180deg, #4D21C9 0%, rgba(37, 33, 201, 0.00) 100
     
     .results-summary-card-summary {
         background-color: white;
-        // padding: 0px 30px;
 
         .results-summary-card-content {
             width: 315px;
             margin: auto;
 
-            .results-summary-card-conten-title {
+            .results-summary-card-content-title {
                 color: $dark-navy-color;
                 font-size: 18px;
                 font-weight: 700;
@@ -162,14 +162,63 @@ $gradient-score: linear-gradient(180deg, #4D21C9 0%, rgba(37, 33, 201, 0.00) 100
 
         &-score {
             width: 368px;
+            padding: 38px 0 55px;
             border-top-right-radius: 32px;
             border-top-left-radius: 32px;
             z-index: 5;
-        }
 
-        &-summary {
-            margin-left: -30px;
-            width: 398px;
+            &-label {
+                font-size: 24px;
+                font-weight: 700;
+                line-height: normal;
+            }
+
+            &-wrapper {
+                margin: 35px auto 28px;
+                width: 200px;
+                height: 200px;
+
+                .score {
+                    font-size: 72px;
+                }
+
+                .score-max {
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+            }
+
+            &-text {
+                font-size: 32px;
+                margin-bottom: 14px;
+            }
+
+            &-info {
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .results-summary-card .results-summary-card-summary {
+        // .results-summary-card &-summary {
+        margin-left: -30px;
+        width: 398px;
+
+        border-top-right-radius: 32px;
+        border-bottom-right-radius: 32px;
+        .results-summary-card-content {
+            width: 288PX;
+            margin-left: 70px;
+            .results-summary-card-content-title {
+                font-size: 24px;
+                font-weight: 700;
+                margin: 38px 0 28px;
+            }
+
+            .results-summary-card-content-btn {
+                margin: 25px 0 46px;
+            }
         }
     }
 }
