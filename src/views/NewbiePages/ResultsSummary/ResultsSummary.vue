@@ -162,7 +162,7 @@ $gradient-score: linear-gradient(180deg, #4D21C9 0%, rgba(37, 33, 201, 0.00) 100
 
         &-score {
             width: 368px;
-            padding: 38px 0 55px;
+            padding: 36px 0 54px;
             border-top-right-radius: 32px;
             border-top-left-radius: 32px;
             z-index: 5;
