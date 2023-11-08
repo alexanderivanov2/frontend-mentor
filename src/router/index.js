@@ -24,6 +24,11 @@ const router = createRouter({
       path: '/newbie/results-summary',
       name: 'ResultsSummary',
       component: () => import('../views/NewbiePages/ResultsSummary/ResultsSummary.vue')
+    },
+    {
+      path: '/newbie/3-column-preview',
+      name: '3ColumnPreview',
+      component: () => import('../views/NewbiePages/3ColumnPreview/3ColumnPreview.vue')
     }
   ]
 })
