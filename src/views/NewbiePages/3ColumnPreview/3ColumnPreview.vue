@@ -60,7 +60,7 @@ const cardsData = ref([
         min-width: 920px;
         margin: 0;
         position: absolute;
-        top: 50%;
+        top: calc(50% + 20px);
         left: 50%;
         transform: translate(-50%, -50%);
     }
