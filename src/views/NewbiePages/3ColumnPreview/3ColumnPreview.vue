@@ -61,6 +61,7 @@ const cardsData = ref([
         .columns-preview {
             display: flex;
             min-width: 920px;
+            max-height: 500px;
             margin: 0;
             position: absolute;
             top: calc(50% + 20px);

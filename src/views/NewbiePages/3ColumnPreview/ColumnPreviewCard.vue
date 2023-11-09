@@ -45,7 +45,7 @@ $white-color: #F2F2F2;
 
 .column-preview-card {
     color: $white-color;
-    padding: 46px 48px 48px;
+    padding: 48px 48px;
 
     &:first-child {
         border-top-right-radius: 8px;
