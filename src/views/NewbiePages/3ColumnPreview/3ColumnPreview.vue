@@ -55,14 +55,18 @@ const cardsData = ref([
 }
 
 @media screen and (min-width: 1440px) {
-    .columns-preview-page .columns-preview {
-        display: flex;
-        min-width: 920px;
-        margin: 0;
-        position: absolute;
-        top: calc(50% + 20px);
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+    $bg-color: #F2F2F2;
+    .columns-preview-page {
+        background-color: $bg-color;
+        .columns-preview {
+            display: flex;
+            min-width: 920px;
+            margin: 0;
+            position: absolute;
+            top: calc(50% + 20px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    } 
 }
 </style>
