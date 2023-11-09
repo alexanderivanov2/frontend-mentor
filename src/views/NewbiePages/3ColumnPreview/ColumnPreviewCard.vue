@@ -3,7 +3,7 @@
         <img :src="cardData.carIcon" alt="car type icon" class="column-preview-card-icon">
         <h2 class="column-preview-card-title">{{ cardData.carType }}</h2>
         <p class="column-preview-card-description">{{ cardData.description }}</p>
-        <button class="column-preview-card-btn">Learn More</button>
+        <button class="column-preview-card-btn"><span>Learn More</span></button>
     </div>
 </template>
 
@@ -45,7 +45,7 @@ $white-color: #F2F2F2;
 
 .column-preview-card {
     color: $white-color;
-    padding: 48px 49px;
+    padding: 48px 48px;
 
     &:first-child {
         border-top-right-radius: 8px;
@@ -74,21 +74,42 @@ $white-color: #F2F2F2;
     &-description {
         line-height: 25px;
         opacity: 0.75;
-        margin-bottom: 25px;
+        margin-bottom: 83px;
+        font-weight: 400;
     }
 
     &-btn {
         line-height: 25px;
-        padding: 12px 32px;
-        border: 1px solid transparent;
+        padding: 10px 32px;
+        border: 2px solid transparent;
         border-radius: 25px;
-        font-weight: 700;
+        max-height: 48px;
+        
+        span {
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 25px;
+        }
 
         &:hover {
             cursor: pointer;
             background-color: transparent;
             color: $white-color;
             border-color: $white-color;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .column-preview-card {
+        &:first-child {
+            border-bottom-left-radius: 8px;
+            border-top-right-radius: 0px;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: 0px;
+            border-top-right-radius: 8px;
         }
     }
 }
