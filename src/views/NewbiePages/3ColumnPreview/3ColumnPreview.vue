@@ -53,4 +53,16 @@ const cardsData = ref([
         border-radius: 8px;
     }
 }
+
+@media screen and (min-width: 1440px) {
+    .columns-preview-page .columns-preview {
+        display: flex;
+        min-width: 920px;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
 </style>
