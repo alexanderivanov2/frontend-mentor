@@ -15,6 +15,10 @@ const newbieCardsList = [
         cardName: '3 Column Preview',
         routeName: '3ColumnPreview',
     },
+    {
+        cardName: 'Interactive Rating Card',
+        routeName: 'InteractiveRatingCard',
+    },
 ]
 
 export {

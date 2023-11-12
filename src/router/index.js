@@ -29,6 +29,11 @@ const router = createRouter({
       path: '/newbie/3-column-preview',
       name: '3ColumnPreview',
       component: () => import('../views/NewbiePages/3ColumnPreview/3ColumnPreview.vue')
+    },
+    {
+      path: '/newbie/interactive-rating-card',
+      name: 'InteractiveRatingCard',
+      component: () => import('../views/NewbiePages/InteractiveRatingCard/InteractiveRatingCardView.vue')
     }
   ]
 })
