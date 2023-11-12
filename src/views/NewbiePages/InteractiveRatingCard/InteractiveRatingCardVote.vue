@@ -1,19 +1,39 @@
 <template>
-    <div class="interactive-rating-card-content-wrpaper">
+    <div class="interactive-rating-card-content-wrapper">
         <template v-if="!rating">
             <div class="star-wrapper">
                 <img :src="starIcon" alt="star icon">
             </div>
             
-            {{ isRated }}
+            <h3 class="interactive-rating-card-label">How did we do?</h3>
+            <p class="interactive-rating-card-description">
+                Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!
+            </p>
 
-            <button @click="vote">Submit</button>
+            <div class="interactive-rating-card-voting-options">
+                <div 
+                    v-for="voteValue in 5"
+                    :key="voteValue"
+                    @click="selectVoteValue(voteValue)"
+                    class="interactive-rating-card-voting-option"
+                    :class="{'selected': voteValue === selectedVoteValue }"
+                >
+                    <span class="vote-value">{{ voteValue }}</span>
+                </div>
+            </div>
+
+            <button
+                class="interactive-rating-card-submit-btn"    
+                @click="vote"
+            >
+                Submit
+            </button>
         </template>
     </div>
 </template>
 
 <script setup> 
-import { toRefs } from 'vue'
+import { ref, toRefs } from 'vue'
 
 import starIcon from '../../../../public/assets/images/interactiveRatignCard/icon-star.svg'
 
@@ -26,7 +46,119 @@ const props = defineProps({
 })
 const { rating } = toRefs(props)
 
+const selectedVoteValue = ref(null);
+
+function selectVoteValue(voteValue) {
+    console.log(voteValue)
+    selectedVoteValue.value = voteValue;
+    console.log(selectedVoteValue.value)
+}
+
 function vote() {
 }
 
 </script>
+
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+$dark-blue: #262E38;
+$light-gray: #969FAD;
+$medium-gray: #7C8798;
+$orange: #FC7614;
+.interactive-rating-card-content-wrapper {
+    font-family: 'Overpass', sans-serif;
+    .star-wrapper {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $dark-blue;
+        border-radius: 50px;
+        margin-bottom: 19px;
+    }
+
+    .interactive-rating-card-label {
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 10px;
+    }
+
+    .interactive-rating-card-description {
+        color: $light-gray;
+        font-size: 14px;
+        line-height: 22px;
+        padding-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    .interactive-rating-card-voting-options {
+        padding: 24px 0 24px;
+        display: flex;
+        gap: 18px;
+
+        .interactive-rating-card-voting-option {
+            width: 42px;
+            height: 42px;
+            background-color: $dark-blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            cursor: pointer;
+            
+            .vote-value {
+                color: $medium-gray;
+                padding-top: 2px;
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: 700;
+                letter-spacing: 0.175px;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            &.selected {
+                background-color: $medium-gray;
+                
+                .vote-value {
+                    color: white;
+                }
+            }
+
+            &:hover {
+                background-color: $orange;
+                .vote-value {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .interactive-rating-card-submit-btn {
+        background-color: $orange;
+        display: inline-block;
+        width: 100%;
+        padding: 12px;
+        border-radius: 22.5px;
+        border: none;
+        color: white;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.867px;
+        line-height: normal;
+        transition: all ease-in-out 500ms;
+        cursor: pointer;
+
+        &:hover {
+            background-color: white;
+            color: $orange;
+        }
+    }
+}
+
+</style>
