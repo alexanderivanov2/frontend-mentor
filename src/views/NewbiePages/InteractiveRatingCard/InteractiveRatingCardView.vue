@@ -50,4 +50,11 @@ $card-bg: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
     }
 }
 
+@media screen and (min-width: 1440px) {
+    .interactive-rating-card-page .interactive-rating-card-wrapper {
+        width: 412px;
+        height: 416px;
+    }
+}
+
 </style>
