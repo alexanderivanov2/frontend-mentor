@@ -1,6 +1,6 @@
 <template>
     <div class="interactive-rating-card-content-wrapper">
-        <template v-if="!rating">
+        <div class="interactive-rating-card-voting" v-if="!isRated">
             <div class="star-wrapper">
                 <img :src="starIcon" alt="star icon">
             </div>
@@ -28,7 +28,18 @@
             >
                 Submit
             </button>
-        </template>
+        </div>
+        <div v-else class="interactive-rating-card-voting-result">
+            <div class="thank-you-image-wrapper">
+                <img :src="illustrationThankYouSvg"
+                alt="illustration of thank you vote">
+            </div>
+            <p class="interactive-rating-card-vote-result">You selected {{ rating }} out of 5</p>
+            <h3 class="interactive-rating-card-label">Thank you!</h3>
+            <p class="interactive-rating-card-description">
+                We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!
+            </p>
+        </div>
     </div>
 </template>
 
@@ -36,12 +47,17 @@
 import { ref, toRefs } from 'vue'
 
 import starIcon from '../../../../public/assets/images/interactiveRatignCard/icon-star.svg'
+import illustrationThankYouSvg from '../../../../public/assets/images/interactiveRatignCard/illustration-thank-you.svg'
 
 const emit = defineEmits(['vote'])
 
 const props = defineProps({
     isRated: {
         type: Boolean,
+    },
+    rating: {
+        type: [Number, undefined],
+        default: 0,
     }
 })
 const { rating } = toRefs(props)
@@ -49,12 +65,13 @@ const { rating } = toRefs(props)
 const selectedVoteValue = ref(null);
 
 function selectVoteValue(voteValue) {
-    console.log(voteValue)
     selectedVoteValue.value = voteValue;
-    console.log(selectedVoteValue.value)
 }
 
 function vote() {
+    if (selectedVoteValue.value) {
+        emit('vote', selectedVoteValue.value);
+    }
 }
 
 </script>
@@ -108,6 +125,7 @@ $orange: #FC7614;
             justify-content: center;
             align-items: center;
             border-radius: 50px;
+            transition: all ease-in-out 250ms;
             cursor: pointer;
             
             .vote-value {
@@ -159,6 +177,36 @@ $orange: #FC7614;
             color: $orange;
         }
     }
+
+    .interactive-rating-card-voting-result {
+        text-align: center;
+        .thank-you-image-wrapper {
+            margin: 10px auto 24px;
+            text-align: center;
+            height: 96px;
+            width: 144px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    
+        .interactive-rating-card-vote-result {
+            display: inline-block;
+            background-color: $dark-blue;
+            color: $orange;
+            padding: 5px 12px;
+            border-radius: 22.5px;
+            line-height: 22px;
+            margin-bottom: 26px;
+        }
+
+        .interactive-rating-card-label {
+            text-align: center;
+        }
+    }
+
+
 }
 
 </style>
