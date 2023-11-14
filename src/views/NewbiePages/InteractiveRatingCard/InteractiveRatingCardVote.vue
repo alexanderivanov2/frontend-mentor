@@ -205,8 +205,74 @@ $orange: #FC7614;
             text-align: center;
         }
     }
+}
 
+@media screen and (min-width: 1440px) {
+    .interactive-rating-card-content-wrapper {
+        .star-wrapper {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 30px;
+        }
 
+        .interactive-rating-card-label {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10.5px;
+        }
+
+        .interactive-rating-card-description {
+            font-size: 15px;
+            line-height: 24px;
+            padding-top: 4.5px;
+            margin-bottom: 4.5px;
+        }
+        
+        .interactive-rating-card-voting-options {
+            padding: 24px 0 32px;
+            justify-content: center;
+            gap: 21px;
+
+            .interactive-rating-card-voting-option {
+                width: 51px;
+                height: 51px;
+                
+                .vote-value {
+                    padding-top: 3.5px;
+                    font-size: 16px;
+                    letter-spacing: 0.2px;
+                }
+            }
+        }
+
+        .interactive-rating-card-submit-btn {
+            padding: 14px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .interactive-rating-card-voting-result {
+            .thank-you-image-wrapper {
+                margin: 13px auto 32px;
+                height: 108px;
+                width: 162px;
+            }
+        
+            .interactive-rating-card-vote-result {
+                padding: 6.5px 19px 1.5px;
+                line-height: 24px;
+                font-size: 15px;
+                margin-bottom: 34.5px;
+            }
+
+            .interactive-rating-card-label {
+                margin-bottom: 7px;
+            }
+        }
+    }
+
+   
 }
 
 </style>
