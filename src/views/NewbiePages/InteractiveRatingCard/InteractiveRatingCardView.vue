@@ -2,7 +2,8 @@
     <section class="interactive-rating-card-page">
         <div class="interactive-rating-card-wrapper">
             <InteractiveRatingCardVote 
-                :isRated="!rating"
+                :isRated="!!rating"
+                :rating="rating"
                 @vote="vote"
             />
         </div>
@@ -17,8 +18,7 @@ import InteractiveRatingCardVote from './InteractiveRatingCardVote.vue'
 const rating = ref(null)
 
 function vote(voteValue) {
-    console.log(voteValue)
-    // rating.value = voteValue
+    rating.value = voteValue
 }
 
 </script>
