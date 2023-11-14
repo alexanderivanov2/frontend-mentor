@@ -39,14 +39,13 @@ $card-bg: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2px;
+    
 
     .interactive-rating-card-wrapper {
         width: 327px;
         height: 360px;
         background: $card-bg;
         border-radius: 15px;
-
         padding: 24px 24px 32px;
     }
 }
@@ -56,6 +55,7 @@ $card-bg: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
         width: 412px;
         height: 416px;
         padding: 32px;
+        margin-top: 2px;
     }
 }
 
