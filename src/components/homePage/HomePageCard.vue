@@ -1,7 +1,13 @@
 <template>
     <div class="home-page-card">
-        <h6 class="home-page-card-title">{{ title }}</h6>
-        <router-link :to="{ name: routeName }" class="home-page-card-link">{{ title }} &#187;</router-link>
+        <router-link :to="{ name: routeName }" class="home-page-card-link">
+            <h6 class="home-page-card-title">{{ title }}</h6>
+            <div class="go-corner">
+                <div class="go-arrow">
+                    →
+                </div>
+            </div>
+        </router-link>
     </div>
 </template>
 
@@ -24,39 +30,67 @@
 </script>
 
 <style lang="scss">
-    .home-page-card {
-        max-width: 250px;
-        max-height: 250px;
-        border: 3px solid #1D2C35;
-        border-radius: 10px;
+.home-page-card {
+    border-radius: 5px;
+    max-height: 300px;
+    &-link {
+        display: block;
+        position: relative;
+        background-color: #f2f8f9;
+        max-width: 265px;
+        border-radius: 5px;
+        padding: 32px 24px;
+        margin: 12px;
+        text-decoration: none;
+        z-index: 0;
+        overflow: hidden;
 
         .home-page-card-title {
-            padding: 1rem;
-            background-color: white;
-            border-bottom: 5px solid #F4CB15;
-            border-top-left-radius: 6px;
-            border-top-right-radius: 6px;
-            text-align: center;
-            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
         }
 
-        .home-page-card-link {
-            display: block;
-            background-color: #05050F;
-            border-bottom-left-radius: 6px;
-            border-bottom-right-radius: 6px;
-            padding: 1rem;
-            text-align: center;
-            text-decoration: none;
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: -16px;
+            right: -16px;
+            background: #00838d;
+            height: 32px;
+            width: 32px;
+            border-radius: 10px;
+            transform: scale(1);
+            transform-origin: 50% 50%;
+            transition: transform 0.25s ease-out;
+        }
+
+        &:hover:before {
+            transform: scale(21);
+        }
+
+        .go-corner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            overflow: hidden;
+            top: 0;
+            right: 0;
+            background-color: #00838d;
+            border-radius: 0 4px 0 32px;
+        }
+
+        .go-arrow {
+            margin-top: -4px;
+            margin-right: -4px;
             color: white;
-            font-weight: bold;
-
-            &:hover {
-                background-color: #F26419;
-                color: black;
-                transition: all ease-in-out 500ms;
-            }
+            font-family: courier, sans;
+            font-size: 1.2rem;
         }
-
     }
+}
 </style>

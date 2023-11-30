@@ -29,6 +29,7 @@ import HomePageCard from '../components/homePage/HomePageCard.vue'
     }
 
     .home-page-challange-title {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 1.5rem;
         font-weight: bold;
         margin: 12px 0;
@@ -41,7 +42,8 @@ import HomePageCard from '../components/homePage/HomePageCard.vue'
         gap: 12px;
 
         .home-page-card {
-            min-width: 200px;
+            width: 250px;
+            min-width: 250px;
             flex: 1;
         }
     
