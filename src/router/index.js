@@ -34,7 +34,12 @@ const router = createRouter({
       path: '/newbie/interactive-rating-card',
       name: 'InteractiveRatingCard',
       component: () => import('../views/NewbiePages/InteractiveRatingCard/InteractiveRatingCardView.vue')
-    }
+    },
+    {
+      path: '/newbie/nft-preview-card',
+      name: 'NFTPreviewCard',
+      component: () => import('../views/NewbiePages/NFTPreviewCard/NFTPreviewCard.vue')
+    },
   ]
 })
 

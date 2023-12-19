@@ -19,6 +19,10 @@ const newbieCardsList = [
         cardName: 'Interactive Rating Card',
         routeName: 'InteractiveRatingCard',
     },
+    {
+        cardName: 'NFT Preview Card',
+        routeName: 'NFTPreviewCard',
+    }
 ]
 
 export {
