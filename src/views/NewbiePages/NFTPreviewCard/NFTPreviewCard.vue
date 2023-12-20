@@ -19,7 +19,7 @@
                 </div>
             </div>
 
-            <div class="nff-card-line"></div>
+            <div class="nft-card-line"></div>
             <div class="nft-card-owner-wrapper">
                 <div class="nft-card-owner-avatar-wrapper">
                     <img :src="avatarIMG" alt="owner avatar">
@@ -61,7 +61,9 @@ body {
     height: 100%;
     min-height: 100vh;
     width: 100%;
-    padding-top: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 15px;
     background-color: $very-dark-blue-main-bg;
 
@@ -201,6 +203,21 @@ body {
 
             }
         }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .nft-preview-card-page {
+        .nft-preview-card {
+            width: 350px;
+            height: 596px;
+        }
+    }
+
+    .nft-preview-card-page .nft-preview-card .nft-card-info-wrapper .nft-card-info-data .nft-card-info-quantity,
+    .nft-preview-card-page .nft-preview-card .nft-card-info-wrapper .nft-card-info-data .nft-card-info-time,
+    .nft-preview-card-page .nft-preview-card .nft-card-owner-wrapper .nft-card-owner-info {
+            font-size: 16px;
     }
 }
 
