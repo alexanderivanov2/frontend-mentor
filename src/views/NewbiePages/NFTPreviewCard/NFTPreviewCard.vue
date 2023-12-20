@@ -211,7 +211,13 @@ body {
         .nft-preview-card {
             width: 350px;
             height: 596px;
+
+            .nft-card-info-wrapper .nft-card-info-data {
+                margin: 24px 0 ;
+            }
         }
+
+        
     }
 
     .nft-preview-card-page .nft-preview-card .nft-card-info-wrapper .nft-card-info-data .nft-card-info-quantity,
