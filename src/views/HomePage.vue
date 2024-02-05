@@ -14,40 +14,4 @@
 <script setup>
 import { newbieCardsList } from '../assets/constants/homePageConstants/newbieCardsConstants' 
 import HomePageCard from '../components/homePage/HomePageCard.vue'
-
 </script>
-
-<style lang="scss" scoped>
-.home-page {
-    @media (max-width: 475px) {
-        .home-page-challange-title {
-            text-align: center;
-        }
-        .home-page-newbie-cards-wrapper {
-            justify-content: center;
-        }
-    }
-
-    .home-page-challange-title {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin: 12px 0;
-        color: white;
-    }
-
-    .home-page-newbie-cards-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-
-        .home-page-card {
-            width: 250px;
-            min-width: 250px;
-            flex: 1;
-        }
-    
-
-    }
-}
-</style>

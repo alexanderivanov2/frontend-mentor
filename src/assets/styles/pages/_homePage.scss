@@ -2,5 +2,43 @@
     background-color: $background-color;
     height: 100vh;
     padding: 1rem;
+
+    @media (max-width: 475px) {
+        .home-page-challange-title {
+            text-align: center;
+        }
+        .home-page-newbie-cards-wrapper {
+            justify-content: center;
+        }
+    }
+
+    .home-page-challange-title {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 12px 0;
+        color: white;
+    }
+
+    .home-page-newbie-cards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        .home-page-card {
+            width: 100%;
+            flex: 1 1 100%;
+            
+            @media (min-width: 360px) {
+                min-width: 250px;
+                flex: 1;
+            }
+
+            .home-page-card-link {
+                margin: 12px auto;
+                word-break: break-word;
+            }
+        }
+    }
 }
 
