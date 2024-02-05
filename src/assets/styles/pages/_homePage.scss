@@ -2,6 +2,7 @@
     background-color: $background-color;
     height: 100vh;
     padding: 1rem;
+    overflow-y: scroll;
 
     @media (max-width: 475px) {
         .home-page-challange-title {
