@@ -34,40 +34,4 @@ const cardsData = ref([
         cardClasses: 'luxury-card'
     },
 ])
-
-
 </script>
-
-<style lang="scss" scoped >
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
-.columns-preview-page {
-    height: 100%;
-    min-height: 100vh;
-    width: 100%;
-    font-size: 15px;
-    font-family: 'Lexend Deca', sans-serif;
-
-    .columns-preview {
-        width: 327px;
-        margin: 88px auto;
-        border-radius: 8px;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-    $bg-color: #F2F2F2;
-    .columns-preview-page {
-        background-color: $bg-color;
-        .columns-preview {
-            display: flex;
-            min-width: 920px;
-            max-height: 500px;
-            margin: 0;
-            position: absolute;
-            top: calc(50% + 20px);
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    } 
-}
-</style>
