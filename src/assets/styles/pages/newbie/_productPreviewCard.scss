@@ -6,8 +6,8 @@ $title-text-color: #1C232B;
 $green: #3D8168;
 $dark-green: #1A4031;
 $border-radius: 10px;
-$product-mobile-img: "../../../../../public/assets/images/productPreview/image-product-mobile.jpg";
-$product-desktop-img: "../../../../../public/assets/images/productPreview/image-product-desktop.jpg";
+$product-mobile-img: "/assets/images/productPreview/image-product-mobile.jpg";
+$product-desktop-img: "/assets/images/productPreview/image-product-desktop.jpg";
 
 
 #productPreviewCard {
@@ -24,9 +24,9 @@ $product-desktop-img: "../../../../../public/assets/images/productPreview/image-
     }
 
     .product-preview-card {
+        width: 100%;
         max-width: 343px;
         height: 100%;
-        // min-height: 611px;
         background-color: white;
         border-radius: $border-radius;
         font-family: 'Montserrat', sans-serif;
@@ -77,6 +77,7 @@ $product-desktop-img: "../../../../../public/assets/images/productPreview/image-
             .product-preview-card-price-wrapper {
                 display: flex;
                 align-items: center;
+                flex-wrap: wrap;
                 gap: 19px;
                 margin-bottom: 20px;
 
@@ -104,6 +105,7 @@ $product-desktop-img: "../../../../../public/assets/images/productPreview/image-
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                flex-wrap: wrap;
                 gap: 12px;
                 border-radius: 8px;
                 margin: auto;
@@ -140,6 +142,8 @@ $product-desktop-img: "../../../../../public/assets/images/productPreview/image-
                 padding: 34px 30px;
                 background-color: white;
                 border-radius: $border-radius;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
                 margin: 0;
 
                 .product-preview-card-tag {
