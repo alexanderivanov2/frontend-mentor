@@ -106,17 +106,17 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        .column-preview-card {
+            &:first-child {
+                border-bottom-left-radius: 8px;
+                border-top-right-radius: 0px;
+            }
+    
+            &:last-child {
+                border-bottom-left-radius: 0px;
+                border-top-right-radius: 8px;
+            }
+        }
     } 
-
-    .column-preview-card {
-        &:first-child {
-            border-bottom-left-radius: 8px;
-            border-top-right-radius: 0px;
-        }
-
-        &:last-child {
-            border-bottom-left-radius: 0px;
-            border-top-right-radius: 8px;
-        }
-    }
 }
