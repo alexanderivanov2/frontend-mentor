@@ -24,40 +24,5 @@ function vote(voteValue) {
 </script>
 
 <style lang="scss" scoped>
-$body-bg: #131518;
-$card-bg: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
-
-* {
-    box-sizing: border-box;
-}
-
-.interactive-rating-card-page {
-    height: 100%;
-    min-height: 100vh;
-    width: 100%;
-    background-color: $body-bg;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-
-    .interactive-rating-card-wrapper {
-        width: 327px;
-        height: 360px;
-        background: $card-bg;
-        border-radius: 15px;
-        padding: 24px 24px 32px;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-    .interactive-rating-card-page .interactive-rating-card-wrapper {
-        width: 412px;
-        height: 416px;
-        padding: 32px;
-        margin-top: 5px;
-        border-radius: 30px;
-    }
-}
 
 </style>
