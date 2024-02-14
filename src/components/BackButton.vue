@@ -21,8 +21,8 @@ watchEffect(() => {
 
 <style scoped lang="scss">
 .back-button-wrapper {
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
     padding: 0.5rem 1rem 1rem;
     background-color: #4282B3;
     border-bottom-left-radius: 5px;
