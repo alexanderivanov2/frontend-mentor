@@ -40,6 +40,11 @@ const router = createRouter({
       name: 'NFTPreviewCard',
       component: () => import('../views/NewbiePages/NFTPreviewCard/NFTPreviewCard.vue')
     },
+    {
+      path: '/newbie/order-summary-card',
+      name: 'OrderSummaryCard',
+      component: () => import('../views/NewbiePages/OrderSummaryCard/OrderSummaryCard.vue')
+    }
   ]
 })
 

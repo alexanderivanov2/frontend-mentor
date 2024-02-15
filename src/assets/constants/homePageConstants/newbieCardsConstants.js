@@ -22,6 +22,10 @@ const newbieCardsList = [
     {
         cardName: 'NFT Preview Card',
         routeName: 'NFTPreviewCard',
+    },
+    {
+        cardName: 'Order Summary Card',
+        routeName: 'OrderSummaryCard'
     }
 ]
 
