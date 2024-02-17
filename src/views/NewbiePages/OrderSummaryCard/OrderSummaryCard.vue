@@ -16,14 +16,14 @@ import desktopBackground from '../../../../public/assets/images/orderSummaryCard
 
 import { ref, onBeforeMount, onBeforeUnmount } from 'vue'
 
-const isMobile = ref(() => document?.documentElement?.clientWidth < 1440 ?? 0)
+const isMobile = ref(() => false)
 
 const handleResize = () => {
-    console.log(document?.documentElement?.clientWidth < 1440)
     isMobile.value = document?.documentElement?.clientWidth < 1440;
 }
 
 onBeforeMount(() => {
+    handleResize()
     window.addEventListener('resize', handleResize)
 })
 
