@@ -138,6 +138,7 @@ $product-desktop-img: "/assets/images/productPreview/image-product-desktop.jpg";
             }
 
             .product-preview-card-content-wrapper {
+                box-sizing: content-box;
                 width: 236px;
                 padding: 34px 30px;
                 background-color: white;
