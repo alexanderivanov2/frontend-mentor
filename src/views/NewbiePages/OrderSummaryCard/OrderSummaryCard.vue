@@ -207,7 +207,6 @@ onBeforeUnmount(() => {
                 }
 
                 .card-description {
-                    margin-top: 30px;
                     font-size: 16px;
                     font-weight: 500;
                     max-width: 354px;
@@ -217,7 +216,6 @@ onBeforeUnmount(() => {
             .card-plan-wrapper {
                 max-width: 354px;
                 padding: 25px;
-                margin: 30px auto;
                 .card-plan {
                     font-size: 16px;
                 }
