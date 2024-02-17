@@ -29,10 +29,11 @@ watchEffect(() => {
     border-bottom-right-radius: 5px;
     text-align: center;
     display: flex;
-
+    
     position: absolute;
     top: calc(-25px + -1rem);
     left: 10%;
+    z-index: 10;
     transition: all ease-in-out 500ms;
 
     .back-button {
