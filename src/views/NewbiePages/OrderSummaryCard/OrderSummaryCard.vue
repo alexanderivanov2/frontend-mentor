@@ -201,7 +201,7 @@ onBeforeUnmount(() => {
             }
 
             .card-body-wrapper {
-                margin-top: 40px;
+                margin-top: 45px;
                 .card-heading {
                     font-size: 28px;
                 }
