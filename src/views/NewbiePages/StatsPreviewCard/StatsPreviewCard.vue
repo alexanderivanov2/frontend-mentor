@@ -211,7 +211,7 @@ onMounted(() => {
 
                 .card-information-statistics {
                     max-width: 403px;
-                    margin-top: 75px;
+                    margin-top: 80px;
                     flex-direction: row;
                     justify-content: start;
                     gap: 65px;
