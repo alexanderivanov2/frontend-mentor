@@ -89,7 +89,7 @@ onMounted(() => {
 
             &::after {
                 content: '';
-                background-color: $light-purple;
+                background-color: rgba(94, 0, 144, 0.8);
                 opacity: 0.5;
                 position: absolute;
                 top: 0;
@@ -173,7 +173,7 @@ onMounted(() => {
 
         @media screen and (min-width: 1440px) {
             max-width: 1110px;
-            min-height: 446px;
+            max-height: 446px;
             display: flex;
             flex-direction: row;
             
