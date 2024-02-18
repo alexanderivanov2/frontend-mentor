@@ -46,7 +46,7 @@ onMounted(() => {
 
     $mobile-background-img: '../../../../public/assets/images/statsPreviewCard/image-header-mobile.jpg';
     $desktop-background-img: '../../../../public/assets/images/statsPreviewCard/image-header-desktop.jpg';
-
+    $bg-image-br: 10px;
     $dark-purple: #0A0C1C;
     $base-purple: #1B1937;
     $light-purple: #AB5CDB;
@@ -57,6 +57,7 @@ onMounted(() => {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+
 
 
     height: 100%;
@@ -72,7 +73,7 @@ onMounted(() => {
         max-width: 327px;
         width: 100%;
         min-height: 780px;
-        border-radius: 10px;
+        border-radius: $bg-image-br;
 
         .card-image-container {
             position: relative;
@@ -83,8 +84,8 @@ onMounted(() => {
             width: 100%;
             max-height: 240px;
             aspect-ratio: 1;
-            border-top-right-radius: 10px;
-            border-top-left-radius: 10px;
+            border-top-right-radius: $bg-image-br;
+            border-top-left-radius: $bg-image-br;
 
             &::after {
                 content: '';
@@ -166,6 +167,53 @@ onMounted(() => {
                         text-transform: uppercase;
                         letter-spacing: 1px;
                     }
+                }
+            }
+        }
+
+        @media screen and (min-width: 1440px) {
+            max-width: 1110px;
+            min-height: 446px;
+            display: flex;
+            flex-direction: row;
+            
+            .card-image-container {
+                background-image: url($desktop-background-img);
+                background-size: cover;
+                aspect-ratio: unset;
+                max-height: 100%;
+                max-width: 540px;
+                order: 1;
+                border-top-left-radius: unset;
+                border-bottom-right-radius: $bg-image-br;
+                
+                &::after {
+                    border-bottom-right-radius: inherit;
+                }
+            }
+
+            .card-information-container {
+                max-width: 403px;
+                margin: 80px 110px 80px 75px;
+
+                .card-information-header {
+                    margin: 0 auto 30px;
+                    font-size: 36px;
+                }
+
+                .card-information-descripiton {
+                    max-width: 390px;
+                    text-align: start;
+                    font-size: 15px;
+                    line-height: 25px;
+                }
+
+                .card-information-statistics {
+                    max-width: 403px;
+                    margin-top: 80px;
+                    flex-direction: row;
+                    justify-content: start;
+                    gap: 65px;
                 }
             }
         }
