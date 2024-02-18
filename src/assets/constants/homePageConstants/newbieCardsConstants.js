@@ -26,7 +26,11 @@ const newbieCardsList = [
     {
         cardName: 'Order Summary Card',
         routeName: 'OrderSummaryCard'
-    }
+    },
+    {
+        cardName: 'Stats Preview Card',
+        routeName: 'StatsPreviewCard'
+    },
 ]
 
 export {

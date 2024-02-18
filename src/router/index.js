@@ -44,6 +44,11 @@ const router = createRouter({
       path: '/newbie/order-summary-card',
       name: 'OrderSummaryCard',
       component: () => import('../views/NewbiePages/OrderSummaryCard/OrderSummaryCard.vue')
+    },
+    {
+      path: '/newbie/stats-preview-card',
+      name: 'StatsPreviewCard',
+      component: () => import('../views/NewbiePages/StatsPreviewCard/StatsPreviewCard.vue')
     }
   ]
 })
