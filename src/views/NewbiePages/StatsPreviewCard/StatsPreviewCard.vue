@@ -173,7 +173,8 @@ onMounted(() => {
 
         @media screen and (min-width: 1440px) {
             max-width: 1110px;
-            max-height: 446px;
+            height: 446px;
+            min-height: 446px;
             display: flex;
             flex-direction: row;
             
