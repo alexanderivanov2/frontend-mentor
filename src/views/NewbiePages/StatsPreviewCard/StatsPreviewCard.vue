@@ -32,9 +32,9 @@ import { onMounted } from 'vue';
 import { animateCounter } from '../../../composables/useRequestAnimationFrameAnimations.js'
 
 onMounted(() => {
-    animateCounter('.companies-stats', 0, 10, 1000);
-    animateCounter('.templates-stats', 0, 314, 1000);
-    animateCounter('.queries-stats', 0, 12, 1000);
+    animateCounter('.companies-stats', 0, 10, 500);
+    animateCounter('.templates-stats', 0, 314, 500);
+    animateCounter('.queries-stats', 0, 12, 500);
 })
 
 </script>
@@ -195,7 +195,7 @@ onMounted(() => {
 
             .card-information-container {
                 max-width: 403px;
-                margin: 80px 110px 80px 75px;
+                margin: 75px 110px 80px 75px;
 
                 .card-information-header {
                     margin: 0 auto 30px;
