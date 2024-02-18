@@ -215,6 +215,10 @@ onMounted(() => {
                     flex-direction: row;
                     justify-content: start;
                     gap: 65px;
+
+                    .companies-stats, .templates-stats, .queries-stats {
+                        align-self: flex-start;
+                    }
                 }
             }
         }
