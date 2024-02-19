@@ -1,0 +1,90 @@
+#socialLinksProfilePage {
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+    $black: #141414;
+    $dark-grey: #1F1F1F;
+    $grey: #333333;
+    $white: #ffffff;
+    $neon-green: #C4F82A;
+
+    min-height: 100vh;
+    height: 100%;
+
+    background-color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    #socialLinksProfileCard {
+        width: 100%;
+        max-width: 327px;
+        min-height: 579px;
+        background-color: $dark-grey;
+        border-radius: 15px;
+        padding: 23px;
+        text-align: center;
+        
+        .social-profile-img-wrapper {
+            width: 88px;
+            height: 88px;
+            margin: auto;
+            img {
+                width: 100%;
+                border-radius: 100%;
+            }
+        }
+
+
+        .social-profile-names {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 150%;
+            color: $white;
+            margin: 32px auto 10px;
+        }
+
+        .social-profile-location {
+            color: $neon-green;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .social-profile-description {
+            margin-top: 30px;
+            font-size: 14px;
+            font-weight: 400;
+            color: $white;
+        }
+
+        .social-profile-links {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            // justify-content: center;
+            // align-items: center;
+            .social-profile-links-item {
+                padding: 12px;
+                color: $white;
+                background-color: $grey;
+                border-radius: 10px;
+                cursor: pointer;
+                
+                &:hover {
+                    background-color: $neon-green;
+                    color: $grey;
+                }
+
+                .social-link {
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 150%;
+                }
+            }
+        }
+    }
+}
