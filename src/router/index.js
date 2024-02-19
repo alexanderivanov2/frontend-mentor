@@ -49,6 +49,11 @@ const router = createRouter({
       path: '/newbie/stats-preview-card',
       name: 'StatsPreviewCard',
       component: () => import('../views/NewbiePages/StatsPreviewCard/StatsPreviewCard.vue')
+    },
+    {
+      path: '/newbie/social-links-profile-card',
+      name: 'SocialLinksProfileCard',
+      component: () => import('../views/NewbiePages/SocialLinksProfileCard/SocialLinksProfileCard.vue')
     }
   ]
 })
