@@ -58,10 +58,9 @@ onMounted(() => {
     font-optical-sizing: auto;
     font-style: normal;
 
-
-
     height: 100%;
     min-height: 100vh;
+    padding: 80px 0;
     background-color: $dark-purple;
 
     display: flex;
