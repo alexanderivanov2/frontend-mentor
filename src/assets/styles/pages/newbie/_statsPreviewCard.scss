@@ -1,8 +1,8 @@
 #statsPreviewCardPage {
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-    $mobile-background-img: url('../../../../public/assets/images/statsPreviewCard/image-header-mobile.jpg');
-    $desktop-background-img: url('../../../../public/assets/images/statsPreviewCard/image-header-desktop.jpg');
+    $mobile-background-img: '../../../../public/assets/images/statsPreviewCard/image-header-mobile.jpg';
+    $desktop-background-img: '../../../../public/assets/images/statsPreviewCard/image-header-desktop.jpg';
     $bg-image-br: 10px;
     $dark-purple: #0A0C1C;
     $base-purple: #1B1937;
@@ -135,7 +135,7 @@
             flex-direction: row;
             
             .card-image-container {
-                background-image: url($desktop-background-img);
+                background-image: url(/public/assets/images/statsPreviewCard/image-header-desktop.jpg);
                 background-size: cover;
                 aspect-ratio: unset;
                 max-height: 100%;
