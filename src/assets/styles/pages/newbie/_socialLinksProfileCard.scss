@@ -92,6 +92,10 @@
             height: 611px;
             min-height: 611px;
             padding: 40px;
+
+            .social-profile-names, .social-profile-description, .social-profile-links {
+                margin-top: 24px;
+            }
         }
     }
 }
