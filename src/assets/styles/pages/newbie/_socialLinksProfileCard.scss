@@ -86,5 +86,11 @@
                 }
             }
         }
+
+        @media screen and (min-width: 1440px) {
+            max-width: 384px;
+            min-height: 611px;
+            padding: 40px;
+        }
     }
 }
