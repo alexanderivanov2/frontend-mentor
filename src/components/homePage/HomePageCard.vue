@@ -47,7 +47,7 @@
 
         .home-page-card-title {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.8rem;
             font-weight: 700;
         }
 
@@ -89,7 +89,7 @@
             margin-right: -4px;
             color: white;
             font-family: courier, sans;
-            font-size: 1.2rem;
+            font-size: 1.8rem;
         }
     }
 }

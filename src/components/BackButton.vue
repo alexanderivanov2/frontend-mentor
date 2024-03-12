@@ -41,7 +41,7 @@ watchEffect(() => {
         margin: auto;
         text-decoration: none;
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         color: #0D1C1C;
     }
 

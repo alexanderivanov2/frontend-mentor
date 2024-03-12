@@ -1,0 +1,33 @@
+#newbieCardPage {
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+
+
+    &.qr-card-page {
+        $bg-color: #D5E1EF;
+
+        background-color: $bg-color;
+        @include center-with-flex;
+
+        @media (max-height: 530px) {
+            padding: 12px;
+        }
+    }
+
+    &.product-preview-card-page {
+        $bg-color: #F2EAE2;
+
+        background-color: $bg-color;
+        @include center-with-flex;
+    }
+
+    &.results-summary-page {
+        $bg-color: #ECF2FF;
+
+        @media (min-width: 768px) {
+            @include center-with-flex;
+            background-color: $bg-color;
+        }
+    }
+}

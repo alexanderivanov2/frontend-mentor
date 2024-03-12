@@ -13,17 +13,17 @@ const router = createRouter({
     {
       path: '/newbie/QR-code',
       name: 'NewbieQRCode',
-      component: () => import('../views/NewbiePages/NewbieQRCode/NewbieQRCode.vue')
+      component: () => import('../views/NewbiePages/NewbieCardPages/NewbieQRCodePage.vue')
     },
     {
       path: '/newbie/product-preview-card',
       name: 'ProductPreviewCard',
-      component: () => import('../views/NewbiePages/ProductPreviewCard/ProductPreviewCard.vue')
+      component: () => import('../views/NewbiePages/NewbieCardPages/ProductPreviewCardPage.vue')
     },
     {
       path: '/newbie/results-summary',
       name: 'ResultsSummary',
-      component: () => import('../views/NewbiePages/ResultsSummary/ResultsSummary.vue')
+      component: () => import('../views/NewbiePages/NewbieCardPages/ResultSummaryPage/ResultSummaryPage.vue')
     },
     {
       path: '/newbie/3-column-preview',
