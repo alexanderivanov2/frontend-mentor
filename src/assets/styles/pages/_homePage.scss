@@ -1,8 +1,7 @@
 .home-page {
     background-color: $background-color;
-    height: 100vh;
+    min-height: 100vh;
     padding: 1rem;
-    overflow-y: scroll;
 
     @media (max-width: 475px) {
         .home-page-challange-title {
@@ -15,16 +14,16 @@
 
     .home-page-challange-title {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 1.5rem;
+        font-size: 2.2rem;
         font-weight: bold;
-        margin: 12px 0;
+        margin: 1.2rem 0;
         color: white;
     }
 
     .home-page-newbie-cards-wrapper {
         display: flex;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 1.2rem;
 
         .home-page-card {
             width: 100%;
@@ -36,7 +35,7 @@
             }
 
             .home-page-card-link {
-                margin: 12px auto;
+                margin: 1.2rem auto;
                 word-break: break-word;
             }
         }

@@ -1,0 +1,238 @@
+.results-summary-card {
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&display=swap');
+
+    $dark-navy-color: #303B59;
+    $purple-light: #CAC9FF;
+    $gradient-score-card: linear-gradient(180deg, #75F 0%, #6943FF 0.01%, #2F2CE9 100%);
+    $gradient-score: linear-gradient(180deg, #4D21C9 0%, rgba(37, 33, 201, 0.00) 100%, rgba(37, 33, 201, 0.00) 100%);
+    $dark-navy-color: #303B59;
+
+    
+    $bg-red: #F55555;
+    $bg-orange: #FFB21E;
+    $bg-green: #00BB8F;
+    $bg-blue: #1125D6;
+
+    background-color: white;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 1.8rem;
+
+    &-score {
+        padding: 2.4rem 0 4rem;
+        background: $gradient-score-card;
+        border-bottom-left-radius: 3.2rem;
+        border-bottom-right-radius: 3.2rem;
+        color: white;
+        text-align: center;
+
+        &-label {
+            color: $purple-light;
+            font-weight: 500;
+        }
+
+        &-wrapper {
+            margin: 2.4rem auto;
+            background: $gradient-score;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            @include center-with-flex;
+            flex-direction: column;
+
+            .score {
+                font-size: 5.6rem;
+                font-weight: 800;
+                line-height: 7.2rem;
+            }
+
+            .score-max {
+                color: $purple-light;
+                font-size: 1.6rem;
+                font-weight: 500;
+                opacity: 0.5;
+            }
+        }
+
+        &-text {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            line-height: normal;
+        }
+
+        &-info {
+            max-width: 260px;
+            margin: 0 auto;
+            color: $purple-light;
+            font-size: 1.6rem;
+            font-weight: normal;
+            text-align: center;
+            line-height: normal;
+        }
+    }
+
+    .results-summary-card-summary {
+        background-color: white;
+
+        .results-summary-card-content {
+            max-width: 315px;
+            margin: auto;
+
+            .results-summary-card-content-title {
+                color: $dark-navy-color;
+                font-size: 1.8rem;
+                font-weight: 700;
+                line-height: normal;
+                margin: 2.4rem 0 2.4rem;
+            }
+
+            .results-summary-card-content-btn {
+                width: 100%;
+                margin: 2.4rem 0 3rem;
+                padding: 1.6rem;
+                background-color: $dark-navy-color;
+                color: white;
+                border: none;
+                border-radius: 12.8rem;
+                font-size: 1.8rem;
+                font-weight: 700;
+                line-height: normal;
+
+                &:hover {
+                    cursor: pointer;
+                    background: $gradient-score-card;
+                }
+            }
+
+            .summary-skill-wrapper {
+                margin-bottom: 1.6rem;
+                border-radius: 1.2rem;
+                
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1.8rem 1.6rem;
+
+                .summary-skill-category {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1.2rem;
+            
+                    .summary-skill-category-name {
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                        line-height: normal;
+                    }
+            
+                }
+
+                .summary-skill-score-current,
+                .summary-skill-score-total {
+                    color: $dark-navy-color;
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    line-height: normal;
+                }
+            
+                .summary-skill-score-total {
+                    opacity: 0.5;
+                }
+        
+                &.bg-red {
+                    background-color: rgba($bg-red, 0.05);
+                    color: $bg-red;
+                }
+                &.bg-orange {
+                    background-color: rgba($bg-orange, 0.05);
+                    color: $bg-orange;
+                }
+                &.bg-green {
+                    background-color: rgba($bg-green, 0.05);
+                    color: $bg-green;
+                }
+                &.bg-blue {
+                    background-color: rgba($bg-blue, 0.05);
+                    color: $bg-blue;
+                }
+
+                @media screen and (min-width: 768px) {
+                    .summary-skill-category .summary-skill-category-name {
+                        font-size: 1.8rem;
+                    }
+                
+                    .summary-skill-score-current,
+                    .summary-skill-score-total {
+                        font-size: 1.8rem;
+                    }
+                }
+            } 
+        }
+
+        @media (min-width: 768px) {
+            margin-left: -3rem;
+            width: 398px;
+    
+            border-top-right-radius: 3.2rem;
+            border-bottom-right-radius: 3.2rem;
+            .results-summary-card-content {
+                width: 288PX;
+                margin-left: 7rem;
+                .results-summary-card-content-title {
+                    font-size: 2.4rem;
+                    font-weight: 700;
+                    margin: 3.8rem 0 2.8rem;
+                }
+    
+                .results-summary-card-content-btn {
+                    margin: 2.5rem 0 4.6rem;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        border-radius: 3.2rem;
+    
+        &-score {
+            width: 368px;
+            padding: 3.6rem 0 5.4rem;
+            border-top-right-radius: 3.2rem;
+            border-top-left-radius: 3.2rem;
+            z-index: 5;
+    
+            &-label {
+                font-size: 2.4rem;
+                font-weight: 700;
+                line-height: normal;
+            }
+    
+            &-wrapper {
+                margin: 3.5rem auto 2.8rem;
+                width: 200px;
+                height: 200px;
+    
+                .score {
+                    font-size: 7.2rem;
+                }
+    
+                .score-max {
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                }
+            }
+    
+            &-text {
+                font-size: 3.2rem;
+                margin-bottom: 1.4rem;
+            }
+    
+            &-info {
+                font-size: 1.8rem;
+                font-weight: 500;
+            }
+        }
+    }
+}

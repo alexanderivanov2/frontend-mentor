@@ -1,5 +1,4 @@
 <template>
-    <section class="results-summary-page">
         <div class="results-summary-card">
             <div class="results-summary-card-score">
                 <p class="results-summary-card-score-label">Your Result</p>
@@ -26,12 +25,14 @@
                 </div>
             </div>
         </div>
-
-
-    </section>
 </template>
 
 <script setup>
 import ResultsSummarySkill from './ResultsSummarySkill.vue';
-import data from './data.json'
+
+const props = defineProps({
+    data: {
+        type: Object
+    }
+})
 </script>
