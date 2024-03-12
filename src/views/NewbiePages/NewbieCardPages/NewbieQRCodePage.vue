@@ -5,5 +5,5 @@
 </template>
 <script setup>
 import NewbieCardPage from './NewbieCardPage.vue';
-import NewbieQRCode from '../../components/NewbieCards/NewbieQRCode.vue';
+import NewbieQRCode from '../../../components/NewbieCards/NewbieQRCode.vue';
 </script>./NewbieCardPages/NewbieCardPage.vue
