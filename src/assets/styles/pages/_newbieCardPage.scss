@@ -37,14 +37,8 @@
     }
 
     &.interactive-card-page {
-        &-btn {
-            line-height: 1rem;
-        
-            span {
-                line-height: 1rem;
-                font-size: 1.2rem;
-            }
-        }
-
+        $body-bg: #131518;
+        background-color: $body-bg;
+        @include center-with-flex;
     }
 }
