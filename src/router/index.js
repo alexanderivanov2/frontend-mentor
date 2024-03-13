@@ -26,9 +26,9 @@ const router = createRouter({
       component: () => import('../views/NewbiePages/NewbieCardPages/ResultSummaryPage/ResultSummaryPage.vue')
     },
     {
-      path: '/newbie/3-column-preview',
-      name: '3ColumnPreview',
-      component: () => import('../views/NewbiePages/3ColumnPreview/3ColumnPreview.vue')
+      path: '/newbie/three-column-preview',
+      name: 'ThreeColumnPreview',
+      component: () => import('../views/NewbiePages/NewbieCardPages/NewbieThreeColumnCardPage.vue')
     },
     {
       path: '/newbie/interactive-rating-card',

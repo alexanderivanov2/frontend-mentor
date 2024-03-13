@@ -3,26 +3,7 @@
 // 2 - Junior
 
 const newbieCardsList = [
-    {
-        cardName: 'QRCode',
-        routeName: 'NewbieQRCode',
-        difficulty: 1,    
-    },
-    {
-        cardName: 'Product Preview Card',
-        routeName: 'ProductPreviewCard',
-        difficulty: 1,
-    },
-    {
-        cardName: 'Results Summary',
-        routeName: 'ResultsSummary',
-        difficulty: 1,
-    },
-    {
-        cardName: '3 Column Preview',
-        routeName: '3ColumnPreview',
-        difficulty: 1,
-    },
+
     {
         cardName: 'Interactive Rating Card',
         routeName: 'InteractiveRatingCard',
@@ -47,7 +28,27 @@ const newbieCardsList = [
         cardName: 'Social Links Profile',
         routeName: 'SocialLinksProfileCard',
         difficulty: 1,
-    }
+    },
+    {
+        cardName: 'Three Column Preview',
+        routeName: 'ThreeColumnPreview',
+        difficulty: 1,
+    },
+    {
+        cardName: 'Results Summary',
+        routeName: 'ResultsSummary',
+        difficulty: 1,
+    },
+    {
+        cardName: 'Product Preview Card',
+        routeName: 'ProductPreviewCard',
+        difficulty: 1,
+    },
+    {
+        cardName: 'QRCode',
+        routeName: 'NewbieQRCode',
+        difficulty: 1,    
+    },
 ]
 
 export {

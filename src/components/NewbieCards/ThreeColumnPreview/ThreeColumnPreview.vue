@@ -1,13 +1,11 @@
 <template>
-    <section class="columns-preview-page">
-        <div class="columns-preview">
-            <ColumnPreviewCard 
-                v-for="cardData in cardsData"
-                :key="cardData.carType"
-                :cardData="cardData"
-            />
-        </div>
-    </section>
+    <div class="columns-preview">
+        <ColumnPreviewCard 
+            v-for="cardData in cardsData"
+            :key="cardData.carType"
+            :cardData="cardData"
+        />
+    </div>
 </template>
 
 <script setup>
