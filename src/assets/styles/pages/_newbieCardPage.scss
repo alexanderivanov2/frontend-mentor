@@ -72,4 +72,10 @@
         padding: 8rem 0;
         @include center-with-flex;
     }
+
+    &.social-link-profile-card-page {
+        $black: #141414;
+        background-color: $black;
+        @include center-with-flex;
+    }
 }

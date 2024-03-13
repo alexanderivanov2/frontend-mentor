@@ -53,7 +53,7 @@ const router = createRouter({
     {
       path: '/newbie/social-links-profile-card',
       name: 'SocialLinksProfileCard',
-      component: () => import('../views/NewbiePages/SocialLinksProfileCard/SocialLinksProfileCard.vue')
+      component: () => import('../views/NewbiePages/NewbieCardPages/NewbieSocialLinksProfileCardPage.vue')
     }
   ]
 })
