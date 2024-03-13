@@ -35,4 +35,16 @@
         $bg-color: #F2F2F2;
         background-color: $bg-color;
     }
+
+    &.interactive-card-page {
+        &-btn {
+            line-height: 1rem;
+        
+            span {
+                line-height: 1rem;
+                font-size: 1.2rem;
+            }
+        }
+
+    }
 }
