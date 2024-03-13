@@ -38,7 +38,7 @@ const router = createRouter({
     {
       path: '/newbie/nft-preview-card',
       name: 'NFTPreviewCard',
-      component: () => import('../views/NewbiePages/NFTPreviewCard/NFTPreviewCard.vue')
+      component: () => import('../views/NewbiePages/NewbieCardPages/NewbieNFTCardPage.vue')
     },
     {
       path: '/newbie/order-summary-card',

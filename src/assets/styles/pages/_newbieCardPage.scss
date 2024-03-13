@@ -41,4 +41,10 @@
         background-color: $body-bg;
         @include center-with-flex;
     }
+
+    &.nft-preview-card-page {
+        $very-dark-blue-main-bg: #0D192C;
+        background-color: $very-dark-blue-main-bg;
+        @include center-with-flex;
+    }
 }

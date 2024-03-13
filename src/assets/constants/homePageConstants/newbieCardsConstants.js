@@ -3,17 +3,6 @@
 // 2 - Junior
 
 const newbieCardsList = [
-
-    {
-        cardName: 'Interactive Rating Card',
-        routeName: 'InteractiveRatingCard',
-        difficulty: 1,
-    },
-    {
-        cardName: 'NFT Preview Card',
-        routeName: 'NFTPreviewCard',
-        difficulty: 1,
-    },
     {
         cardName: 'Order Summary Card',
         routeName: 'OrderSummaryCard',
@@ -27,6 +16,16 @@ const newbieCardsList = [
     {
         cardName: 'Social Links Profile',
         routeName: 'SocialLinksProfileCard',
+        difficulty: 1,
+    },
+    {
+        cardName: 'NFT Preview Card',
+        routeName: 'NFTPreviewCard',
+        difficulty: 1,
+    },
+    {
+        cardName: 'Interactive Rating Card',
+        routeName: 'InteractiveRatingCard',
         difficulty: 1,
     },
     {
