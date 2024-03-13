@@ -47,4 +47,22 @@
         background-color: $very-dark-blue-main-bg;
         @include center-with-flex;
     }
+
+    &.order-summary-card-page {
+        $body-bg: #E0E8FF;
+
+        background-color: $body-bg;
+        position: relative;
+        @include center-with-flex;
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            width: 100%;
+    
+            img {
+                width: 100%;
+            }
+        }
+    }
 }

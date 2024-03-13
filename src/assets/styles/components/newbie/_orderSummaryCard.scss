@@ -1,4 +1,4 @@
-#orderSummaryCardPage {
+.order-summary-card {
     @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
     $white: #FFFFFF;
     $blue: #382AE1;
@@ -11,166 +11,161 @@
     $link-color: $blue;
 
     $card-border-radius: 20px;
-    
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $body-bg;
-    min-height: 100vh;
-    height: 100%;
 
-    .background-image {
-        position: absolute;
-        top: 0;
+    position: relative;
+    max-width: 327px;
+    width: 100%;
+    min-height: 567px;
+    border-radius: $card-border-radius;
+    background-color: $card-bg;
+    box-shadow: 0px 6px 2rem -1rem;
+
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    .card-header-image-wrapper {
         width: 100%;
 
         img {
             width: 100%;
+            border-top-left-radius: $card-border-radius;
+            border-top-right-radius: $card-border-radius;
+            box-shadow: 0px 4px 5px 0px $light-text-color;
         }
     }
 
-    .order-summary-card {
-        position: relative;
-        max-width: 327px;
-        width: 100%;
-        min-height: 567px;
-        border-radius: $card-border-radius;
-        background-color: $card-bg;
-        box-shadow: 0px 6px 20px -10px;
-        
-        font-family: "Red Hat Display", sans-serif;
-        font-optical-sizing: auto;
-        font-style: normal;
-        .card-header-image-wrapper {
-            width: 100%;
-            img {
-                width: 100%;
-                border-top-left-radius: $card-border-radius;
-                border-top-right-radius: $card-border-radius;
-                box-shadow: 0px 4px 5px 0px $light-text-color;
-            }
+    .card-body-wrapper {
+        margin-top: 3rem;
+        text-align: center;
+
+        .card-heading {
+            color: $card-heading-color;
+            font-size: 2.2rem;
+            font-weight: 900;
         }
 
-        .card-body-wrapper {
-            margin-top: 30px;
-            text-align: center;
-            .card-heading {
+        .card-description {
+            max-width: 263px;
+            margin: 2.5rem auto 0;
+            color: $light-text-color;
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+        }
+    }
+
+    .card-plan-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $card-plan-bg;
+
+        max-width: 279px;
+        margin: 2.5rem auto;
+        padding: 1.6rem;
+        border-radius: 1rem;
+
+        .card-plan-info {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .card-plan {
+            text-align: start;
+            font-size: 1.4rem;
+
+            &-type {
+                margin-bottom: 1rem;
                 color: $card-heading-color;
-                font-size: 22px;
                 font-weight: 900;
             }
 
-            .card-description {
-                max-width: 263px;
-                margin: 25px auto 0;
+            &-price {
                 color: $light-text-color;
-                font-size: 15px;
-                line-height: 25px;
+            }
+        }
+
+        .card-plan-link {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: $link-color;
+        }
+    }
+
+    .options-button-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        max-width: 280px;
+        gap: 1rem;
+
+        .payment-button,
+        .cancel-button {
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .payment-button {
+            color: $white;
+            background-color: $blue;
+            box-shadow: 0px 1.3rem 2rem -5px $light-text-color;
+            
+            &:hover {
+                background-color: darken($blue, 7%);
+            }
+        }
+
+        .cancel-button {
+            background-color: transparent;
+            color: $light-text-color;
+
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        max-width: 450px;
+        min-height: 697px;
+
+        .card-header-image-wrapper img {
+            box-shadow: unset;
+        }
+
+        .card-body-wrapper {
+            margin-top: 4.5rem;
+
+            .card-heading {
+                font-size: 2.8rem;
+            }
+
+            .card-description {
+                font-size: 1.6rem;
+                font-weight: 500;
+                max-width: 354px;
             }
         }
 
         .card-plan-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            background-color: $card-plan-bg;
-            
-            max-width: 279px;
-            margin: 25px auto;
-            padding: 16px;
-            border-radius: 10px;
-
-            .card-plan-info {
-                display: flex;
-                align-items: center;
-                gap: 20px;
-            }
+            max-width: 354px;
+            padding: 2.5rem;
 
             .card-plan {
-                
-                text-align: start;
-                font-size: 14px;
-
-                &-type {
-                    margin-bottom: 10px;
-                    color: $card-heading-color;
-                    font-weight: 900;
-                }
-
-                &-price {
-                    color: $light-text-color;
-                }
-            }
-            
-            .card-plan-link {
-                font-size: 14px;
-                font-weight: bold;
-                color: $link-color;
+                font-size: 1.6rem;
             }
         }
 
         .options-button-wrapper {
-            display: flex;
-            flex-direction: column;
-            margin: auto;
-            max-width: 280px;
-            gap: 10px;
-
-            .payment-button, .cancel-button {
-                font-size: 15px;
-                font-weight: 700;
-                padding: 15px;
-                border-radius: 10px;
-                border: none;
-            }
-
-            .payment-button {
-                color: $white;
-                background-color: $blue;
-                box-shadow: 0px 13px 20px -5px $light-text-color;
-            }
-
-            .cancel-button {
-                background-color: transparent;
-                color: $light-text-color;
-            }
-        }
-    
-        @media screen and (min-width: 1440px) {
-            max-width: 450px;
-            min-height: 697px;
-
-            .card-header-image-wrapper img {
-                box-shadow: unset;
-            }
-
-            .card-body-wrapper {
-                margin-top: 45px;
-                .card-heading {
-                    font-size: 28px;
-                }
-
-                .card-description {
-                    font-size: 16px;
-                    font-weight: 500;
-                    max-width: 354px;
-                }
-            }
-
-            .card-plan-wrapper {
-                max-width: 354px;
-                padding: 25px;
-                .card-plan {
-                    font-size: 16px;
-                }
-            }
-
-            .options-button-wrapper {
-                max-width: 354px;
-                gap: 15px;
-            }
+            max-width: 354px;
+            gap: 1.5rem;
         }
     }
 }

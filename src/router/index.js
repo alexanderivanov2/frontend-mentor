@@ -43,7 +43,7 @@ const router = createRouter({
     {
       path: '/newbie/order-summary-card',
       name: 'OrderSummaryCard',
-      component: () => import('../views/NewbiePages/OrderSummaryCard/OrderSummaryCard.vue')
+      component: () => import('../views/NewbiePages/NewbieCardPages/NewbieOrderSummaryCardPage.vue')
     },
     {
       path: '/newbie/stats-preview-card',

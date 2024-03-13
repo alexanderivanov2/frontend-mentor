@@ -4,11 +4,6 @@
 
 const newbieCardsList = [
     {
-        cardName: 'Order Summary Card',
-        routeName: 'OrderSummaryCard',
-        difficulty: 1,
-    },
-    {
         cardName: 'Stats Preview Card',
         routeName: 'StatsPreviewCard',
         difficulty: 1,
@@ -16,6 +11,11 @@ const newbieCardsList = [
     {
         cardName: 'Social Links Profile',
         routeName: 'SocialLinksProfileCard',
+        difficulty: 1,
+    },
+    {
+        cardName: 'Order Summary Card',
+        routeName: 'OrderSummaryCard',
         difficulty: 1,
     },
     {
