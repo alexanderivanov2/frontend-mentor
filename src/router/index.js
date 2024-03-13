@@ -18,7 +18,7 @@ const router = createRouter({
     {
       path: '/newbie/product-preview-card',
       name: 'ProductPreviewCard',
-      component: () => import('../views/NewbiePages/NewbieCardPages/ProductPreviewCardPage.vue')
+      component: () => import('../views/NewbiePages/NewbieCardPages/NewbieProductPreviewCardPage.vue')
     },
     {
       path: '/newbie/results-summary',
@@ -48,7 +48,7 @@ const router = createRouter({
     {
       path: '/newbie/stats-preview-card',
       name: 'StatsPreviewCard',
-      component: () => import('../views/NewbiePages/StatsPreviewCard/StatsPreviewCard.vue')
+      component: () => import('../views/NewbiePages/NewbieCardPages/NewbieStatsPreviewCard.vue')
     },
     {
       path: '/newbie/social-links-profile-card',

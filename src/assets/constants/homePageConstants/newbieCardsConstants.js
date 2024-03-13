@@ -4,13 +4,13 @@
 
 const newbieCardsList = [
     {
-        cardName: 'Stats Preview Card',
-        routeName: 'StatsPreviewCard',
+        cardName: 'Social Links Profile',
+        routeName: 'SocialLinksProfileCard',
         difficulty: 1,
     },
     {
-        cardName: 'Social Links Profile',
-        routeName: 'SocialLinksProfileCard',
+        cardName: 'Stats Preview Card',
+        routeName: 'StatsPreviewCard',
         difficulty: 1,
     },
     {

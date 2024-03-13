@@ -65,4 +65,11 @@
             }
         }
     }
+
+    &.stats-preview-card-page {
+        $dark-purple: #0A0C1C;
+        background-color: $dark-purple;
+        padding: 8rem 0;
+        @include center-with-flex;
+    }
 }

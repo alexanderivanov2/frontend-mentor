@@ -1,6 +1,6 @@
-#statsPreviewCardPage {
+#statsPreviewCard {
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-    $bg-image-br: 10px;
+    $bg-image-br: 1rem;
     $dark-purple: #0A0C1C;
     $base-purple: #1B1937;
     $light-purple: #AB5CDB;
@@ -11,167 +11,139 @@
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-
-    height: 100%;
-    min-height: 100vh;
-    padding: 80px 0;
-    background-color: $dark-purple;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    #statsPreviewCard {
-        background-color: $base-purple;
+    background-color: $base-purple;
+    max-width: 327px;
+    width: 100%;
+    min-height: 780px;
+    border-radius: $bg-image-br;
+    .card-image-container {
+        position: relative;
+        background-image: url(/public/assets/images/statsPreviewCard/image-header-mobile.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
         max-width: 327px;
         width: 100%;
-        min-height: 780px;
-        border-radius: $bg-image-br;
-
-        .card-image-container {
-            position: relative;
-            background-image: url(/public/assets/images/statsPreviewCard/image-header-mobile.jpg);
-            background-size: contain;
-            background-repeat: no-repeat;
-            max-width: 327px;
-            width: 100%;
-            max-height: 240px;
-            aspect-ratio: 1;
-            border-top-right-radius: $bg-image-br;
-            border-top-left-radius: $bg-image-br;
-
-            &::after {
-                content: '';
-                background-color: rgba(94, 0, 144, 0.8);
-                opacity: 0.5;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                z-index: 10;
-                border-top-right-radius: inherit;
-                border-top-left-radius: inherit;
+        max-height: 240px;
+        aspect-ratio: 1;
+        border-top-right-radius: $bg-image-br;
+        border-top-left-radius: $bg-image-br;
+        &::after {
+            content: '';
+            background-color: rgba(94, 0, 144, 0.8);
+            opacity: 0.5;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            border-top-right-radius: inherit;
+            border-top-left-radius: inherit;
+        }
+    }
+    .card-information-container {
+        max-width: 264px;
+        margin: 0 auto;
+        .card-information-header {
+            margin: 4rem auto 2rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2.8rem;
+            color: $white;
+            .header-acent {
+                color: $light-purple;
             }
         }
-
-        .card-information-container {
-            max-width: 264px;
-            margin: 0 auto;
-            
-            .card-information-header {
-                margin: 40px auto 20px;
-                text-align: center;
-                font-weight: bold;
-                font-size: 28px;
-                color: $white;
-
-                .header-acent {
-                    color: $light-purple;
-                }
-            }
-
-            .card-information-descripiton {
-                color: $light-gray;
-                text-align: center;
-                line-height: 25px;
-                font-size: 15px;
-            }
-
-            .card-information-statistics {
-                margin-top: 45px;
+        .card-information-descripiton {
+            color: $light-gray;
+            text-align: center;
+            line-height: 2.5rem;
+            font-size: 1.5rem;
+        }
+        .card-information-statistics {
+            margin-top: 4.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 3.5rem;
+            .card-information-statistics-item {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 align-items: center;
-                gap: 35px;
-
-                .card-information-statistics-item {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-
-                    .companies-stats, .templates-stats, .queries-stats {
-                        position: relative;
-                        font-size: 24px;
-                        font-weight: bold;
-                        color: $white;
-                    }
-
-
-                    .companies-stats, .queries-stats {
-                        padding-right: 25px;
-                    }
-                    .companies-stats::after {
-                        content: 'K+';
-                        position: absolute;
-                    }
-
-                    .queries-stats::after {
-                        content: 'M+';
-                        position: absolute;
-                    }
-
-                    .stats-label {
-                        font-size: 12px;
-                        line-height: 25px;
-                        color: $gray;
-                        text-transform: uppercase;
-                        letter-spacing: 1px;
-                    }
+                justify-content: center;
+                .companies-stats,
+                .templates-stats,
+                .queries-stats {
+                    position: relative;
+                    font-size: 2.4rem;
+                    font-weight: bold;
+                    color: $white;
+                }
+                .companies-stats,
+                .queries-stats {
+                    padding-right: 2.5rem;
+                }
+                .companies-stats::after {
+                    content: 'K+';
+                    position: absolute;
+                }
+                .queries-stats::after {
+                    content: 'M+';
+                    position: absolute;
+                }
+                .stats-label {
+                    font-size: 1.2rem;
+                    line-height: 2.5rem;
+                    color: $gray;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
                 }
             }
         }
-
-        @media screen and (min-width: 1440px) {
-            max-width: 1110px;
-            height: 446px;
-            min-height: 446px;
-            display: flex;
-            flex-direction: row;
-            
-            .card-image-container {
-                background-image: url(/public/assets/images/statsPreviewCard/image-header-desktop.jpg);
-                background-size: cover;
-                aspect-ratio: unset;
-                max-height: 100%;
-                max-width: 540px;
-                order: 1;
-                border-top-left-radius: unset;
-                border-bottom-right-radius: $bg-image-br;
-                
-                &::after {
-                    border-bottom-right-radius: inherit;
-                }
+    }
+    @media screen and (min-width: 1440px) {
+        max-width: 1110px;
+        height: 446px;
+        min-height: 446px;
+        display: flex;
+        flex-direction: row;
+        .card-image-container {
+            background-image: url(/public/assets/images/statsPreviewCard/image-header-desktop.jpg);
+            background-size: cover;
+            aspect-ratio: unset;
+            max-height: 100%;
+            max-width: 540px;
+            order: 1;
+            border-top-left-radius: unset;
+            border-bottom-right-radius: $bg-image-br;
+            &::after {
+                border-bottom-right-radius: inherit;
             }
-
-            .card-information-container {
+        }
+        .card-information-container {
+            max-width: 403px;
+            margin: 7.5rem 11rem 80px 7.5rem;
+        .card-information-header {
+                margin: 0 auto 3rem;
+                font-size: 3.6rem;
+            }
+            .card-information-descripiton {
+                max-width: 390px;
+                text-align: start;
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+            }
+            .card-information-statistics {
                 max-width: 403px;
-                margin: 75px 110px 80px 75px;
-
-                .card-information-header {
-                    margin: 0 auto 30px;
-                    font-size: 36px;
-                }
-
-                .card-information-descripiton {
-                    max-width: 390px;
-                    text-align: start;
-                    font-size: 15px;
-                    line-height: 25px;
-                }
-
-                .card-information-statistics {
-                    max-width: 403px;
-                    margin-top: 80px;
-                    flex-direction: row;
-                    justify-content: start;
-                    gap: 65px;
-
-                    .companies-stats, .templates-stats, .queries-stats {
-                        align-self: flex-start;
-                    }
+                margin-top: 8rem;
+                flex-direction: row;
+                justify-content: start;
+                gap: 6.5rem;
+                .companies-stats,
+                .templates-stats,
+                .queries-stats {
+                    align-self: flex-start;
                 }
             }
         }
