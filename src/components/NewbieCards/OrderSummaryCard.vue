@@ -4,7 +4,7 @@
     </div>
     <div class="order-summary-card">
         <div class="card-header-image-wrapper">
-            <img src="../../../../public/assets/images/orderSummaryCard/illustration-hero.svg"
+            <img src="../../../public/assets/images/orderSummaryCard/illustration-hero.svg"
                 alt="order hero illustation">
         </div>
         <div class="card-body-wrapper">
@@ -14,7 +14,7 @@
         </div>
         <div class="card-plan-wrapper">
             <div class="card-plan-info">
-                <img src="../../../../public/assets/images/orderSummaryCard/icon-music.svg" alt="music icon" />
+                <img src="../../../public/assets/images/orderSummaryCard/icon-music.svg" alt="music icon" />
                 <div class="card-plan">
                     <p class="card-plan-type">Annual Plan</p>
                     <p class="card-plan-price">$59.99/year</p>
