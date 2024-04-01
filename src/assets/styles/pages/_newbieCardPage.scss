@@ -78,4 +78,10 @@
         background-color: $black;
         @include center-with-flex;
     }
+
+    &.blog-preview-card-page {
+        $bg-color: #F4D04E;
+        background-color: $bg-color;
+        @include center-with-flex; 
+    }
 }

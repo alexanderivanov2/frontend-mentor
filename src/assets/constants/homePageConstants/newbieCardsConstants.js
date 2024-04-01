@@ -4,6 +4,11 @@
 
 const newbieCardsList = [
     {
+        cardName: 'Blog Preview Card',
+        routeName: 'BlogPreviewCard',
+        difficulty: 1,    
+    },
+    {
         cardName: 'Social Links Profile',
         routeName: 'SocialLinksProfileCard',
         difficulty: 1,
