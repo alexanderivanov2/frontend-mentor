@@ -1,8 +1,6 @@
 <template>
     <div class="blog-preview-card">
-        <div class="blog-preview-card-image-wrapper">
-            <img :src="BlogPreviewImage" alt="blog preview image" />
-        </div>
+        <div class="blog-preview-card-image"></div>
         <div class="blog-preview-card-body">
             <div class="card-body-tags">
                 <span class="card-body-tag">Learing</span>
@@ -19,6 +17,5 @@
 </template>
 
 <script setup>
-import BlogPreviewImage from '../../../public/assets/images/blogPreviewCard/illustration-article.svg';
 import PublisherImage from '../../../public/assets/images/blogPreviewCard/image-avatar.webp';
 </script>
