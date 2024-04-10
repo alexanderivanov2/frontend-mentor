@@ -11,12 +11,16 @@
 <script setup>
 import { ref } from 'vue';
 import ColumnPreviewCard from './ColumnPreviewCard.vue';
+import sedanIcon from '/src/assets/images/3ColumnPreview/icon-sedans.svg';
+// import suvIcon from '/assets/images/3ColumnPreview/icon-suvs.svg';
+// import luxuryIcon from '@/assets/images/3ColumnPreview/icon-luxury.svg';
 
 const cardsData = ref([
     {
         carType: 'Sedans',
         description: 'Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road trip.',
-        carIcon: '../../../src/assets/images/3ColumnPreview/icon-sedans.svg',
+        // carIcon: '../../../src/assets/images/3ColumnPreview/icon-sedans.svg',
+        carIcon: sedanIcon,
         cardClasses: 'sedan-card'
     },
     {
