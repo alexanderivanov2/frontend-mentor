@@ -12,23 +12,27 @@
 import { ref } from 'vue';
 import ColumnPreviewCard from './ColumnPreviewCard.vue';
 
+import sedanIcon from '/src/assets/images/3ColumnPreview/icon-sedans.svg';
+import suvsIcon from '/src/assets/images/3ColumnPreview/icon-suvs.svg';
+import luxuryIcon from '/src/assets/images/3ColumnPreview/icon-luxury.svg';
+
 const cardsData = ref([
     {
         carType: 'Sedans',
         description: 'Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road trip.',
-        carIcon: '/src/assets/images/3ColumnPreview/icon-sedans.svg',
+        carIcon: sedanIcon,
         cardClasses: 'sedan-card'
     },
     {
         carType: 'SUVs',
         description: 'Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation and off-road adventures.',
-        carIcon: '/src/assets/images/3ColumnPreview/icon-suvs.svg',
+        carIcon: suvsIcon,
         cardClasses: 'suvs-card'
     },
     {
         carType: 'Luxury',
         description: 'Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in style.',
-        carIcon: '/src/assets/images/3ColumnPreview/icon-luxury.svg',
+        carIcon: luxuryIcon,
         cardClasses: 'luxury-card'
     },
 ])
