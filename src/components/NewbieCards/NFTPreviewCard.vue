@@ -29,8 +29,8 @@
 </template>
 
 <script setup>
-import equilibriumIMG from '../../../public/assets/images/nftPreviewCard/image-equilibrium.jpg'
-import equilibriumLogo from '../../../public/assets/images/nftPreviewCard/icon-ethereum.svg'
-import clockIMG from '../../../public/assets/images/nftPreviewCard/icon-clock.svg'
-import avatarIMG from '../../../public/assets/images/nftPreviewCard/image-avatar.png'
+import equilibriumIMG from '../../assets/images/nftPreviewCard/image-equilibrium.jpg'
+import equilibriumLogo from '../../assets/images/nftPreviewCard/icon-ethereum.svg'
+import clockIMG from '../../assets/images/nftPreviewCard/icon-clock.svg'
+import avatarIMG from '../../assets/images/nftPreviewCard/image-avatar.png'
 </script>

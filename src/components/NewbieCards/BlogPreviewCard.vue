@@ -17,5 +17,5 @@
 </template>
 
 <script setup>
-import PublisherImage from '../../../public/assets/images/blogPreviewCard/image-avatar.webp';
+import PublisherImage from '../../assets/images/blogPreviewCard/image-avatar.webp';
 </script>

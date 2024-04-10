@@ -10,7 +10,7 @@
 
 <script setup>
     import { ref } from 'vue';
-    import qrCodeImage from '../../../public/assets/images/image-qr-code.png'
+    import qrCodeImage from '../../assets/images/image-qr-code.png'
      
     const img = ref(qrCodeImage)
 </script>

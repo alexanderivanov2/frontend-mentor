@@ -19,5 +19,5 @@
 </template>
 
 <script setup>
-import socialProfileImg from '../../../public/assets/images/socialLinksProfileCard/avatar-jessica.jpeg'
+import socialProfileImg from '../../assets/images/socialLinksProfileCard/avatar-jessica.jpeg'
 </script>

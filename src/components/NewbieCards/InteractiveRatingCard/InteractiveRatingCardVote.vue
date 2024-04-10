@@ -46,8 +46,8 @@
 <script setup> 
 import { ref, toRefs } from 'vue'
 
-import starIcon from '../../../../public/assets/images/interactiveRatignCard/icon-star.svg'
-import illustrationThankYouSvg from '../../../../public/assets/images/interactiveRatignCard/illustration-thank-you.svg'
+import starIcon from '../../../assets/images/interactiveRatignCard/icon-star.svg'
+import illustrationThankYouSvg from '../../../assets/images/interactiveRatignCard/illustration-thank-you.svg'
 
 const emit = defineEmits(['vote'])
 

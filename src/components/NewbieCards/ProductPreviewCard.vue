@@ -17,7 +17,7 @@
 
 <script setup>
     import { ref } from 'vue'
-    import cartSVG from '../../../public/assets/images/productPreview/icon-cart.svg'
+    import cartSVG from '../../assets/images/productPreview/icon-cart.svg'
 
     const productTag = ref('Perfume')
     const productTitle = ref('Gabrielle Essence Eau De Parfum')
