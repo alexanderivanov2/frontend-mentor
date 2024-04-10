@@ -58,7 +58,7 @@ const router = createRouter({
     {
       path: '/newbie/blog-preview-card',
       name: 'BlogPreviewCard',
-      component: () => import('../views/NewbiePages/NewbieCardPages/BlogPreviewCardPage.vue')
+      component: () => import('../views/NewbiePages/NewbieCardPages/NewbieBlogPreviewCardPage.vue')
     },
   ]
 })
