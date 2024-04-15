@@ -17,7 +17,7 @@
                         :key="skill.category"
                         :category="skill.category"
                         :score="skill.score"
-                        :iconPath="skill.icon"
+                        :iconPath="`/src/assets/images/resultsSummary/${skill.icon}`"
                         :colorClass="skill.colorClass"
                     />
 
