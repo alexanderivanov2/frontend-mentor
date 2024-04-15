@@ -17,7 +17,7 @@
                         :key="skill.category"
                         :category="skill.category"
                         :score="skill.score"
-                        :iconPath="skill.icon"
+                        :iconType="skill.icon"
                         :colorClass="skill.colorClass"
                     />
 
@@ -30,9 +30,11 @@
 <script setup>
 import ResultsSummarySkill from './ResultsSummarySkill.vue';
 
+
 const props = defineProps({
     data: {
         type: Object
     }
 })
+
 </script>
