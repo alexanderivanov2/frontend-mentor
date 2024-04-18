@@ -1,5 +1,6 @@
 <template>
     <div class="home-page">
+        <ChallangeCardCarousel></ChallangeCardCarousel>
         <h2 class="home-page-challange-title">Newbie Challanges</h2>
         <div class="home-page-newbie-cards-wrapper">
             <HomePageCard v-for="card in newbieCardsList" 
@@ -12,6 +13,7 @@
 </template>
 
 <script setup>
+import ChallangeCardCarousel from '../components/ChallangeCardCarousel/ChallangeCardCarousel.vue'
 import HomePageCard from '../components/homePage/HomePageCard.vue'
 import { newbieCardsList } from '../assets/constants/homePageConstants/newbieCardsConstants' 
 </script>
