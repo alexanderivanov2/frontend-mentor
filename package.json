@@ -10,6 +10,7 @@
   "dependencies": {
     "embla-carousel-vue": "^8.0.2",
     "sass": "^1.69.3",
+    "typescript": "^5.4.5",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },
