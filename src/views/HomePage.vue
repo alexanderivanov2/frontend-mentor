@@ -9,6 +9,4 @@
 
 <script setup>
 import ChallangeCardCarousel from '../components/ChallangeCardCarousel/ChallangeCardCarousel.vue'
-import HomePageCard from '../components/homePage/HomePageCard.vue'
-import { newbieCardsList } from '../assets/constants/homePageConstants/newbieCardsConstants' 
 </script>
