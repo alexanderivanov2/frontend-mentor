@@ -1,12 +1,7 @@
 {
     "rewrites": [
         {
-            "source": "/src/assets/(.*)",
-            "destination": "/src/assets/$1"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/"
+            "source": "/(.*)", "destination": "/"
         }
     ]
 }
