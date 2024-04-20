@@ -2,7 +2,7 @@
     <router-link :to="{ name: routeName }" >
         <div id="challangeCard"
         :style="{
-            backgroundImage: `url(${imgUrl})`,
+            background: `${linearGradient}, url(${imgUrl})`,
             height: '200px',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -38,6 +38,7 @@ const difficultyDictionary: DifficultyDictionary = {
     2: 'Junior',
 }
 const getDifficulty = computed(() => difficultyDictionary[difficulty.value] ?? 'unknown')
+const linearGradient = 'linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))'
 </script>
 
 <style scooped lang="scss">
@@ -45,12 +46,12 @@ const getDifficulty = computed(() => difficultyDictionary[difficulty.value] ?? '
         position: relative;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         letter-spacing: 1px;
+        border-radius: 10px;
 
         .challange-card-title {
             font-size: 1.6rem;
             font-weight: 900;
             color: white;
-
             position: absolute;
             bottom: 5%;
             left: 0;
@@ -64,10 +65,10 @@ const getDifficulty = computed(() => difficultyDictionary[difficulty.value] ?? '
             top: 5%;
             right: 5%;
             color: white;
-            background-color: black;
+            background-color: yellowgreen;
             padding: 0.75rem 1.5rem;
             font-size: 1.2rem;
-            font-weight: 900;
+            font-weight: 500;
             border-radius: 100px;
         }
     }

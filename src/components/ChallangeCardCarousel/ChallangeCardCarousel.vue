@@ -35,6 +35,7 @@ const [emblaRef] = emblaCarouselVue(options)
     overflow: hidden;
     max-width: 1920px;
     margin: 0 auto;
+    padding: 2rem 0;
   }
   .embla__container {
     display: flex;
