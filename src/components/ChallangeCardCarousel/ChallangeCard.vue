@@ -1,16 +1,19 @@
 <template>
-    <div id="challangeCard"
-    :style="{
-        backgroundImage: `url(${imgUrl})`,
-        height: '200px',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-    }"
-    >
-        <h3 class="challange-card-title">{{ title }}</h3>
-        <span class="challange-card-difficulty">{{ getDifficulty }}</span>
-    </div>
+    <router-link :to="{ name: routeName }" >
+        <div id="challangeCard"
+        :style="{
+            backgroundImage: `url(${imgUrl})`,
+            height: '200px',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+        }"
+        >
+            <h3 class="challange-card-title">{{ title }}</h3>
+            <span class="challange-card-difficulty">{{ getDifficulty }}</span>
+        </div>
+    </router-link>
+
 </template>
 
 <script setup lang="ts">
@@ -19,6 +22,7 @@ import { computed, toRefs } from 'vue';
 interface Props {
     title: string;
     imgUrl: string;
+    routeName: string;
     difficulty: number | string;
 }
 

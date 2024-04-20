@@ -5,6 +5,7 @@
                 <ChallangeCard 
                   :title="card.cardName"
                   :imgUrl="card.cardImgURL"
+                  :routeName="card.routeName"
                   :difficulty="card.difficulty"
                 />
             </div>
