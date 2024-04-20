@@ -1,7 +1,7 @@
 .home-page {
     background-color: $background-color;
     min-height: 100vh;
-    padding: 1rem;
+    padding: 2rem;
 
     @media (max-width: 475px) {
         .home-page-challange-title {
@@ -20,25 +20,9 @@
         color: white;
     }
 
-    .home-page-newbie-cards-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.2rem;
-
-        .home-page-card {
-            width: 100%;
-            flex: 1 1 100%;
-            
-            @media (min-width: 360px) {
-                min-width: 250px;
-                flex: 1;
-            }
-
-            .home-page-card-link {
-                margin: 1.2rem auto;
-                word-break: break-word;
-            }
-        }
+    .challange-wrapper {
+        width: 100%;
+        margin: auto;
     }
 }
 

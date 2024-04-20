@@ -14,11 +14,20 @@
 </template>
 
 <script setup lang="ts">
+import { EmblaOptionsType } from 'embla-carousel'
 import emblaCarouselVue from 'embla-carousel-vue'
 import ChallangeCard from './ChallangeCard.vue';
 import { newbieCardsList } from '../../assets/constants/homePageConstants/newbieCardsConstants' 
 
-const [emblaRef] = emblaCarouselVue()
+const options: EmblaOptionsType = {
+  dragFree: false,
+  slidesToScroll: 1,
+  breakpoints: {
+    '(min-width: 540px)': { slidesToScroll: 2 },
+    '(min-width: 1140px)': { slidesToScroll: 3 },
+  }
+}
+const [emblaRef] = emblaCarouselVue(options)
 </script>
 
 <style scoped>
@@ -26,30 +35,33 @@ const [emblaRef] = emblaCarouselVue()
     overflow: hidden;
     max-width: 1920px;
     margin: 0 auto;
-    /* background-color: wheat; */
   }
   .embla__container {
     display: flex;
-    /* flex-direction: column; */
     height: 200px;
   }
   .embla__slide {
-    flex: 0 0 80%;
-    min-width: 0;
-    margin-right: 15px;
+    flex: 0 0 90%;
+    max-width: 350px;
+    width: 100%;
+    margin-right: 10px;
     
-    @media screen and (min-width: 550px) {
-        flex: 0 0 40%;
+    @media screen and (min-width: 540px) {
+        flex: 0 0 100%;
+        max-width: 250px;
+    }
+    
+    @media screen and (min-width: 640px) {
+        max-width: 300px;
     }
 
-    @media screen and (min-width: 900px) {
-        flex: 0 0 33%;
+    @media screen and (min-width: 760px) {
+        max-width: 350px;
+        margin-right: 15px;
     }
 
-    
-    @media screen and (min-width: 1200px) {
-        flex: 0 0 15%;
+    @media screen and (min-width: 930px) {
+      max-width: 350px;
     }
-    /* max-width: 200px; */
   }
 </style>
