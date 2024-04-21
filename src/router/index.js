@@ -60,6 +60,11 @@ const router = createRouter({
       name: 'BlogPreviewCard',
       component: () => import('../views/NewbiePages/NewbieCardPages/NewbieBlogPreviewCardPage.vue')
     },
+    {
+      path: '/newbie/blog-preview-card',
+      name: 'ProfileCard',
+      component: () => import('../views/NewbiePages/NewbieCardPages/NewbieProfileCardPage.vue')
+    },
   ]
 })
 

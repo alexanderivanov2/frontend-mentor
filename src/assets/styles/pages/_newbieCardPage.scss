@@ -84,4 +84,8 @@
         background-color: $bg-color;
         @include center-with-flex; 
     }
+
+    &.profile-card {
+        @include center-with-flex;
+    }
 }

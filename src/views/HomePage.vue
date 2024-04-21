@@ -1,12 +1,12 @@
 <template>
     <div class="home-page">
-        <div class="challange-wrapper">
-            <h2 class="home-page-challange-title">Newbie Challanges</h2>
-            <ChallangeCardCarousel></ChallangeCardCarousel>
+        <div class="challenge-wrapper">
+            <h2 class="home-page-challenge-title">Newbie Challenges</h2>
+            <ChallengeCardCarousel></ChallengeCardCarousel>
         </div>
     </div>
 </template>
 
 <script setup>
-import ChallangeCardCarousel from '../components/ChallangeCardCarousel/ChallangeCardCarousel.vue'
+import ChallengeCardCarousel from '../components/ChallengeCardCarousel/ChallengeCardCarousel.vue'
 </script>

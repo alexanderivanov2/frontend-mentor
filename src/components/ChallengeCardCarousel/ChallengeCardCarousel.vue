@@ -2,7 +2,7 @@
     <div class="embla" ref="emblaRef">
         <div class="embla__container">
             <div class="embla__slide" v-for="card in newbieCardsList">
-                <ChallangeCard 
+                <ChallengeCard 
                   :title="card.cardName"
                   :imgUrl="card.cardImgURL"
                   :routeName="card.routeName"
@@ -16,7 +16,7 @@
 <script setup lang="ts">
 import { EmblaOptionsType } from 'embla-carousel'
 import emblaCarouselVue from 'embla-carousel-vue'
-import ChallangeCard from './ChallangeCard.vue';
+import ChallengeCard from './ChallengeCard.vue';
 import { newbieCardsList } from '../../assets/constants/homePageConstants/newbieCardsConstants' 
 
 const options: EmblaOptionsType = {

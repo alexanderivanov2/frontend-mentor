@@ -4,6 +4,12 @@
 
 const newbieCardsList = [
     {
+        cardName: 'Profile Card',
+        routeName: 'ProfileCard',
+        cardImgURL: 'assets/images/challangeCardImages/profile-card-challange.webp',
+        difficulty: 1,    
+    },
+    {
         cardName: 'Blog Preview Card',
         routeName: 'BlogPreviewCard',
         cardImgURL: 'assets/images/challangeCardImages/blog-preview-card-challange.webp',

@@ -1,6 +1,6 @@
 <template>
     <router-link :to="{ name: routeName }" >
-        <div id="challangeCard"
+        <div id="challengeCard"
         :style="{
             background: `${linearGradient}, url(${imgUrl})`,
             height: '200px',
@@ -9,8 +9,8 @@
             backgroundRepeat: 'no-repeat',
         }"
         >
-            <h3 class="challange-card-title">{{ title }}</h3>
-            <span class="challange-card-difficulty">{{ getDifficulty }}</span>
+            <h3 class="challenge-card-title">{{ title }}</h3>
+            <span class="challenge-card-difficulty">{{ getDifficulty }}</span>
         </div>
     </router-link>
 
@@ -42,13 +42,13 @@ const linearGradient = 'linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0
 </script>
 
 <style scooped lang="scss">
-    #challangeCard {
+    #challengeCard {
         position: relative;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         letter-spacing: 1px;
         border-radius: 10px;
 
-        .challange-card-title {
+        .challenge-card-title {
             font-size: 1.6rem;
             font-weight: 900;
             color: white;
@@ -60,7 +60,7 @@ const linearGradient = 'linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0
             text-shadow: 1px 1px 1px rgba(0, 0, 0, .95);
         }
 
-        .challange-card-difficulty {
+        .challenge-card-difficulty {
             position: absolute;
             top: 5%;
             right: 5%;
