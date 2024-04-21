@@ -83,6 +83,11 @@
                 color: $grey;
             }
         }
+    }
 
+    @media screen and (min-width: 1440px) {
+        .profile-card {
+            min-width: 350px;
+        }
     }
 }
