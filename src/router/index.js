@@ -61,7 +61,7 @@ const router = createRouter({
       component: () => import('../views/NewbiePages/NewbieCardPages/NewbieBlogPreviewCardPage.vue')
     },
     {
-      path: '/newbie/blog-preview-card',
+      path: '/newbie/profile-card',
       name: 'ProfileCard',
       component: () => import('../views/NewbiePages/NewbieCardPages/NewbieProfileCardPage.vue')
     },

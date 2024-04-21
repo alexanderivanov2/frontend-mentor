@@ -1,0 +1,88 @@
+.profile-card-page {
+    @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+    $grey: #6B7082;
+    $dark-blue: #2E3349;
+    $lg-start: #0989B4;
+    $lg-end: #53FFEE;
+    box-sizing: border-box;
+
+    font-family: "Kumbh Sans", sans-serif;
+
+    .profile-card {
+        width: 100%;
+        max-width: 326px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0px 3px 8px 2px rgba(0, 0, 0, .25);
+
+        &-top-bg-decoration {
+            height: 140px;
+            width: 100%;
+            background: url('/src/assets//images/profileCard/bg-pattern-card.svg');
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        &-body {
+            text-align: center;
+
+            .profile-card-picture {
+                display: block;
+                margin: 0 auto;
+                width: 108px;
+                height: 108px;
+                border-radius: 100px;
+                border: 6px solid white;
+                margin-top: -48px;
+                margin-bottom: 24px;
+            }
+
+            .profile-name {
+                display: inline-block;
+                font-size: 18px;
+                font-weight: 900;
+                color: $dark-blue;
+                line-height: 23px;
+                text-shadow: -1px 4px 2px rgba(0, 0, 0, .25);
+            }
+            
+            .profile-age {
+                display: inline-block;
+                margin-left: 8.5px;
+                font-weight: 400;
+                font-size: 18px;
+                color: $grey;
+            }
+
+            .profile-location {
+                color: $grey;
+                margin-top: 8px;
+            }
+        }
+
+        .profile-card-footer {
+            margin-top: 28px;
+            border-top: 1px solid rgba($grey, .15);
+            display: flex;
+            justify-content: space-evenly;
+            padding: 24px 0;
+            text-align: center;
+
+            .stats-number {
+                color: $dark-blue;
+                font-size: 18px;
+                font-weight: 900;
+                line-height: 18px;
+            }
+
+            .stats-label {
+                margin-top: 10px;
+                letter-spacing: 1.5px;
+                font-size: 10px;
+                color: $grey;
+            }
+        }
+
+    }
+}
