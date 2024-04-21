@@ -57,6 +57,7 @@
 
             .profile-location {
                 color: $grey;
+                font-size: 14px;
                 margin-top: 8px;
             }
         }
@@ -89,6 +90,10 @@
         .profile-card {
             min-width: 350px;
             max-height: 374px;
+
+            .profile-name {
+                text-shadow: none;
+            }
         }
     }
 }
