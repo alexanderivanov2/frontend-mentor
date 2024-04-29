@@ -1,0 +1,121 @@
+.single-price-grid {
+    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+    $white: #ffffff;
+    $aqua: #2AB3B1;    
+    $light-aqua: #4abfbd;
+    $light-green: #C0DF33;
+    $grey: #9AA7BE;
+    $br: 5px;
+
+    max-width: 311px;
+    width: 100%;
+    font-family: "Karla", sans-serif;
+    border-radius: $br;
+    box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.15);
+
+    .cell {
+        width: 100%;
+        padding: 24px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $white;
+        margin-bottom: 24px;
+    }
+
+    .section-join {
+        background-color: $white;
+        padding-top: 28px;
+        padding-bottom: 32px;
+        border-top-left-radius: $br;
+        border-top-right-radius: $br;
+
+        .join-title {
+            color: $aqua;
+            margin-bottom: 24px;
+            letter-spacing: -0.25px;
+        }
+
+        .join-benefit {
+            color: $light-green;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 20px;
+            margin-bottom: 16px;
+            letter-spacing: -0.19px;
+        }
+
+        .join-description {
+            color: $grey;
+            line-height: 26px;
+            font-size: 14px;
+            letter-spacing: -0.17px;
+        }
+    }
+
+    .section-subscription {
+        background-color: $aqua;
+
+        .subscription-title {
+            letter-spacing: -0.22px;
+            font-size: 18px;
+            line-height: auto;
+            margin-bottom: 18px;
+        }
+
+        .subscription-monthly {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            color: $white;
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: -0.4px;
+            line-height: auto;
+            margin-bottom: 8px;
+
+            span {
+                font-size: 16px;
+                letter-spacing: -0.2px;
+                line-height: 26px;
+                color: #94d9d9;
+            }
+        }
+
+        .subscription-details {
+            color: $white;
+            letter-spacing: -0.2px;
+            line-height: 26px;
+            margin-bottom: 26px;
+        }
+
+        .subscription-sign-up {
+            width: 100%;
+            color: $white;
+            background-color: $light-green;
+            border: none;
+            outline: none;
+            padding: 15px;
+            border-radius: $br;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: -0.2px;
+            line-height: auto;
+            box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    .section-why-us {
+        background-color: $light-aqua;
+        border-bottom-left-radius: $br;
+        border-bottom-right-radius: $br;
+        .benefit {
+            color: #94d9d9;
+            letter-spacing: -0.17px;
+            line-height: 20px;
+            font-size: 14px;
+        }
+    }
+}

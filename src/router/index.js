@@ -65,6 +65,11 @@ const router = createRouter({
       name: 'ProfileCard',
       component: () => import('../views/NewbiePages/NewbieCardPages/NewbieProfileCardPage.vue')
     },
+    {
+      path: '/newbie/single-price-grid',
+      name: 'SinglePriceGrid',
+      component: () => import('../views/NewbiePages/NewbieCardPages/NewbieSinglePriceGrid.vue')
+    },
   ]
 })
 

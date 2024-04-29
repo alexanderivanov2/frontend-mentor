@@ -115,7 +115,12 @@
             bottom: -50%;
             right: -53%;
         }
-        // background: , url('/src/assets//images//profileCard/bg-pattern-bottom.svg');
+        @include center-with-flex;
+    }
+
+    &.single-price-grid-page {
+        $bg-color: #E6EFF5;
+        background-color: $bg-color;
         @include center-with-flex;
     }
 }
