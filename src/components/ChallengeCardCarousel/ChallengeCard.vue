@@ -38,7 +38,7 @@ const difficultyDictionary: DifficultyDictionary = {
     2: 'Junior',
 }
 const getDifficulty = computed(() => difficultyDictionary[difficulty.value] ?? 'unknown')
-const linearGradient = 'linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))'
+const linearGradient = 'linear-gradient(to top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0))'
 </script>
 
 <style scooped lang="scss">

@@ -70,6 +70,11 @@ const router = createRouter({
       name: 'SinglePriceGrid',
       component: () => import('../views/NewbiePages/NewbieCardPages/NewbieSinglePriceGrid.vue')
     },
+    {
+      path: '/newbie/recipe-card',
+      name: 'RecipeCard',
+      component: () => import('../views/NewbiePages/NewbieCardPages/NewbieRecipePage.vue')
+    },
   ]
 })
 

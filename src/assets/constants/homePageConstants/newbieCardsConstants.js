@@ -4,6 +4,12 @@
 
 const newbieCardsList = [
     {
+        cardName: 'Recipe Page',
+        routeName: 'RecipeCard',
+        cardImgURL: 'assets/images/challangeCardImages/recipe-page-card-challange.webp',
+        difficulty: 1,    
+    },
+    {
         cardName: 'Single Price Grid',
         routeName: 'SinglePriceGrid',
         cardImgURL: 'assets/images/challangeCardImages/single-price-grid-challange.webp',
