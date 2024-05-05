@@ -217,5 +217,18 @@
                 border-radius: $br-desktop / 2;
             }
         }
+
+        .recipe-content {
+            .recipe-preparation-time {
+                padding: 28px;
+
+                &-list-details {
+    
+                    .list-item {
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+        }
     }
 }
