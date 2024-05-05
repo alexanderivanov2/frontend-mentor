@@ -125,6 +125,11 @@
     }
 
     &.recipe-page {
+        $bg-color: #f3e3cf;
+        background-color: $bg-color;
 
+        @media screen and (min-width: 750px) {
+            @include center-with-flex;
+        }
     }
 }
