@@ -13,7 +13,7 @@
     $snow: #fff7fb;
     $brown-red: #854632;
     font-family: "Outfit", sans-serif;
-    
+
     background-color: $white;
     width: 100%;
     max-width: 100%;
@@ -144,6 +144,8 @@
                 .list-item {
                     padding-left: 16px;
                     list-style-type: decimal;
+                    line-height: 150%;
+                    margin: 8px 0;
 
                     &::before {
                         content: none;
