@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
 .single-price-grid {
-    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
     $white: #ffffff;
     $aqua: #2AB3B1;    
     $light-aqua: #4abfbd;
@@ -12,6 +13,8 @@
     font-family: "Karla", sans-serif;
     border-radius: $br;
     box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.15);
+
+
 
     .cell {
         width: 100%;
@@ -116,6 +119,56 @@
             letter-spacing: -0.17px;
             line-height: 20px;
             font-size: 14px;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 635px;
+
+        .section-subscription, .section-why-us {
+            flex: 0 0 50%;
+        }
+
+        .cell {
+            padding: 40px;
+        }
+
+        .section-title {
+            font-size: 18px;
+        }
+
+        .section-join {
+            .join-title {
+                font-size: 24px;
+                letter-spacing: -0.3px;
+                line-height: auto;
+            }
+
+            .join-benefit {
+                font-size: 18px;
+                letter-spacing: -0.22px;
+                line-height: auto;
+                margin-bottom: 18px;
+            }
+
+            .join-description {
+                font-size: 16px;
+                letter-spacing: -0.2px;
+            }
+        }
+
+        .section-subscription {
+            border-bottom-left-radius: $br;
+        }
+
+        .section-why-us {
+            border-bottom-left-radius: 0;
+
+            .why-us-title {
+                margin-bottom: 18px;
+            }
         }
     }
 }

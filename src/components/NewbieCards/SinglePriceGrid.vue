@@ -12,7 +12,7 @@
             <button class="subscription-sign-up">Sign Up</button>
         </div>
         <div class="section-why-us cell">
-            <h3 class="section-title">Why Us</h3>
+            <h3 class="section-title why-us-title">Why Us</h3>
             <div class="benefits">
                 <p class="why-us-benefit benefit" v-for="(benefit, index) in formatBenefits" :key="index">{{ benefit }}</p>
             </div>
