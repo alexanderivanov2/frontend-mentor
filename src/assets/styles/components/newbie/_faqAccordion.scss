@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.faq-accordion-card {
+    $dark-purple: #301534;
+    $pale-purple: #8B6990;
+    $pink: #AD28EB;
+    $light-pink: #F8EEFF;
+
+    font-family: "Work Sans", sans-serif;
+    $grid-gutter-width: 2.4rem;
+
+    max-width: 327px;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    padding: $grid-gutter-width;
+    border-radius: 8px;
+    transition: all .25s;
+    display: grid;
+
+    grid-template-columns: min-content 1fr;
+
+    .faq-accordion-card-heading-icon {
+        width: $grid-gutter-width;
+        height: $grid-gutter-width;
+        margin-right: $grid-gutter-width;
+        align-self: center;
+    }
+
+    .faq-accordion-card-heading {
+        color: $dark-purple;
+        font-size: 3.2rem;
+        font-weight: bold;
+        align-self: center;
+    }
+
+    .faq-accordion-card-content {
+        grid-column: 1 / -1;
+        margin-top: $grid-gutter-width;
+
+        .faq-card-section {
+            padding: 2rem 0;
+
+            &:not(:last-of-type) {
+                border-bottom: 1px solid $light-pink;
+            }
+
+            .faq-head {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: $grid-gutter-width;
+                cursor: pointer;
+
+                &-title {
+                    color: $dark-purple;
+                    font-size: 1.6rem;
+                    font-weight: 700;
+
+                    &:hover {
+                        color: $pink;
+                    }
+                }
+            }
+
+            .faq-content-wrapper {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height .5s ease-out;
+                .faq-content {
+                    margin-top: $grid-gutter-width;
+                    color: $pale-purple;
+                    line-height: 150%;
+                    font-size: 1.4rem;
+                    transition: height .25s, opacity .25s ease-in-out .25s;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        max-width: 600px;
+        border-radius: 1.6rem;
+        padding: 4rem;
+
+        .faq-accordion-card-heading-icon {
+            width: 4rem;
+            height: 4rem;
+        }
+
+        .faq-accordion-card-heading {
+            font-size: 5.6rem;
+        }
+
+        .faq-accordion-card-content {
+            .faq-card-section {
+                .faq-head .faq-head-title {
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                }
+
+                .faq-content-wrapper .faq-content {
+                    font-size: 1.6rem
+                }
+            }
+        }
+    }
+}

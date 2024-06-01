@@ -132,4 +132,39 @@
             @include center-with-flex;
         }
     }
+
+    &.faq-accordion-page {
+        $bg-color: #F8EEFF;
+        background-color: $bg-color;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            height: 232px;
+            width: 100%;
+            background-image: url('/assets/images/newbieChallanges/faqAccordion/background-pattern-mobile.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+        }
+
+        @media screen and (min-width: 400px) {
+            &::before {
+                background-image: url('/assets/images/newbieChallanges/faqAccordion/background-pattern-desktop.svg');
+            }
+        }
+
+        .faq-accordion-card {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @media screen and (min-width: 1440px) {
+                top: 10%;
+            }
+        }
+    }
 }

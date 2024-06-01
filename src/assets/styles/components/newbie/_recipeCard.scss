@@ -214,7 +214,7 @@
             border-radius: $br-desktop;
             img {
                 max-height: 300px;
-                border-radius: $br-desktop / 2;
+                border-radius: calc($br-desktop / 2);
             }
         }
 

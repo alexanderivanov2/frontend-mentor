@@ -4,6 +4,12 @@
 
 const newbieCardsList = [
     {
+        cardName: 'FAQ Accordion Page',
+        routeName: 'FaqAccordion',
+        cardImgURL: 'assets/images/challangeCardImages/faq-accordion-card-challenge.webp',
+        difficulty: 1,    
+    },
+    {
         cardName: 'Recipe Page',
         routeName: 'RecipeCard',
         cardImgURL: 'assets/images/challangeCardImages/recipe-page-card-challange.webp',

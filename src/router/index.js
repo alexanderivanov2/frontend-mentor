@@ -75,6 +75,11 @@ const router = createRouter({
       name: 'RecipeCard',
       component: () => import('../views/NewbiePages/NewbieCardPages/NewbieRecipePage.vue')
     },
+    {
+      path: '/newbie/faq-accordion',
+      name: 'FaqAccordion',
+      component: () => import('../views/NewbiePages/NewbieCardPages/NewbieFAQAccordionCardPage.vue')
+    },
   ]
 })
 
