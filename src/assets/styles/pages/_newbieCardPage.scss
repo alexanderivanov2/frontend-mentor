@@ -150,20 +150,22 @@
             top: 0;
         }
 
+        .faq-accordion-card {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
         @media screen and (min-width: 400px) {
             &::before {
                 background-image: url('/assets/images/newbieChallanges/faqAccordion/background-pattern-desktop.svg');
             }
         }
 
-        .faq-accordion-card {
-            position: absolute;
-            top: 20%;
-            left: 50%;
-            transform: translateX(-50%);
-
-            @media screen and (min-width: 1440px) {
-                top: 10%;
+        @media screen and (min-width: 1440px) {
+            &::before {
+                height: 32.2rem;
             }
         }
     }
