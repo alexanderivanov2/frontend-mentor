@@ -4,6 +4,12 @@
 
 const newbieCardsList = [
     {
+        cardName: 'Workit Landing Page',
+        routeName: 'WorkitLandingPage',
+        cardImgURL: 'assets/images/challangeCardImages/workit-landing-page-card-challange.webp',
+        difficulty: 1,    
+    },
+    {
         cardName: 'FAQ Accordion Page',
         routeName: 'FaqAccordion',
         cardImgURL: 'assets/images/challangeCardImages/faq-accordion-card-challenge.webp',

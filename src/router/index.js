@@ -80,6 +80,11 @@ const router = createRouter({
       name: 'FaqAccordion',
       component: () => import('../views/NewbiePages/NewbieCardPages/NewbieFAQAccordionCardPage.vue')
     },
+    {
+      path: '/newbie/workit-landing-page',
+      name: 'WorkitLandingPage',
+      component: () => import('../views/NewbiePages/NewbieLandingPages/WorkitLandingPage.vue')
+    },
   ]
 })
 
