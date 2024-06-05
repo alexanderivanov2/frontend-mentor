@@ -79,6 +79,8 @@ $font-family-fraunces: "Fraunces", serif;
         top: -6vh;
         z-index: 5;
         padding: 0 10px 0 26px;
+        display: flex;
+        justify-content: center;
         width: 100%;
         height: 100%;
         .benefits-section-img {
@@ -93,6 +95,15 @@ $font-family-fraunces: "Fraunces", serif;
         @media screen and (min-width: 525px) {
             top: -16vh;
             padding-right: 36px;
+        }
+        
+        @media screen and (min-width: 525px) {
+            top: -18vh;
+            padding-right: 36px;
+
+            .benefits-section-img {
+                width: 514px;
+            }
         }
     }
 }
@@ -115,7 +126,7 @@ $font-family-fraunces: "Fraunces", serif;
         transform: rotate(-45deg) translate(-600%, 35%);
     }
 
-    &:hover::before {
+    &:hover::before, &:active::before, &:focus::before {
         transform: rotate(-45deg) translate(600%, 35%);
     }
 }
