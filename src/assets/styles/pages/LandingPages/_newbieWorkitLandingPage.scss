@@ -11,6 +11,7 @@ $font-family-fraunces: "Fraunces", serif;
     width: 100%;
     max-height: 540px;
     position: relative;
+    overflow-x: clip;
 
     .workit-header-wrapper {
         width: 100%;
@@ -111,7 +112,6 @@ $font-family-fraunces: "Fraunces", serif;
         background: radial-gradient(120% 100% at 50% 0px, $dark-purple 74%, transparent 75%) no-repeat;
         bottom: -40px;
     }
-
         
     @media screen and (min-width: 300px) {
         max-height: 482px;
@@ -174,6 +174,28 @@ $font-family-fraunces: "Fraunces", serif;
                 line-height: 6rem;
                 max-width: 500px;
             }
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-image: url('/public/assets/images/LandingPages/WorkitLandingPage/bg-pattern-1.svg');
+                background-repeat: no-repeat;
+                width: 350px;
+                height: 300px;
+                left: -228px;
+                transform: translateY(-10%);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                background-image: url('/public/assets/images/LandingPages/WorkitLandingPage/bg-pattern-2.svg');
+                background-repeat: no-repeat;
+                width: 300px;
+                height: 181px;
+                left: 90%;
+                transform: translateY(-40%);
+            }
         }
 
         .workit-header-img-wrapper {
@@ -197,6 +219,14 @@ $font-family-fraunces: "Fraunces", serif;
             &-btn-learn-more {
                 max-width: 165px;
                 margin-bottom: 50px;
+            }
+
+            &::before {
+                left: -145px;
+            }
+
+            &::after {
+                left: 95%;
             }
         }
 
