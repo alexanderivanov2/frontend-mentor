@@ -37,8 +37,8 @@
         <img :src="workitLogoDark" alt="workit logo dark" class="workit-logo-dark">
         <div class="workit-footer-social-links">
             <img :src="iconFacebook" alt="facebook" class="social-link facebook">
-            <img :src="iconInstagram" alt="social-link twitter">
-            <img :src="iconTwitter" alt="social-link instagram">
+            <img :src="iconInstagram" alt="social-link twitter" class="social-link twitter">
+            <img :src="iconTwitter" alt="social-link instagram" class="social-link instagram">
         </div>
     </footer>
 </template>
