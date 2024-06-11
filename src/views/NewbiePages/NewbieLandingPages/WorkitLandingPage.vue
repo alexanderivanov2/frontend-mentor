@@ -7,15 +7,15 @@
             </div>
             <div class="workit-header-top-body">
                 <h1 class="workit-header-top-body-title">Data <span class="underline">tailred</span> to your needs.</h1>
-                <button class="workit-header-top-body-btn-learn-more shine-btn-effect">Learn more</button>
+                <button class="workit-header-top-body-btn-learn-more workit-btn">Learn more</button>
             </div>
             <div class="workit-header-img-wrapper">
                 <img :src="mobileImageHero" alt="image of mobile phone" class="workit-header-img">
             </div>
         </div>
     </header>
-    <section class="benefits-section">
-        <div class="benefits-section-wrapper">
+    <section class="workit-benefits-section">
+        <div class="workit-benefits-section-wrapper">
             <div class="benefit" v-for="({title, description}, index) in benefits" :key="index">
                 <button class="benefit-order-number">{{ index + 1 }}</button>
                 <h3 class="benefit-title">{{ title }}</h3>
@@ -23,14 +23,34 @@
             </div>
         </div>
     </section>
-    <section class="apply-for-test-section">
-        <h1>Be first to test</h1>
+    <section class="workit-apply-for-test-section">
+        <div class="workit-apply-for-test-section-wrapper">
+            <img :src="founderAvatar" alt="founder avatar" class="founder-avatar">
+            <div class="founder-message">
+                <h3 class="founder-message-title">Be the first to test</h3>
+                <p class="founder-message-text">Hi, I'm Louis Graham, the founder of the company. Book a demo call with me to become a beta tester for our app and kickstart your company. Apply for access below and I’ll be in touch to schedule a call.</p>
+                <button class="apply-for-test-section-btn-apply workit-btn">Apply for access</button>
+            </div>
+        </div>
     </section>
+    <footer class="workit-footer">
+        <img :src="workitLogoDark" alt="workit logo dark" class="workit-logo-dark">
+        <div class="workit-footer-social-links">
+            <img :src="iconFacebook" alt="facebook" class="social-link facebook">
+            <img :src="iconInstagram" alt="social-link twitter">
+            <img :src="iconTwitter" alt="social-link instagram">
+        </div>
+    </footer>
 </template>
 
 <script setup>
 import workitLogoLight from '/assets/images/LandingPages/WorkitLandingPage/logo-light.svg'
+import workitLogoDark from '/assets/images/LandingPages/WorkitLandingPage/logo-dark.svg'
 import mobileImageHero from '/assets/images/LandingPages/WorkitLandingPage/image-hero.webp'
+import founderAvatar from '/assets/images/LandingPages/WorkitLandingPage/image-founder.webp'
+import iconFacebook from '/assets/images/LandingPages/WorkitLandingPage/icon-facebook.svg'
+import iconInstagram from '/assets/images/LandingPages/WorkitLandingPage/icon-instagram.svg'
+import iconTwitter from '/assets/images/LandingPages/WorkitLandingPage/icon-twitter.svg'
 
 const benefits = [
     {
