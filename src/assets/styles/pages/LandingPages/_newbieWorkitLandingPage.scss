@@ -186,6 +186,11 @@ $font-family-fraunces: "Fraunces", serif;
     @media screen and (min-width: 1440px) {
         max-height: 730px;
 
+        .workit-header-top {
+            padding: 3.2rem 0;
+            margin: 0 16.5rem 5.6rem;
+        }
+
         .workit-header-top-body {
             &-title {
                 font-size: 8rem;
