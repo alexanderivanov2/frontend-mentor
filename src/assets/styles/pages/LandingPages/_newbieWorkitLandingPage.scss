@@ -205,6 +205,11 @@ $font-family-fraunces: "Fraunces", serif;
                 max-width: 767px;
             }
         }
+
+        &::before {
+            height: 130px;
+            background: radial-gradient(93% 134% at 50% 0px,#24053E 74%,transparent 75%) no-repeat;    
+        }
     }
 }
 
@@ -333,6 +338,11 @@ $font-family-fraunces: "Fraunces", serif;
                     line-height: 3.2rem;
                 }
             }
+        }
+
+        &::before {
+            height: 130px;
+            background: radial-gradient(93% 134% at 50% 0px,$ghost-white 74%,transparent 75%) no-repeat;
         }
     }
 }
