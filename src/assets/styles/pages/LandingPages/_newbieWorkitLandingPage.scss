@@ -233,6 +233,7 @@ $font-family-fraunces: "Fraunces", serif;
             max-width: 350px;
 
             &-order-number {
+                font-family: $font-family-fraunces;
                 outline: none;
                 border-radius: 50%;
                 border: 1px solid $dark-purple;
@@ -510,7 +511,7 @@ $font-family-fraunces: "Fraunces", serif;
     .workit-logo-dark {
         cursor: pointer;
     }
-    
+
     .workit-footer-social-links {
         display: flex;
         gap: 2.8rem;
