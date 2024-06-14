@@ -4,6 +4,12 @@
 
 const newbieCardsList = [
     {
+        cardName: 'Skilled E-Learning Page',
+        routeName: 'SkilledELearningLandingPage',
+        cardImgURL: 'assets/images/challangeCardImages/skilled-e-learning-landing-page-challange.webp',
+        difficulty: 1,    
+    },
+    {
         cardName: 'Workit Landing Page',
         routeName: 'WorkitLandingPage',
         cardImgURL: 'assets/images/challangeCardImages/workit-landing-page-card-challange.webp',

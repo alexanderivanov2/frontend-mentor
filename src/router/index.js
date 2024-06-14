@@ -85,6 +85,11 @@ const router = createRouter({
       name: 'WorkitLandingPage',
       component: () => import('../views/NewbiePages/NewbieLandingPages/WorkitLandingPage.vue')
     },
+    {
+      path: '/newbie/skilled-e-learning-landing-page',
+      name: 'SkilledELearningLandingPage',
+      component: () => import('../views/NewbiePages/NewbieLandingPages/SkilledELearningLandingPage.vue')
+    },
   ]
 })
 
