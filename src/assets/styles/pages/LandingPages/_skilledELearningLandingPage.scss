@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
-.skilled-e-learining-page-wrapper {
-    background-color: #F0F1FF;
-}
-
 .skilled-e-learning-landing-page {
     $font-family-plus-jakarta: "Plus Jakarta Sans", sans-serif;
 
@@ -19,9 +15,7 @@
     // $purple-gradient-hover: linear-gradient($white 50%, $purple-gradient 100%);
 
     $white-gradient: linear-gradient(#FFFFFF 0%, #F0F1FF 100%);
-    max-width: 144.4rem;
-    margin: auto;
-    overflow-x: clip;
+
 
     $image-mobile-1x: '/assets/images/LandingPages/skilledELearningPage/image-hero-mobile.webp';
     $image-mobile-2x: '/assets/images/LandingPages/skilledELearningPage/image-hero-mobile@2x.png';
@@ -30,11 +24,18 @@
     $image-desktop-1x: '/assets/images/LandingPages/skilledELearningPage/image-hero-desktop.webp';
     $image-desktop-2x: '/assets/images/LandingPages/skilledELearningPage/image-hero-desktop@2x.png';
 
+    $icon-animation: '/assets/images/LandingPages/skilledELearningPage/icon-animation.svg';
+    $icon-business: '/assets/images/LandingPages/skilledELearningPage/icon-business.svg';
+    $icon-crypto: '/assets/images/LandingPages/skilledELearningPage/icon-crypto.svg';
+    $icon-design: '/assets/images/LandingPages/skilledELearningPage/icon-design.svg';
+    $icon-photography: '/assets/images/LandingPages/skilledELearningPage/icon-photography.svg';
+    max-width: 144.4rem;
+    margin: auto;
+    overflow-x: clip;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background: $white;
     font-family: $font-family-plus-jakarta;
-    padding: 1.6rem 1.6rem 0;
 
     .skilled-e-learning-header {
         display: flex;
@@ -42,6 +43,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
+        padding: 1.6rem 1.6rem 0;
 
         .btn {
             position: relative;
@@ -49,12 +51,13 @@
         }
     }
 
-    .header-section {
+    .skilled-e-learning-header-section {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 4.6rem;
         margin-top: 3.8rem;
+        padding: 1.6rem 1.6rem 0;
 
         &-intro {
             flex: 1 1 70%;
@@ -73,6 +76,79 @@
                 line-height: 2.6rem;
                 color: $light-grey;
                 margin-bottom: 2.4rem;
+            }
+        }
+    }
+
+    .skilled-e-learning-courses-list {
+        background: $white-gradient;
+        padding: 1.6rem;
+        
+        .skilled-e-learning-course {
+            position: relative;
+            background-color: $white;
+            margin-bottom: 4rem;
+            padding: 5.6rem 2.8rem 3.2rem;
+            border-radius: 1rem;
+
+            &.check-intro {
+                background: $light-gradient;
+                color: $white; 
+                padding: 2.4rem 2.8rem 3.2rem;
+                .check-intro-title {
+                    font-size: 2.4rem;
+                    font-weight: bold;
+                    line-height: 3.2rem;
+                    
+                }
+            }
+
+            &-title {
+                font-size: 2rem;
+                font-weight: bold;
+                color: $dark-blue;
+                margin-bottom: 1.6rem;
+            }
+
+            &-description {
+                font-size: 1.6rem;
+                line-height: 2.6rem;
+                margin-bottom: 2.4rem;
+                color: $light-grey;
+            }
+
+            &-link {
+                text-decoration: none;
+                color: $pink;
+                font-weight: bold;
+                font-size: 1.8rem;
+                line-height: 2.8rem;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 5.6rem;
+                height: 5.6rem;
+                top: -2.8rem;
+
+            }
+
+            &.animation::before {
+                background-image: url($icon-animation);
+            }
+
+            &.design::before {
+                background-image: url($icon-design);
+            }
+            &.photography::before {
+                background-image: url($icon-photography);
+            }
+            &.crypto::before {
+                background-image: url($icon-crypto);
+            }
+            &.business::before {
+                background-image: url($icon-business);
             }
         }
     }
@@ -110,7 +186,7 @@
             flex-direction: row;
         }
 
-        .header-section {
+        .skilled-e-learning-header-section {
             &-intro {
                 &-title {
                     font-size: 4rem;
@@ -122,7 +198,7 @@
     }
 
     @media screen and (min-width: 375px) {
-        .header-section {
+        .skilled-e-learning-header-section {
             &-image-wrapper {
                 position: relative;
                 width: 100%;
@@ -152,9 +228,13 @@
     }
 
     @media screen and (min-width: 768px) {
-        padding: 2.4rem 4rem 0;
+        .skilled-e-learning-header,
+        .skilled-e-learning-header-section,
+        .skilled-e-learning-courses-list {
+            padding: 2.4rem 4rem 0;
+        }
 
-        .header-section {
+        .skilled-e-learning-header-section {
             flex-direction: row;
             justify-content: space-between;
             
@@ -192,12 +272,20 @@
                 min-width: 16.7rem;
             }
         }
+
+        .skilled-e-learning-courses-list {
+            margin-top: 10rem;
+        }
     }
 
     @media screen and (min-width: 1100px) {
-        padding: 2.4rem 16.5rem 0;
+        .skilled-e-learning-header,
+        .skilled-e-learning-header-section,
+        .skilled-e-learning-courses-list {
+            padding: 2.4rem 16.5rem 0;
+        }
 
-        .header-section {
+        .skilled-e-learning-header-section {
             &-intro {
                 flex: 1 1 60%;
                 max-width: 46rem;
@@ -232,6 +320,10 @@
                     }
                 }
             }
+        }
+
+        .skilled-e-learning-courses-list {
+            margin-top: 20rem;
         }
     }
 }
