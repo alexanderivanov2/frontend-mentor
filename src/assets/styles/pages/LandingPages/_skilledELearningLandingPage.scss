@@ -143,6 +143,7 @@
 
                         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
                             background-image: url($image-mobile-2x);
+                            background-size: contain;
                         }
                     }
                 }
