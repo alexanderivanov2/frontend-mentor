@@ -30,6 +30,10 @@
                 </div>
             </div>
         </section>
+        <footer class="skilled-e-learning-footer">
+            <img :src="logoLight" alt="skilled light logo">
+            <button class="btn btn-dark-gradient">Get Started</button>
+        </footer>
     </div>
 </template>
 

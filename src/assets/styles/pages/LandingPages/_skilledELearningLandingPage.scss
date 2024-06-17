@@ -11,8 +11,9 @@
     $light-pink: #FFA7C3;
     $light-gradient: linear-gradient(#FF6F48 0%, #F02AA6 100%);
     $light-gradient-hover: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), linear-gradient(#FF6F48, #F02AA6);
+    $dark-gradient: linear-gradient(#4851FF 0%, #F02AA6 100%);
+    $dark-gradient-hover: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), linear-gradient(#4851FF, #F02AA6);
     $white-gradient: linear-gradient(#FFFFFF 0%, #F0F1FF 100%);
-
 
     $image-mobile-1x: '/assets/images/LandingPages/skilledELearningPage/image-hero-mobile.webp';
     $image-mobile-2x: '/assets/images/LandingPages/skilledELearningPage/image-hero-mobile@2x.png';
@@ -20,12 +21,12 @@
     $image-tablet-2x: '/assets/images/LandingPages/skilledELearningPage/image-hero-tablet@2x.png';
     $image-desktop-1x: '/assets/images/LandingPages/skilledELearningPage/image-hero-desktop.webp';
     $image-desktop-2x: '/assets/images/LandingPages/skilledELearningPage/image-hero-desktop@2x.png';
-
     $icon-animation: '/assets/images/LandingPages/skilledELearningPage/icon-animation.svg';
     $icon-business: '/assets/images/LandingPages/skilledELearningPage/icon-business.svg';
     $icon-crypto: '/assets/images/LandingPages/skilledELearningPage/icon-crypto.svg';
     $icon-design: '/assets/images/LandingPages/skilledELearningPage/icon-design.svg';
     $icon-photography: '/assets/images/LandingPages/skilledELearningPage/icon-photography.svg';
+
     max-width: 144.4rem;
     margin: auto;
     overflow-x: clip;
@@ -82,7 +83,7 @@
         padding: 1.6rem;
 
         &-wrapper {
-            max-width: 1440px;
+            max-width: 144.4rem;
             margin: auto;
         }
 
@@ -102,7 +103,6 @@
                     font-size: 2.4rem;
                     font-weight: bold;
                     line-height: 3.2rem;
-
                 }
             }
 
@@ -164,6 +164,14 @@
         }
     }
 
+    .skilled-e-learning-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $dark-blue;
+        padding: 3.6rem 1.6rem;
+    }
+
     .btn {
         font-size: 1.6rem;
         font-weight: bold;
@@ -190,6 +198,14 @@
                 background: $light-gradient-hover;
             }
         }
+
+        &-dark-gradient {
+            background: $dark-gradient;
+
+            &:hover {
+                background: $dark-gradient-hover;
+            }
+        }
     }
 
     @media screen and (min-width: 300px) {
@@ -213,7 +229,7 @@
             &-image-wrapper {
                 position: relative;
                 width: 100%;
-                height: 410px;
+                height: 41rem;
 
                 .responsive-background {
                     width: 100%;
@@ -243,8 +259,9 @@
 
         .skilled-e-learning-header,
         .skilled-e-learning-header-section,
-        .skilled-e-learning-courses-list {
-            padding: 2.4rem 4rem 0;
+        .skilled-e-learning-courses-list,
+        .skilled-e-learning-footer {
+            padding: 2.4rem 4rem;
         }
 
         .skilled-e-learning-header-section {
@@ -271,8 +288,8 @@
                         right: 0;
                         top: -50%;
                         transform: translateX(48%);
-                        width: 695px;
-                        height: 723px;
+                        width: 69.5rem;
+                        height: 72.3rem;
 
                         @media (-webkit-min-device-pixel-ratio: 2),
                         (min-resolution: 192dpi) {
@@ -316,8 +333,9 @@
 
         .skilled-e-learning-header,
         .skilled-e-learning-header-section,
-        .skilled-e-learning-courses-list {
-            padding: 2.4rem 16.5rem 0;
+        .skilled-e-learning-courses-list,
+        .skilled-e-learning-footer {
+            padding: 2.4rem 16.5rem;
         }
 
         .skilled-e-learning-header-section {
@@ -346,8 +364,8 @@
                         right: 0;
                         top: -65%;
                         transform: translateX(53%);
-                        width: 1046px;
-                        height: 850px;
+                        width: 104.6rem;
+                        height: 85rem;
 
                         @media (-webkit-min-device-pixel-ratio: 2),
                         (min-resolution: 192dpi) {
@@ -384,7 +402,7 @@
                 &-title {
                     font-size: 2.4rem;
                 }
-                
+
                 &-description {
                     font-size: 1.8rem;
                     line-height: 2.8rem;
