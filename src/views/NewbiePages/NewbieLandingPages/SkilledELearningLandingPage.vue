@@ -18,14 +18,16 @@
             </div>
         </section>
         <section class="skilled-e-learning-courses-list">
-            <div class="skilled-e-learning-course check-intro">
-                <h5 class="check-intro-title">Check out our most popular courses!</h5>
-            </div>
-            <div v-for="({ className, title, description, link }, index) in coursesList" class="skilled-e-learning-course"
-                :class="[className]" :key="className">
-                <h5 class="skilled-e-learning-course-title">{{ title }}</h5>
-                <p class="skilled-e-learning-course-description">{{ description }}</p>
-                <a :href="link" class="skilled-e-learning-course-link">Get Started</a>
+            <div class="skilled-e-learning-courses-list-wrapper">
+                <div class="skilled-e-learning-course check-intro">
+                    <h5 class="check-intro-title">Check out our most popular courses!</h5>
+                </div>
+                <div v-for="({ className, title, description, link }, index) in coursesList" class="skilled-e-learning-course"
+                    :class="[className]" :key="className">
+                    <h5 class="skilled-e-learning-course-title">{{ title }}</h5>
+                    <p class="skilled-e-learning-course-description">{{ description }}</p>
+                    <a :href="link" class="skilled-e-learning-course-link">Get Started</a>
+                </div>
             </div>
         </section>
     </div>
