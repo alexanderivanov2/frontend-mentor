@@ -166,8 +166,10 @@
 
     .skilled-e-learning-footer {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        gap: 1rem;
         background-color: $dark-blue;
         padding: 3.6rem 1.6rem;
     }
@@ -209,7 +211,8 @@
     }
 
     @media screen and (min-width: 300px) {
-        .skilled-e-learning-header {
+        .skilled-e-learning-header,
+        .skilled-e-learning-footer {
             flex-direction: row;
         }
 
