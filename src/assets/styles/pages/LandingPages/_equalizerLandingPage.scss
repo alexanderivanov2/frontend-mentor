@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.equalizer-landing-page {
+    $light-orange: #FFB964;
+    $light-orangered: #FA7453;
+    $blue-green: #66E2DC;
+    $white: #FCFAF9;
+    $black: #191826;
+    font-family: "IBM Plex Sans", sans-serif;
+
+
+    background-color: $white;
+    padding: 4rem 2.4rem;
+
+    &-header {
+        margin-bottom: 6.4rem;
+        img {
+           max-width: 100%;
+        }
+    }
+
+    &-hero-section {
+        color: $black;
+        margin-bottom: 6.6rem;
+        position: relative;
+        &-title {
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 2.8rem;
+            margin-bottom: 2rem;
+        }
+
+        &-description  {
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+        }
+
+        &::before {
+            content: '';
+            background-image: url('/public/assets/images/LandingPages/equalizerLandingPage/bg-main-mobile.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            z-index: 10;
+            width: 58.2rem;
+            height: 78rem;
+            top: -39rem;
+            left: calc(100% - 36rem);
+        }
+    }
+
+
+    @media screen and (min-width: 300px) {
+        &-hero-section {
+            &-title {
+                font-size: 4rem;
+                line-height: 4.8rem;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        padding: 6.1rem 4rem;
+        &-header {
+            position: relative;
+            margin-bottom: 9.5rem;
+            &::before {
+                content: "";
+                position: absolute;
+                background-image: url("/public/assets/images/LandingPages/equalizerLandingPage/bg-pattern-1.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 26.6rem;
+                height: 40rem;
+                top: -8.5rem;
+                right: -7.8rem;
+                z-index: 15;
+            }
+        }
+
+        &-hero-section {
+            margin-bottom: 11.1rem;
+            &::before {
+                background-image: url("/public/assets/images/LandingPages/equalizerLandingPage/bg-main-tablet.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 112.8rem;
+                height: 111.08rem;
+                top: -38rem;
+                left: -32rem;
+            }
+
+            &-title, &-description {
+                max-width: 52rem;
+                text-align: left;
+            }
+
+            &-title {
+                font-size: 6.4rem;
+                line-height: 6.4rem;
+                letter-spacing: -0.73px;
+                margin-bottom: 2.8rem;
+            }
+
+            &-description {
+                font-size: 1.8rem;
+                line-height: 2.8rem;
+            }
+
+        }
+    }
+}

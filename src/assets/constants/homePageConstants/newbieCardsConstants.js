@@ -4,6 +4,12 @@
 
 const newbieCardsList = [
     {
+        cardName: 'Equalizer Landing Page',
+        routeName: 'EqualizerLandingPage',
+        cardImgURL: 'assets/images/challangeCardImages/equalizer-landing-page-card-challange.webp',
+        difficulty: 1,    
+    },
+    {
         cardName: 'Skilled E-Learning Page',
         routeName: 'SkilledELearningLandingPage',
         cardImgURL: 'assets/images/challangeCardImages/skilled-e-learning-landing-page-challange.webp',

@@ -90,6 +90,11 @@ const router = createRouter({
       name: 'SkilledELearningLandingPage',
       component: () => import('../views/NewbiePages/NewbieLandingPages/SkilledELearningLandingPage.vue')
     },
+    {
+      path: '/newbie/equalizer-landing-page',
+      name: 'EqualizerLandingPage',
+      component: () => import('../views/NewbiePages/NewbieLandingPages/EqualizerLandingPage.vue')
+    },
   ]
 })
 
