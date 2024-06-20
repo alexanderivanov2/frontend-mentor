@@ -109,7 +109,45 @@
                 font-size: 1.8rem;
                 line-height: 2.8rem;
             }
+        }
 
+        @media screen and (min-width: 1440px) {
+            padding: 6.1rem 16.5rem;
+
+            &-header {
+                margin-bottom: 12.7rem;
+                &::before {
+                    width: 31.2rem;
+                    height: 47rem;
+                    top: -9.5rem;
+                    right: -16.5rem;
+                }
+            }
+    
+            &-hero-section {
+                margin-bottom: 32.1rem;
+                &::before {
+                    background-image: url("/public/assets/images/LandingPages/equalizerLandingPage/bg-main-desktop.png");
+                    width: 191.3rem;
+                    height: 205.8rem;
+                    top: -58rem;
+                    left: -49rem;
+                }
+    
+                &-title {
+                    max-width: 105.2rem;
+                    font-size: 8.8rem;
+                    line-height: 8.8rem;
+                    letter-spacing: -1px;
+                    margin-bottom: 4rem;
+                }
+    
+                &-description {
+                    max-width: 82.5rem;
+                    font-size: 2rem;
+                    line-height: 3.4rem;
+                }
+            }
         }
     }
 }
