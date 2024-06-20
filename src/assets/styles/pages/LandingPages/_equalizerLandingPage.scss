@@ -6,13 +6,15 @@
     $blue-green: #66E2DC;
     $white: #FCFAF9;
     $black: #191826;
+
+
     font-family: "IBM Plex Sans", sans-serif;
-
-
     background-color: $white;
     padding: 4rem 2.4rem;
+    overflow-x: clip;
 
     &-header {
+        max-width: 100%;
         margin-bottom: 6.4rem;
         img {
            max-width: 100%;
@@ -20,9 +22,10 @@
     }
 
     &-hero-section {
+        max-width: 100%;
+        position: relative;
         color: $black;
         margin-bottom: 6.6rem;
-        position: relative;
         &-title {
             font-size: 2rem;
             font-weight: bold;
