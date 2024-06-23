@@ -10,15 +10,17 @@
     font-family: "IBM Plex Sans", sans-serif;
     background-color: $white;
     overflow-x: clip;
-    
-    &-header, &-hero-section {
+
+    &-header,
+    &-hero-section {
         padding: 4rem 2.4rem 0;
     }
 
     &-header {
         max-width: 100%;
+
         img {
-           max-width: 100%;
+            max-width: 100%;
         }
     }
 
@@ -27,6 +29,7 @@
         position: relative;
         color: $black;
         margin-bottom: 16.4rem;
+
         &-title {
             font-size: 2rem;
             font-weight: bold;
@@ -34,7 +37,7 @@
             margin-bottom: 2rem;
         }
 
-        &-description  {
+        &-description {
             font-size: 1.6rem;
             line-height: 2.6rem;
         }
@@ -60,6 +63,7 @@
         border-radius: 2rem;
         margin-bottom: 39rem;
         position: relative;
+
         &::before {
             content: '';
             background-image: url('/public/assets/images/LandingPages/equalizerLandingPage/bg-pattern-2.svg');
@@ -72,16 +76,140 @@
 
         .premium-eq-illustration-app-wrapper {
             text-align: center;
-            .premium-eq-illustration-app {
+
+            .premium-eq-illustration-app,
+            .premium-eq-card {
                 position: relative;
                 z-index: 15;
+            }
+
+            .premium-eq-illustration-app {
                 width: 100%;
                 max-width: 20.9rem;
                 transform: translateY(-9.8rem);
             }
+
+            .premium-eq-card {
+                background-color: $light-orangered;
+                padding: 4.8rem 3.7rem;
+                color: $white;
+                text-align: left;
+                border-radius: 1.2rem;
+                max-width: 40rem;
+                margin: 0 auto;
+
+                &-title {
+                    font-size: 3.2rem;
+                    font-weight: bold;
+                    line-height: 4rem;
+                    margin-bottom: 1.2rem;
+                }
+
+                &-description {
+                    font-size: 1.8rem;
+                    line-height: 2.8rem;
+                }
+
+                &-monthly-price {
+                    margin: 3.6rem 0 3.2rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 1.6rem;
+
+                    .price {
+                        font-size: 6.5rem;
+                        line-height: 5.2rem;
+                        font-weight: bold;
+                    }
+
+                    .month {
+                        font-size: 2rem;
+                        line-height: 3.2rem;
+                        letter-spacing: -0.2px;
+                    }
+                }
+
+                &-buttons-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.6rem;
+                }
+            }
         }
     }
 
+    &-footer {
+        padding: 6.4rem 2.4rem;
+
+        &-head {
+            display: flex;
+            flex-direction: column;
+            gap: 3.2rem;
+
+            &-logo {
+                max-width: 14.6rem;
+                max-height: 3.2rem;
+            }
+    
+            &-all-rights {
+                margin-bottom: 4rem;
+                font-size: 1.6rem;
+                line-height: 2.6rem;
+                .email {
+                    display: block;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        &-social-links {
+            display: flex;
+            gap: 2rem;
+
+            .social-link {
+                &:hover {
+                    color: $light-orange;
+                }
+            }
+        }
+    }
+
+    .btn {
+        padding: 1.5rem 0;
+        font-size: 1.8rem;
+        font-weight: bold;
+        line-height: 3.2rem;
+        letter-spacing: -0.18px;
+        text-align: center;
+        border: none;
+        border-radius: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: background-color ease-in-out .45s;
+
+        &.btn-ios {
+            background-color: $black;
+            color: $white;
+
+            &:hover {
+                background-color: $blue-green;
+            }
+        }
+
+        &.btn-android {
+            &:hover {
+                background-color: $light-orange;
+            }
+        }
+    }
+
+    .social-logo {
+        max-width: 2rem;
+        max-height: 2rem;
+    }
 
     @media screen and (min-width: 300px) {
         &-hero-section {
@@ -94,12 +222,16 @@
 
     @media screen and (min-width: 768px) {
         padding: 6.1rem 4rem;
-        &-header, &-hero-section {
+
+        &-header,
+        &-hero-section {
             padding: 0;
         }
+
         &-header {
             position: relative;
             margin-bottom: 9.5rem;
+
             &::before {
                 content: "";
                 position: absolute;
@@ -115,7 +247,8 @@
         }
 
         &-hero-section {
-            margin-bottom: 11.1rem;
+            margin-bottom: 23.8rem;
+
             &::before {
                 background-image: url("/public/assets/images/LandingPages/equalizerLandingPage/bg-main-tablet.png");
                 background-repeat: no-repeat;
@@ -126,7 +259,8 @@
                 left: -32rem;
             }
 
-            &-title, &-description {
+            &-title,
+            &-description {
                 max-width: 52rem;
                 text-align: left;
             }
@@ -144,42 +278,153 @@
             }
         }
 
-        @media screen and (min-width: 1440px) {
-            padding: 6.1rem 16.5rem;
+        &-premium-eq {
+            max-width: 70rem;
+            min-height: 60rem;
+            margin: 0 auto 17rem;
+            position: relative;
 
-            &-header {
-                margin-bottom: 12.7rem;
-                &::before {
-                    width: 31.2rem;
-                    height: 47rem;
-                    top: -9.5rem;
-                    right: -16.5rem;
+            &::before {
+                left: 54%;
+                top: -3rem;
+            }
+            
+            .premium-eq-illustration-app-wrapper {
+                text-align: unset;
+                .premium-eq-illustration-app {
+                    max-width: 27rem;
+                    left: 6.4rem;
+                    transform: translateY(-13.8rem);
+                }
+    
+                .premium-eq-card {
+                    position: absolute;
+                    margin: 0;
+                    top: 18rem;
+                    left: 24rem;
                 }
             }
-    
-            &-hero-section {
-                margin-bottom: 32.1rem;
-                &::before {
-                    background-image: url("/public/assets/images/LandingPages/equalizerLandingPage/bg-main-desktop.png");
-                    width: 191.3rem;
-                    height: 205.8rem;
-                    top: -58rem;
-                    left: -49rem;
+        }
+
+        &-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 0;
+
+            &-head {
+                max-width: 36.6rem;
+
+                &-all-rights {
+                    .email {
+                        display: inline;
+                    }
+                }
+            }
+
+            &-social-links {
+            
+            }
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        padding: 6.1rem 16.5rem;
+
+        &-header {
+            margin-bottom: 12.7rem;
+
+            &::before {
+                width: 31.2rem;
+                height: 47rem;
+                top: -9.5rem;
+                right: -16.5rem;
+            }
+        }
+
+        &-hero-section {
+            margin-bottom: 32.1rem;
+
+            &::before {
+                background-image: url("/public/assets/images/LandingPages/equalizerLandingPage/bg-main-desktop.png");
+                width: 191.3rem;
+                height: 205.8rem;
+                top: -58rem;
+                left: -49rem;
+            }
+
+            &-title {
+                max-width: 105.2rem;
+                font-size: 8.8rem;
+                line-height: 8.8rem;
+                letter-spacing: -1px;
+                margin-bottom: 4rem;
+            }
+
+            &-description {
+                max-width: 82.5rem;
+                font-size: 2rem;
+                line-height: 3.4rem;
+            }
+        }
+
+        &-premium-eq {
+            max-width: 110rem;
+
+            &::before {
+                left: 44.5%;
+                top: -4rem;
+            }
+            
+            .premium-eq-illustration-app-wrapper {
+                .premium-eq-illustration-app {
+                    max-width: 31.2rem;
+                    left: 10.2rem;
+                    transform: translateY(-20.13rem);
                 }
     
-                &-title {
-                    max-width: 105.2rem;
-                    font-size: 8.8rem;
-                    line-height: 8.8rem;
-                    letter-spacing: -1px;
-                    margin-bottom: 4rem;
+                .premium-eq-card {
+                    padding: 5.8rem;
+                    top: 9.6rem;
+                    left: 51%;
+
+                    &-title {
+                        font-size: 4rem;
+                        line-height: 5.2rem;
+                        margin-bottom: 2.2rem;
+                    }
+
+                    &-description {
+                        font-size: 2rem;
+                        line-height: 3.4rem;
+                    }
+
+                    &-monthly-price {
+                        margin: 3.9rem 0 4.6rem;
+                    }
                 }
-    
-                &-description {
-                    max-width: 82.5rem;
-                    font-size: 2rem;
-                    line-height: 3.4rem;
+            }
+        }
+
+        &-footer {
+            margin: 0 auto;
+            max-width: 111rem;
+            align-items: flex-start;
+
+            &-head {
+                max-width: fit-content;
+                flex-direction: row;
+                gap: 13.6rem;
+                &-all-rights {
+                    max-width: 36.6rem;
+                    .email {
+                        display: inline;
+                    }
                 }
+            }
+
+            &-social-links {
+            
             }
         }
     }
