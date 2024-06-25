@@ -324,10 +324,6 @@
                     }
                 }
             }
-
-            &-social-links {
-            
-            }
         }
     }
 
@@ -390,6 +386,7 @@
                     padding: 5rem;
                     top: 9.6rem;
                     left: 51%;
+                    max-width: 46.5rem;
 
                     &-title {
                         font-size: 4rem;
@@ -424,10 +421,6 @@
                         display: inline;
                     }
                 }
-            }
-
-            &-social-links {
-            
             }
         }
     }
