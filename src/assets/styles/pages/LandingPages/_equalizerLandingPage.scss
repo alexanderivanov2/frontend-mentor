@@ -165,10 +165,12 @@
         &-social-links {
             display: flex;
             gap: 2rem;
-
+            
             .social-link {
+                transition: all ease-in-out .3s;
                 &:hover {
-                    color: $light-orange;
+                    transform: scale(1.2);
+                    filter: brightness(0) saturate(100%) invert(49%) sepia(33%) saturate(969%) hue-rotate(324deg) brightness(109%) contrast(96%);
                 }
             }
         }
@@ -283,6 +285,7 @@
             min-height: 60rem;
             margin: 0 auto 17rem;
             position: relative;
+            z-index: 15;
 
             &::before {
                 left: 54%;
