@@ -1,6 +1,6 @@
 <template>
     <div class="faq-accordion-card">
-        <img class="faq-accordion-card-heading-icon" src="/assets/images/newbieChallanges/faqAccordion/icon-star.svg" alt="">
+        <img class="faq-accordion-card-heading-icon" src="/assets/images/newbieChallenges/faqAccordion/icon-star.svg" alt="">
         <h1 class="faq-accordion-card-heading">FAQs</h1>
         <div class="faq-accordion-card-content">
             <FAQAccordionSection

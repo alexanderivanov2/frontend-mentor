@@ -99,5 +99,5 @@
 </template>
 
 <script setup>
-import OmeletteImage from '/assets/images/newbieChallanges/image-omelette.jpeg'
+import OmeletteImage from '/assets/images/newbieChallenges/image-omelette.jpeg'
 </script>

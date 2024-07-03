@@ -20,8 +20,8 @@
 
 <script setup>
 import { ref,computed, watch, nextTick, onMounted } from 'vue'
-import plusIcon from '/assets/images/newbieChallanges/faqAccordion/icon-plus.svg'
-import minusIcon from '/assets/images/newbieChallanges/faqAccordion/icon-minus.svg'
+import plusIcon from '/assets/images/newbieChallenges/faqAccordion/icon-plus.svg'
+import minusIcon from '/assets/images/newbieChallenges/faqAccordion/icon-minus.svg'
 
 const props = defineProps({
     faq: Object,
