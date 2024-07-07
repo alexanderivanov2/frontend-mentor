@@ -1,0 +1,173 @@
+.meet-landing-page {
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+    $primary-color: #4D96A9;
+    $secondary-color: #855FB1;
+    $medium-color: #28283D;
+    $primary-color-light: #8FE3F9;
+    $secondary-color-light: #D9B8FF;
+    $medium-color-light: #FAFAFA;
+    $gray: #87879D;
+
+    font-family: "Red Hat Display", sans-serif;
+
+    &-wrapper {
+        .meet-header {
+            &-logo-wrapper {
+                padding: 4.8rem 0 5.4rem;
+                text-align: center;
+
+                img {
+                    max-width: 11.9rem;
+                    width: 100%;
+                }
+            }
+
+            &-hero-section {
+                .image-hero {
+                    width: 100%;
+                    margin-left: -6%;
+                    
+                    img {
+                        width: 111%;
+                        min-height: 15.3rem;
+                    }
+                }
+
+                &-content {
+                    max-width: 32.7rem;
+                    margin: 4rem auto;
+
+                    &-title {
+                        font-size: 4rem;
+                        font-weight: 900;
+                        line-height: 4.4rem;
+                        padding: 0 2.4rem;
+                        text-align: center;
+                    }
+                    
+                    &-description {
+                        color: $gray;
+                        font-size: 1.6rem;
+                        line-height: 2.6rem;
+                        text-align: center;
+                        margin: 3.2rem auto;
+                    }
+
+                    &-buttons-wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 1.6rem;
+                    }
+                }
+            }
+        }
+
+        .meet-btn {
+            display: block;
+            border-radius: 2.9rem;
+            border: none;
+            outline: none;
+            max-height: 5.8rem;
+            height: 100%;
+            padding: 1.6rem 3rem;
+            color: white;
+            font-weight: bold;
+            font-size: 1.6rem;
+            cursor: pointer;
+            transition: background-color ease-in-out .5s;
+
+            span {
+                color: $primary-color-light;
+            }
+
+            &.download {
+                padding-left: 4rem;
+                padding-right: 4rem;
+                background-color: $primary-color;
+            }
+
+            &.info {
+                background-color: $secondary-color;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            .meet-header {
+                &-logo-wrapper {
+                    padding-bottom: 6.4rem;
+                }
+
+                &-hero-section {
+                    .image-hero {
+                        margin-left: -3.5%;
+                        
+                        img {
+                            width: 107%;
+                            min-height: 30.3rem;
+                        }
+                    } 
+
+                    &-content {
+                        margin-top: 7.2rem;
+                        max-width: 45.7rem;
+
+                        &-title {
+                            font-size: 4.8rem;
+                            line-height: 4.8rem;
+                            padding: 0 4.8rem;
+                        }
+
+                        &-description {
+                            padding: 0 1rem;
+                            margin-top: 2.4rem;
+                        }
+
+                        &-buttons-wrapper {
+                            flex-direction: row;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: 1440px) {
+            .meet-header {
+                &-hero-section {
+                    // .image-hero {
+                    //     margin-left: -3.5%;
+                        
+                    //     img {
+                    //         width: 107%;
+                    //         min-height: 30.3rem;
+                    //     }
+                    // } 
+
+                    &-content {
+                    //     margin-top: 7.2rem;
+                        max-width: 54rem;
+
+                    //     &-title {
+                    //         font-size: 4.8rem;
+                    //         line-height: 4.8rem;
+                    //         padding: 0 4.8rem;
+                    //     }
+
+                    //     &-description {
+                    //         padding: 0 1rem;
+                    //         margin-top: 2.4rem;
+                    //     }
+
+                    //     &-buttons-wrapper {
+                    //         flex-direction: row;
+                    //         justify-content: center;
+                    //     }
+                    }
+                }
+            }
+
+        }
+    }
+}

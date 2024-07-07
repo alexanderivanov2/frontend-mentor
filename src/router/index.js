@@ -98,7 +98,7 @@ const router = createRouter({
     {
       path: '/newbie/meet-landing-page',
       name: 'MeetLandingPage',
-      component: () => import('../views/NewbiePages/NewbieLandingPages/EqualizerLandingPage.vue')
+      component: () => import('../views/NewbiePages/NewbieLandingPages/MeetLandingPage.vue')
     },
   ]
 })
