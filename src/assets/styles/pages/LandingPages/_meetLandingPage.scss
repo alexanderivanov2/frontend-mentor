@@ -80,13 +80,13 @@
             font-weight: bold;
             font-size: 1.6rem;
             cursor: pointer;
-            transition: background-color ease-in-out .5s;
+            transition: all ease-in-out .5s;
 
             span {
                 color: $primary-color-light;
             }
 
-            &.download {
+            &.primary {
                 padding-left: 4rem;
                 padding-right: 4rem;
                 background-color: $primary-color;
@@ -96,11 +96,19 @@
                 }
             }
 
-            &.info {
+            &.secondary {
                 background-color: $secondary-color;
                 
                 &:hover {
                     background-color: $secondary-color-light;
+
+                    span {
+                        color: white;
+                    }
+                }
+
+                span {
+                    color: $secondary-color-light;
                 }
             }
         }
@@ -129,6 +137,11 @@
                 font-size: 1.6rem;
                 font-weight: 900;
                 line-height: 2.6rem;
+                background-color: $white;
+            }
+
+            &.pointer-two {
+                padding: 0;
             }
         }
 
@@ -179,8 +192,36 @@
                     font-size: 1.6rem;
                     line-height: 2.6rem;
                     text-align: center;
-                    margin: 3.2rem auto;
+                    margin: 3.2rem auto 0;
                 }
+            }
+        }
+
+        .meet-footer {
+            padding: 9.2rem 2.4rem 7.2rem;
+            margin: -2.8rem auto 0;
+            background-color: $primary-color-light;
+            text-align: center;
+            background-image: linear-gradient(rgba($primary-color, .85), rgba($primary-color, .85)), url('/public/assets/images/LandingPages/meetLandingPage/mobile/image-footer.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            &-title {
+                color: white;
+                font-size: 3.2rem;
+                font-weight: 900;
+                line-height: 3.6rem;
+            }
+
+            &-description {
+                font-size: 1.6rem;
+                line-height: 2.6rem;
+                margin: 2.4rem 0 3.2rem;
+                color: $medium-color-light;
+            }
+
+            .meet-btn {
+                margin: 0 auto;
             }
         }
 
@@ -238,6 +279,7 @@
                     }
                 }
             }
+
             .meet-usage-introduction {
                 &-content {
                     padding: 6.4rem 2.4rem;
@@ -250,6 +292,25 @@
                         word-wrap: break-word;
                         max-width: 48rem;
                     }
+                }
+            }
+
+            .meet-footer {
+                background-image: linear-gradient(rgba($primary-color, .85), rgba($primary-color, .85)), url('/public/assets/images/LandingPages/meetLandingPage/tablet/image-footer.jpg');
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                &-title {
+                    font-size: 4rem;
+                    line-height: 4.4rem;
+                    max-width: 46rem;
+                }
+
+                &-description {
+                    font-size: 1.8rem;
+                    max-width: 57.3rem;
                 }
             }
         }
@@ -319,6 +380,29 @@
                         max-width: 25.5rem;
                         max-height: 24.2rem;
                     }
+                }
+            }
+
+            .meet-footer {
+                padding: 11.6rem 16.5rem 10rem;
+                background-image: linear-gradient(rgba($primary-color, .85), rgba($primary-color, .85)), url('/public/assets/images/LandingPages/meetLandingPage/desktop/image-footer.jpg');
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+
+                &-title, &-description {
+                    flex: 1;
+                    max-width: 35rem;
+                    text-align: left;
+                }
+
+                &-description {
+                    margin-top: 0;
+                }
+
+                .meet-btn {
+                    margin: unset;
+                    align-self: center;
                 }
             }
         }
