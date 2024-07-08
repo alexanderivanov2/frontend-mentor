@@ -26,6 +26,27 @@
                     </div>
                 </div>
             </header>
+            <div class="meet-section-pointer pointer-one">
+                <div class="meet-section-pointer-line"></div>
+                <div class="meet-section-pointer-counter">01</div>
+            </div>
+            <section class="meet-usage-introduction">
+                <div class="meet-usage-introduction-images-wrapper">
+                    <div class="image-wrapper" 
+                        v-for="(image, index) in images" :key="index">
+                        <img :src="image" alt="image of people">
+                    </div>
+                </div>
+                <div class="meet-usage-introduction-content">
+                    <h5 class="meet-usage-introduction-content-subtitle">Built for modern use</h5>
+                    <h2 class="meet-usage-introduction-content-title">Smarter meetings, all in one place</h2>
+                    <p class="meet-usage-introduction-content-description">Send messages, share files, show your screen, and record your meetings — all in one workspace. Control who can join with invite-only team access, data encryption, and data export.</p>
+                </div>
+            </section>
+            <div class="meet-section-pointer">
+                <div class="meet-section-pointer-line"></div>
+                <div class="meet-section-pointer-counter pointer-two">02</div>
+            </div>
         </div>
     </div>
 
@@ -38,7 +59,12 @@ import meetLogo from '/assets/images/LandingPages/meetLandingPage/logo.svg'
 import imageHero from '/assets/images/LandingPages/meetLandingPage/tablet/image-hero.png'
 import imageHeroLeft from '/assets/images/LandingPages/meetLandingPage/desktop/image-hero-left.png'
 import imageHeroRight from '/assets/images/LandingPages/meetLandingPage/desktop/image-hero-right.png'
+import imageManTexting from '/assets/images/LandingPages/meetLandingPage/desktop/image-man-texting.jpg'
+import imageMenInMeeting from '/assets/images/LandingPages/meetLandingPage/desktop/image-men-in-meeting.jpg'
+import imageWomanInVideocall from '/assets/images/LandingPages/meetLandingPage/desktop/image-woman-in-videocall.jpg'
+import imageWomenInVideochatting from '/assets/images/LandingPages/meetLandingPage/desktop/image-women-videochatting.jpg'
 
 const { isDesktop } = useDeviceTypeHandler()
 const imageHeroMain = computed(() => isDesktop.value ? imageHeroLeft : imageHero)
+const images = [imageWomanInVideocall, imageWomenInVideochatting, imageMenInMeeting, imageManTexting]
 </script>
