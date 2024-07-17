@@ -100,6 +100,11 @@ const router = createRouter({
       name: 'MeetLandingPage',
       component: () => import('../views/NewbiePages/NewbieLandingPages/MeetLandingPage.vue')
     },
+    {
+      path: '/newbie/pod-request-access-landing-page',
+      name: 'PodRequestAccessLandingPage',
+      component: () => import('../views/NewbiePages/NewbieLandingPages/PodRequestAccessLandingPage/PodRequestAccessLandingPage.vue')
+    },
   ]
 })
 

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+.pod-request-access-landing-page {
+    $primary-color: #54E6AF;
+    $secondary-color: #2C344B;
+    $medium-color: #121725;
+    $white: #FFFFFF;
+    $secondary-light-color: #5A668A;
+    $light-grey: #C2CBE5;
+
+    font-family: "Chivo", sans-serif;
+    font-weight: 100;
+
+    $mobile-bg-image: '/public/assets/images/LandingPages/podRequestAccessLandingPage/mobile/image-host.jpg';
+    $tablet-bg-image: '/public/assets/images/LandingPages/podRequestAccessLandingPage/tablet/image-host.jpg';
+    $desktop-bg-image: '/public/assets/images/LandingPages/podRequestAccessLandingPage/desktop/image-host.jpg';
+
+    background: linear-gradient(rgba($medium-color, 0.9), rgba($medium-color, 0.9)), url($mobile-bg-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+    .pod-request-access {
+        overflow: hidden;
+        width: 100%;
+        &-header {
+            padding: 6.2rem 0 5.7rem;
+            text-align: center;
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            padding: 0 2.4rem;
+            text-align: center;
+            max-width: 55rem;
+            margin: 0 auto;
+
+            &-heading {
+                color: $primary-color;
+                font-size: 2.6rem;
+                line-height: 3.8rem;
+                text-transform: uppercase;
+                margin-bottom: 1.6rem;
+
+                span {
+                    color: $white;
+                }
+            }
+
+            &-description {
+                color: $light-grey;
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+            }
+
+            &-podcast-channels {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                margin: 3.3rem auto 4.8rem;
+                width: 100%;
+                max-width: 45rem;
+
+                img {
+                    width: 7.2rem;
+                    height: 1.5rem;
+                    color: #5A668A;
+                }
+            }
+
+            .request-access-form {
+                order: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+                width: 100%;
+                max-width: 40rem;
+                margin: auto;
+
+                input, button {
+                    padding: 8px 3.2rem;
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    line-height: 2.8rem;
+                    outline: none;
+                    border: none;
+                    border-radius: 50px;
+                }
+
+                input {
+                    background-color: $secondary-color;
+                    color: $light-grey;                   
+                }
+
+                button {
+                    background-color: $primary-color;
+                    color: $medium-color;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 360px) {
+        .pod-request-access {
+            &-content {
+                &-podcast-channels {
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}

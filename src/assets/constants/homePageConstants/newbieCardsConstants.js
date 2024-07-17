@@ -4,6 +4,12 @@
 
 const newbieCardsList = [
     {
+        cardName: 'Pod Request Access Landing Page',
+        routeName: 'PodRequestAccessLandingPage',
+        cardImgURL: 'assets/images/challengeCardImages/pod-request-access-landing-page-card-challenge.webp',
+        difficulty: 1,    
+    },
+    {
         cardName: 'Meet Landing Page',
         routeName: 'MeetLandingPage',
         cardImgURL: 'assets/images/challengeCardImages/meet-landing-page-card-challenge.webp',
