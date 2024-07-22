@@ -10,6 +10,8 @@
 
     font-family: "Chivo", sans-serif;
     font-weight: 100;
+    word-wrap: break-word;
+    overflow-y: auto;
 
     $mobile-bg-image: '/public/assets/images/LandingPages/podRequestAccessLandingPage/mobile/image-host.jpg';
     $tablet-bg-image: '/public/assets/images/LandingPages/podRequestAccessLandingPage/tablet/image-host.jpg';
@@ -66,7 +68,6 @@
                 img {
                     width: 7.2rem;
                     height: 1.5rem;
-                    color: #5A668A;
                 }
             }
 
@@ -97,6 +98,7 @@
                 button {
                     background-color: $primary-color;
                     color: $medium-color;
+                    cursor: pointer;
                 }
             }
         }
@@ -108,6 +110,80 @@
                 &-podcast-channels {
                     flex-direction: row;
                     justify-content: space-between;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        background: $medium-color;
+        position: relative;
+        z-index: 1;
+
+        .pod-request-access {
+            &-bg-image {
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                right: 0;
+                height: 76.7rem;
+                width: 49.1rem;
+                background-image: url($tablet-bg-image);
+            }
+            
+            &-header {
+                text-align: left;
+                padding: 4rem 0 15rem 3.9rem;
+            }
+
+            &-content {
+                background-color: $medium-color;
+                max-width: 63.5rem;
+                min-height: 50.9rem;
+                padding: 0 0 0 3.9rem;
+                margin: 0;
+                text-align: left;
+
+                &-heading {
+                    padding: 9.3rem 0 3rem;
+                    font-size: 4.8rem;
+                    line-height: 5.6rem;
+                    margin-bottom: 3.1rem;
+                }
+
+                &-description {
+                    font-size: 1.8rem;
+                    line-height: 2.8rem;
+                    max-width: 44.5rem;
+                }
+
+                &-podcast-channels {
+                    margin: 0;
+
+                    img {
+                        width: 9rem;
+                        height: 2rem;
+                    }
+                }
+
+                .request-access-form {
+                    order: 0;
+                    max-width: 45rem;
+                    max-height: 4.6rem;
+                    position: relative;
+                    margin: 4rem 0 6.4rem;
+                    input {
+                        height: 4.6rem;
+                    }
+                    button {
+                        position: absolute;
+                        right: 0;
+                        max-width: 16.2rem;
+                        min-height: 4.6rem;
+                        line-height: 2.8rem;
+                        padding: 9px 2.7rem;
+                    }
+
                 }
             }
         }

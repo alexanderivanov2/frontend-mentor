@@ -4,6 +4,7 @@
             <header class="pod-request-access-header">
                 <img :src="Logo" alt="pod request logo">
             </header>
+            <div class="pod-request-access-bg-image"></div>
             <section class="pod-request-access-content">
                 <h1 class="pod-request-access-content-heading">
                     Publish your podcasts <span>everywhere.</span>
@@ -15,7 +16,7 @@
                     <img :src="ApplePodcast" alt="">
                     <img :src="GooglePodcast" alt="">
                     <img :src="PocketPodcast" alt="">
-                </div>
+                </div>            
             </section>
         </div>
     </div>
@@ -28,5 +29,7 @@ import Spotify from '/assets/images/LandingPages/podRequestAccessLandingPage/des
 import ApplePodcast from '/assets/images/LandingPages/podRequestAccessLandingPage/desktop/apple-podcast.svg'
 import GooglePodcast from '/assets/images/LandingPages/podRequestAccessLandingPage/desktop/google-podcasts.svg'
 import PocketPodcast from '/assets/images/LandingPages/podRequestAccessLandingPage/desktop/pocket-casts.svg'
+import { useDeviceTypeHandler } from '../../../../composables/useDeviceTypeHandler'
+const { isTablet } = useDeviceTypeHandler()
 
 </script>
