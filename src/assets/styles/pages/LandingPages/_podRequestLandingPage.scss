@@ -100,6 +100,11 @@
                     background-color: $primary-color;
                     color: $medium-color;
                     cursor: pointer;
+                    transition: background-color ease-in-out .45s;
+
+                    &:hover, &:focus {
+                        background-color: lighten($primary-color, 15%);
+                    }
                 }
             }
         }
