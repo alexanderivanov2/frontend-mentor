@@ -16,6 +16,7 @@
     $mobile-bg-image: '/public/assets/images/LandingPages/podRequestAccessLandingPage/mobile/image-host.jpg';
     $tablet-bg-image: '/public/assets/images/LandingPages/podRequestAccessLandingPage/tablet/image-host.jpg';
     $desktop-bg-image: '/public/assets/images/LandingPages/podRequestAccessLandingPage/desktop/image-host.jpg';
+    $bg-pattern-dots: '/public/assets/images/LandingPages/podRequestAccessLandingPage/desktop/bg-pattern-dots.svg';
 
     background: linear-gradient(rgba($medium-color, 0.9), rgba($medium-color, 0.9)), url($mobile-bg-image);
     background-repeat: no-repeat;
@@ -120,7 +121,26 @@
         position: relative;
         z-index: 1;
 
+        @media screen and (max-height: 1000px) {
+            padding-bottom: 10rem;
+        }
+
         .pod-request-access {
+            position: relative;
+            overflow: unset;   
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-image: url($bg-pattern-dots);
+                width: 23.2rem;
+                height: 10.4rem;
+                z-index: 5;
+                bottom: -5rem;
+                right: 0;
+            }
+        
+
             &-bg-image {
                 position: absolute;
                 z-index: -1;
@@ -169,23 +189,79 @@
                 .request-access-form {
                     order: 0;
                     max-width: 45rem;
-                    max-height: 4.6rem;
+                    max-height: 5.20rem;
                     position: relative;
                     margin: 4rem 0 6.4rem;
                     input {
-                        height: 4.6rem;
+                        height: 5.20rem;
                     }
+
                     button {
                         position: absolute;
-                        right: 0;
-                        max-width: 16.2rem;
-                        min-height: 4.6rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: 0.30rem;
+                        max-width: 16.3rem;
+                        min-height: 4.5rem;
                         line-height: 2.8rem;
                         padding: 9px 2.7rem;
                     }
 
                 }
             }
+        }
+    }
+
+    @media screen and (min-width: 1275px) {
+        overflow-x: hidden;
+        padding-bottom: 0;
+        .pod-request-access {
+            max-width: 127.5rem;
+            margin: 13rem 0 13rem 16.5rem;
+
+            &-bg-image {
+                top: 0;
+                right: 0;
+                height: 64rem;
+                width: 96.2rem;
+                background-image: url($desktop-bg-image);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            &-header {
+                padding: 0 0 10.3rem 0;
+                img {
+                    margin-top: -2.8rem;
+                }
+            }
+
+            &-content {
+                padding: 0 5.8rem 0 0;
+                min-width: 72.3rem;
+                min-height: 50.9rem;
+
+                &-heading {
+                    padding: 8.8rem 0 0;
+                    font-size: 5.2rem;
+                    line-height: 6.2rem;
+                    margin-bottom: 2.4rem;
+                }
+
+                &-podcast-channels {
+                    img {
+                        width: 9.2rem;
+                        height: 2.9rem;
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media screen and (min-width: 1445px) {
+        .pod-request-access {
+            margin: 13rem auto;
         }
     }
 }
