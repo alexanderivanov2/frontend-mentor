@@ -26,6 +26,7 @@
     .pod-request-access {
         overflow: hidden;
         width: 100%;
+        padding-bottom: 3rem;
         &-header {
             padding: 6.2rem 0 5.7rem;
             text-align: center;
@@ -149,6 +150,7 @@
         .pod-request-access {
             position: relative;
             overflow: unset;   
+            padding-bottom: 0;
 
             &::before {
                 content: '';

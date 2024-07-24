@@ -16,12 +16,6 @@
             }"
         >{{ requestMessage }}</p>
     </form>
-    <div>
-        <button
-            type="submit"
-            @click.prevent.stop="requestAccess"
-        >TEST</button>
-    </div>
 </template> 
 
 
