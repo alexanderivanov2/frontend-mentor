@@ -80,6 +80,7 @@
                 width: 100%;
                 max-width: 40rem;
                 margin: auto;
+                position: relative;
 
                 input, button {
                     padding: 8px 3.2rem;
@@ -101,9 +102,24 @@
                     color: $medium-color;
                     cursor: pointer;
                     transition: background-color ease-in-out .45s;
+                    // pointer-events: auto;
+                    z-index: 100;
 
-                    &:hover, &:focus {
+                    &:hover {
                         background-color: lighten($primary-color, 15%);
+                    }
+                }
+
+                .request-access-response-message {
+                    position: absolute;
+                    bottom: -2.5rem;
+                    left: 2.5rem;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    color: green;
+
+                    &.error-message {
+                        color: red;
                     }
                 }
             }
@@ -206,6 +222,7 @@
                         top: 50%;
                         transform: translateY(-50%);
                         right: 0.30rem;
+                        z-index: 100;
                         max-width: 16.3rem;
                         min-height: 4.5rem;
                         line-height: 2.8rem;
