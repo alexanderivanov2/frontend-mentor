@@ -105,6 +105,11 @@ const router = createRouter({
       name: 'PodRequestAccessLandingPage',
       component: () => import('../views/NewbiePages/NewbieLandingPages/PodRequestAccessLandingPage/PodRequestAccessLandingPage.vue')
     },
+    {
+      path: '/newbie/social-proof-landing-page',
+      name: 'SocialProofLandingPage',
+      component: () => import('../views/NewbiePages/NewbieLandingPages/SocialProofLandingPage.vue')
+    },
   ]
 })
 

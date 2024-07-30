@@ -1,10 +1,9 @@
 <template>
-    <form class="request-access-form">
-        <input :value="email" @input="onInput" placeholder="Email address"
+    <form class="request-access-form" @submit.prevent="requestAccess">
+        <input :value="email" @input="onInput" @blur="onBlur" placeholder="Email address"
         />
         <button
             type="submit"
-            @click.prevent.stop="requestAccess"
         >
             Request Access
         </button>
@@ -28,6 +27,9 @@ const email = ref('')
 
 const onInput = (e) => {
     email.value = e.target.value
+}
+const onBlur = (e) => {
+    console.log('onBlur')
 }
 
 const requestAccess = () => {
