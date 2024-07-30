@@ -1,12 +1,137 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 .social-proof-page {
-
-
+    $light-purple: #F7F2F7;
+    $dark-purple: #512051;
+    $dark-pink: #EE69A4;
+    $grey-puprple: #927B91;
+    
+    
+    
+    $mobile-bg-top: "/assets/images/LandingPages/socialProofSectionPage/bg-pattern-top-mobile.svg";
+    $mobile-bg-bottom: "/assets/images/LandingPages/socialProofSectionPage/bg-pattern-bottom-mobile.svg";
+    $desktop-bg-bottom: "/assets/images/LandingPages/socialProofSectionPage/bg-pattern-bottom-desktop.svg";
+    $desktop-bg-top: "/assets/images/LandingPages/socialProofSectionPage/bg-pattern-top-desktop.svg";
     
     font-family: "League Spartan", sans-serif;
-
+    position: relative;
+    
     &-wrapper {
+        background: url($mobile-bg-top);
+        background-repeat: no-repeat;
+        padding: 8.2rem 2.4rem 10rem;
+        max-width: 1440px;
+        margin: 0 auto;
 
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: url($mobile-bg-bottom);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 50.3rem;
+        }
+
+        .social-proof-raiting-content {
+            margin-bottom: 5rem;
+
+            .social-proof-raiting-introduction {
+                text-align: center;
+                margin-bottom: 3.9rem;
+                &-heading {
+                    font-size: 4rem;
+                    font-weight: bold;
+                    line-height: 3.2rem;
+                    letter-spacing: -1.43px;
+                    color: $dark-purple;
+                    margin-bottom: 1.7rem;
+                }
+
+                &-description {
+                    color: $grey-puprple;
+                    font-size: 1.9rem;
+                    line-height: 2.5rem;
+                    letter-spacing: -0.63px;
+                }
+            }
+
+            .social-proof-raiting-rate-examples {
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+                .social-proof-rate-example {
+                    background-color: $light-purple;
+                    text-align: center;
+                    padding: 1.5rem 0;
+                    border-radius: 8px;
+
+                    &-stars-wrapper {
+                        display: flex;
+                        gap: 8.45px;
+                        justify-content: center;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    &-rated-info {
+                        font-size: 1.7rem;
+                        font-weight: bold;
+                        color: $dark-purple;
+                    }
+                }
+
+            }
+        }
+
+        .social-proof-testimonials {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+
+            .social-proof-testimonial {
+                background-color: $dark-purple;
+                border-radius: 8px;
+                padding: 4rem 3.2rem 3.5rem;
+
+                .social-proof-testimonial-header {
+                    display: flex;
+                    align-items: center;
+                    gap: 2.3rem;
+                    margin-bottom: 2.4rem;
+                    
+                    img {
+                        width: 4rem;
+                        border-radius: 50%;
+                    }
+
+                    &-user {
+                        font-size: 1.7rem;
+                        font-weight: bold;
+
+                        &-names {
+                            color: white;
+                        }
+
+                        &-subtitle {
+                            color: $dark-pink;
+                        }
+                    }
+                }
+
+                .social-proof-testimonial-text {
+                    color: white;
+                    font-size: 1.7rem;
+                    line-height: 2.2rem;
+                    letter-spacing: -0.3px;
+                }
+            }
+        }
+ 
+
+        @media screen and (min-width: 1440px) {
+
+        }
     }
 }
