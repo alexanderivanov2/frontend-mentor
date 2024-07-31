@@ -17,22 +17,35 @@
     position: relative;
     
     &-wrapper {
-        background: url($mobile-bg-top);
-        background-repeat: no-repeat;
+        width: 100%;
         padding: 8.2rem 2.4rem 10rem;
-        max-width: 1440px;
+        max-width: 111rem;
         margin: 0 auto;
 
-        &::after {
+        &::before, &::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            right: 0;
+            z-index: -1;            
+        }
+        
+        &::before {
+            background: url($mobile-bg-top);
+            background-repeat: no-repeat;
+            background-size: contain;
+            left: 0;
+            top: 0;
+            height: 23.2rem;
+            width: 100%;
+        }
+
+        &::after {
             background: url($mobile-bg-bottom);
             background-repeat: no-repeat;
             background-size: cover;
+            bottom: 0;
+            right: 0;
             width: 100%;
-            height: 50.3rem;
+            height: 57.4rem;
         }
 
         .social-proof-raiting-content {
@@ -40,7 +53,8 @@
 
             .social-proof-raiting-introduction {
                 text-align: center;
-                margin-bottom: 3.9rem;
+                margin: 0 auto 3.9rem;
+                max-width: 50rem;
                 &-heading {
                     font-size: 4rem;
                     font-weight: bold;
@@ -62,6 +76,8 @@
                 display: flex;
                 flex-direction: column;
                 gap: 1.6rem;
+                max-width: 44.5rem;
+                margin: 0 auto;
                 .social-proof-rate-example {
                     background-color: $light-purple;
                     text-align: center;
@@ -88,12 +104,14 @@
         .social-proof-testimonials {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 1.6rem;
 
             .social-proof-testimonial {
                 background-color: $dark-purple;
                 border-radius: 8px;
                 padding: 4rem 3.2rem 3.5rem;
+                max-width: 40rem;
 
                 .social-proof-testimonial-header {
                     display: flex;
@@ -130,8 +148,92 @@
         }
  
 
-        @media screen and (min-width: 1440px) {
+        @media screen and (min-width: 1200px) {
+            min-height: 100vh;
+            padding: 11.7rem 0;
+            &::before {
+                background: url($desktop-bg-top);
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 100%;
+            } 
+            
+            &::after {
+                background: url($desktop-bg-bottom);
+                background-repeat: no-repeat;
+                height: 67.3rem;
+                width: 100.85rem;
+            }
 
+            .social-proof-raiting-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 111rem;
+                margin: 0 auto 7.2rem;
+
+                .social-proof-raiting-introduction {
+                    max-width: 44.5rem;
+                    margin-bottom: 0;
+                    text-align: left;
+                    &-heading {
+                        font-size: 5.6rem;
+                        line-height: 4.8rem;
+                        letter-spacing: -2px;
+                        margin-bottom: 3.2rem;
+                    }
+
+                    &-description {
+                        width: 95%;
+                    }
+                }
+
+                .social-proof-raiting-rate-examples {
+                    width: 100%;
+                    margin: 0;
+                    padding: 3.2rem 0;
+                    
+                    .social-proof-rate-example {
+                        display: flex;
+                        align-items: center;
+                        padding: 2rem 3.2rem;
+                        gap: 2rem;
+
+                        &:first-child {
+                            margin-left: -9rem;
+                            margin-right: 9rem;
+                        }
+
+                        &:nth-child(2) {
+                            margin-left: -4.5rem;
+                            margin-right: 4.5rem;
+                        }
+
+                        &-stars-wrapper {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            .social-proof-testimonials {
+                flex-direction: row;
+                gap: 3rem;
+
+                .social-proof-testimonial {
+                    max-width: 35rem;
+
+                    &:nth-child(2) {
+                        margin-top: 2rem;
+                        margin-bottom: -2rem;
+                    }
+
+                    &:last-child {
+                        margin-top: 4rem;
+                        margin-bottom: -4rem;
+                    }
+                }
+            }
         }
     }
 }
