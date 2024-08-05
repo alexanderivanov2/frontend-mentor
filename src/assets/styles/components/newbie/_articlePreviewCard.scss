@@ -20,7 +20,6 @@
             width: 100%;
             border-top-left-radius: inherit;
             border-top-right-radius: inherit;
-
         }
     }
 
@@ -51,12 +50,14 @@
 
     &-footer {
         .user-share-info-section {
+            position: relative;
+            overflow: hidden;
             width: 100%;
 
             .user-share-info-main {
                 display: flex;
                 align-items: center;
-                padding: 0 3rem 3.2rem;
+                padding: 1.6rem 3rem;
 
                 .user-share-info-avatar {
                     width: 4rem;
@@ -84,6 +85,8 @@
                 }
 
                 .users-share-info-share-btn {
+                    position: relative;
+                    z-index: 10;
                     margin-left: auto;
                     background-color: $light-gray;
                     border: none;
@@ -92,6 +95,54 @@
                     height: 3.2rem;
                     border-radius: 5rem;
                     cursor: pointer;
+                    transition: all .5s;
+
+
+                    &:hover, &.active {
+                        background-color: $light-blue-gray;
+                        img {
+
+                            filter: invert(100%) brightness(1000%) contrast(100%);
+                        
+                        }
+                    }
+                }
+            }
+
+            .user-share-info-share-section {
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                transform: translateX(-10%);
+                opacity: 0;
+                width: 0;
+                height: 100%;
+                background-color: $blue-gray;
+                border-bottom-left-radius: 6px;
+                border-bottom-right-radius: 6px;
+                display: flex;
+                align-items: center;
+                gap: 2.1rem;
+                padding-left: 3rem;
+                transition: all ease-in-out .2s;
+                
+                &.open {
+                    transform: translateX(0);
+                    width: 100%;
+                    opacity: 1;
+                }
+
+                .share-text-tag {
+                    font-size: 1.3rem;
+                    color: $light-blue-gray;
+                    line-height: 2rem;
+                    letter-spacing: 5px;
+                }
+
+                .user-share-info-links {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.6rem;
                 }
             }
         }

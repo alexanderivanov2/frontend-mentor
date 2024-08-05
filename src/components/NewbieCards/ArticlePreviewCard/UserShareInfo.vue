@@ -10,13 +10,24 @@
                 <p class="user-share-info-names"> {{ userInfo.names }}</p>
                 <p class="user-share-info-date"> {{  userInfo.date }}</p>
             </div>
-            <button class="users-share-info-share-btn">
+            <button 
+                class="users-share-info-share-btn"
+                :class="{
+                    'active': isShareOpen,
+                }"
+                @click="toggleIsOpen"
+
+            >
+                <!-- <svg :src="iconShare"></svg> -->
                 <img :src="iconShare" alt="share icon">
             </button>
         </div>
         <div 
-            v-if="false"
+   
             class="user-share-info-share-section"
+            :class="{
+                'open': isShareOpen
+            }"
         >
             <p class="share-text-tag">SHARE</p>
             <div class="user-share-info-links">
@@ -48,6 +59,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import iconFacebook from '/assets/images/newbieChallenges/articlePreview/icon-facebook.svg'
 import iconTwitter from '/assets/images/newbieChallenges/articlePreview/icon-twitter.svg'
 import iconPinterest from '/assets/images/newbieChallenges/articlePreview/icon-pinterest.svg'
@@ -67,5 +79,11 @@ interface Props {
     }
 }
 const props = defineProps<Props>()
+
+const isShareOpen = ref<boolean>(false)
+
+const toggleIsOpen = () => {
+    isShareOpen.value = !isShareOpen.value
+}
 
 </script>
