@@ -110,6 +110,11 @@ const router = createRouter({
       name: 'SocialProofLandingPage',
       component: () => import('../views/NewbiePages/NewbieLandingPages/SocialProofLandingPage.vue')
     },
+    {
+      path: '/newbie/article-preview-card',
+      name: 'ArticlePreviewCard',
+      component: () => import('../views/NewbiePages/NewbieCardPages/NewbieArticlePreviewCardPage.vue')
+    },
   ]
 })
 

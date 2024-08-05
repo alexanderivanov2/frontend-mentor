@@ -4,6 +4,12 @@
 
 const newbieCardsList = [
     {
+        cardName: 'Article Preview Card',
+        routeName: 'ArticlePreviewCard',
+        cardImgURL: 'assets/images/challengeCardImages/article-preview-card-challenge.webp',
+        difficulty: 1,    
+    },
+    {
         cardName: 'Social Proof Landing Page',
         routeName: 'SocialProofLandingPage',
         cardImgURL: 'assets/images/challengeCardImages/social-proof-section-card-challenge.webp',

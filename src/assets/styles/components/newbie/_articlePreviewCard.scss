@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.article-preview-card {
+    $white: #ffffff;
+    $blue-gray: #48556A;
+    $light-blue-gray: #6E8098;
+    $light-gray: #ECF2F8;
+
+    font-family: "Manrope", sans-serif;
+    background-color: $white;
+    max-width: 32.7rem;
+    min-height: 51.2rem;
+    border-radius: 5px;
+    
+    &-image-wrapper {
+        width: 100%;
+        border-radius: inherit;
+
+        img {
+            width: 100%;
+            border-top-left-radius: inherit;
+            border-top-right-radius: inherit;
+
+        }
+    }
+
+    &-body {
+        padding: 3.6rem 0 3.2rem;
+        &-heading,
+        &-description {
+            max-width: 26.3rem;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        &-heading {
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 2.4rem;
+            letter-spacing: -0.2px;
+            margin-bottom: 1.2rem;
+        }
+
+        &-description {
+            color: $light-blue-gray;
+            font-size: 1.3rem;
+            line-height: 2rem;
+            letter-spacing: 0.12px;
+        }
+    }
+
+    &-footer {
+        .user-share-info-section {
+            width: 100%;
+
+            .user-share-info-main {
+                display: flex;
+                align-items: center;
+                padding: 0 3rem 3.2rem;
+
+                .user-share-info-avatar {
+                    width: 4rem;
+                    height: 4rem;
+                    border-radius: 5rem;
+                }
+
+                .user-share-info {
+                    margin-left: 1.6rem;
+
+                    &-names {
+                        font-weight: bold;
+                        font-size: 1.3rem;
+                        line-height: 2rem;
+                        letter-spacing: -0.12px;
+                        color: $blue-gray;
+                    }
+
+                    &-date {
+                        font-size: 1.3rem;
+                        line-height: 2rem;
+                        letter-spacing: -0.12px;
+                        color: $light-blue-gray;
+                    }
+                }
+
+                .users-share-info-share-btn {
+                    margin-left: auto;
+                    background-color: $light-gray;
+                    border: none;
+                    outline: none;
+                    width: 3.2rem;
+                    height: 3.2rem;
+                    border-radius: 5rem;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
