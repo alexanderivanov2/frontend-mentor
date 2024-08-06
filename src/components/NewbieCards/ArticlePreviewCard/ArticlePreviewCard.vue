@@ -8,14 +8,14 @@
             <p class="article-preview-card-body-description">
                 Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.
             </p>
-        </div>
-        <div class="article-preview-card-footer">
-            <UserShareInfo
-                :avatar="avatarImg"
-                :user-info="userInfo"
-                :share-links="shareLinks"
-            >
-            </UserShareInfo>
+            <div class="article-preview-card-footer">
+                <UserShareInfo
+                    :avatar="avatarImg"
+                    :user-info="userInfo"
+                    :share-links="shareLinks"
+                >
+                </UserShareInfo>
+            </div>
         </div>
     </div>
 </template>

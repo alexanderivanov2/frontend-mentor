@@ -24,7 +24,7 @@
     }
 
     &-body {
-        padding: 3.6rem 0 3.2rem;
+        padding: 3.6rem 0 0;
         &-heading,
         &-description {
             max-width: 26.3rem;
@@ -38,6 +38,7 @@
             line-height: 2.4rem;
             letter-spacing: -0.2px;
             margin-bottom: 1.2rem;
+            color: $blue-gray;
         }
 
         &-description {
@@ -45,6 +46,7 @@
             font-size: 1.3rem;
             line-height: 2rem;
             letter-spacing: 0.12px;
+            margin-bottom: 1.6rem;
         }
     }
 
@@ -84,65 +86,161 @@
                     }
                 }
 
-                .users-share-info-share-btn {
-                    position: relative;
-                    z-index: 10;
+                .user-share-button-wrapper {
                     margin-left: auto;
-                    background-color: $light-gray;
-                    border: none;
-                    outline: none;
-                    width: 3.2rem;
-                    height: 3.2rem;
-                    border-radius: 5rem;
-                    cursor: pointer;
-                    transition: all .5s;
 
-
-                    &:hover, &.active {
-                        background-color: $light-blue-gray;
-                        img {
-
-                            filter: invert(100%) brightness(1000%) contrast(100%);
+                    .user-share-info-share-section {
+                        overflow: hidden;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        transform: translateX(-10%);
+                        opacity: 0;
+                        width: 0;
+                        height: 100%;
+                        background-color: $blue-gray;
+                        border-bottom-left-radius: 6px;
+                        border-bottom-right-radius: 6px;
+                        display: flex;
+                        align-items: center;
+                        gap: 2.1rem;
+                        padding-left: 3rem;
+                        transition: all ease-in-out .2s;
                         
+                        &.open {
+                            transform: translateX(0);
+                            width: 100%;
+                            opacity: 1;
+                        }
+        
+                        .share-text-tag {
+                            font-size: 1.3rem;
+                            color: $light-blue-gray;
+                            line-height: 2rem;
+                            letter-spacing: 5px;
+                        }
+        
+                        .user-share-info-links {
+                            display: flex;
+                            align-items: center;
+                            gap: 1.6rem;
                         }
                     }
-                }
+
+                    .user-share-info-share-btn {
+                        position: relative;
+                        z-index: 10;
+                        background-color: $light-gray;
+                        border: none;
+                        outline: none;
+                        width: 3.2rem;
+                        height: 3.2rem;
+                        border-radius: 5rem;
+                        cursor: pointer;
+                        transition: all .5s;
+                        border: 1px solid transparent;
+    
+                        &:hover {
+                            border-color: $blue-gray;
+                        }
+
+                        &.active {
+                            background-color: $light-blue-gray;
+                            img {
+    
+                                filter: invert(100%) brightness(1000%) contrast(100%);
+                            }
+                        }
+                    }
+                }    
+            }
+        }
+    }
+
+    @media screen and (min-width: 780px) {
+        max-width: 73rem;
+        width: 100%;
+        min-height: 28rem;
+        display: flex;
+
+        &-image-wrapper {
+            max-width: 28.5rem;
+            min-height: 28rem;
+            border-bottom-left-radius: inherit;
+            border-top-right-radius: 0;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        &-body {
+            padding: 3.2rem 4rem;
+            flex: 1;
+
+            &-heading,
+            &-description {
+                max-width: 100%;
+                margin: 0;
+                text-align: left;
             }
 
-            .user-share-info-share-section {
-                overflow: hidden;
-                position: absolute;
-                top: 0;
-                transform: translateX(-10%);
-                opacity: 0;
-                width: 0;
-                height: 100%;
-                background-color: $blue-gray;
-                border-bottom-left-radius: 6px;
-                border-bottom-right-radius: 6px;
-                display: flex;
-                align-items: center;
-                gap: 2.1rem;
-                padding-left: 3rem;
-                transition: all ease-in-out .2s;
-                
-                &.open {
-                    transform: translateX(0);
-                    width: 100%;
-                    opacity: 1;
-                }
+            &-heading {
+                font-size: 2rem;
+                line-height: 2.8rem;
+                letter-spacing: 0.25px;
+                margin-bottom: 1.2rem;
+            }
 
-                .share-text-tag {
-                    font-size: 1.3rem;
-                    color: $light-blue-gray;
-                    line-height: 2rem;
-                    letter-spacing: 5px;
-                }
+            &-description {
+                margin-bottom: 2rem;
+            }
+        }
 
-                .user-share-info-links {
-                    display: flex;
-                    align-items: center;
-                    gap: 1.6rem;
+        &-footer {
+            padding: 0;
+
+            .user-share-info-section {
+                overflow: visible;
+                .user-share-info-main {
+                    padding: 0;
+                    
+                    .user-share-button-wrapper {
+                        position: relative;
+                        
+                        .user-share-info-share-section {
+                            overflow: visible;
+                            justify-content: center;
+                            width: 25rem;
+                            max-width: 25rem;
+                            transform: translateX(0);
+                            height: 5.5rem;
+                            top: -250%;
+                            left: -225%;
+                            padding: 1.8rem 3.6rem;
+                            border-radius: 5px;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                width: 2rem;
+                                height: 2rem;
+                                background-color: inherit;
+                                bottom: -1rem;
+                                transform: rotate(45deg);
+                            }
+
+                            &.open {
+                                width: 25rem;
+                                max-width: 25rem;
+                                height: 5.5rem;
+                            }
+                        }
+
+                        .user-share-info-share-btn {
+                            margin-right: 1.6rem;
+                        }
+                    }
                 }
             }
         }
