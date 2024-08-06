@@ -44,7 +44,6 @@ import iconTwitter from '/assets/images/newbieChallenges/articlePreview/icon-twi
 import iconPinterest from '/assets/images/newbieChallenges/articlePreview/icon-pinterest.svg'
 import iconShare from '/assets/images/newbieChallenges/articlePreview/icon-share.svg'
 
-
 interface Props {
     avatar: string,
     userInfo: {
