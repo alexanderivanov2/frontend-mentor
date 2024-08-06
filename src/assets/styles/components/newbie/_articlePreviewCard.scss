@@ -147,7 +147,6 @@
                         &.active {
                             background-color: $light-blue-gray;
                             img {
-    
                                 filter: invert(100%) brightness(1000%) contrast(100%);
                             }
                         }
@@ -213,13 +212,24 @@
                             justify-content: center;
                             width: 25rem;
                             max-width: 25rem;
-                            transform: translateX(0);
                             height: 5.5rem;
-                            top: -250%;
-                            left: -225%;
+                            transform: translate(calc(-50% - 1rem), -100%);
+                            left: 50%;
+                            top: -100%;
                             padding: 1.8rem 3.6rem;
                             border-radius: 5px;
+                            z-index: -10;
 
+                            &.open {
+                                z-index: 5;
+                                width: 25rem;
+                                max-width: 25rem;
+                                height: 5.5rem;
+                                left: 50%;
+                                top: -100%;
+                                transform: translate(calc(-50% - 1rem), -100%);
+                            }
+                            
                             &::before {
                                 content: "";
                                 position: absolute;
@@ -230,11 +240,10 @@
                                 transform: rotate(45deg);
                             }
 
-                            &.open {
-                                width: 25rem;
-                                max-width: 25rem;
-                                height: 5.5rem;
+                            &, &::before {
+                                box-shadow: 0px 1px 10px 5px rgba($blue-gray, 0.5);
                             }
+
                         }
 
                         .user-share-info-share-btn {
