@@ -4,6 +4,12 @@
 
 const newbieCardsList = [
     {
+        cardName: 'Four Card Feature Landing Page',
+        routeName: 'FourCardFeatureLandingPage',
+        cardImgURL: 'assets/images/challengeCardImages/four-card-feature-landing-page-challenge.webp',
+        difficulty: 1,    
+    },
+    {
         cardName: 'Article Preview Card',
         routeName: 'ArticlePreviewCard',
         cardImgURL: 'assets/images/challengeCardImages/article-preview-card-challenge.webp',

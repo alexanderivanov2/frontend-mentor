@@ -115,6 +115,11 @@ const router = createRouter({
       name: 'ArticlePreviewCard',
       component: () => import('../views/NewbiePages/NewbieCardPages/NewbieArticlePreviewCardPage.vue')
     },
+    {
+      path: '/newbie/four-card-feature-landing-page',
+      name: 'FourCardFeatureLandingPage',
+      component: () => import('../views/NewbiePages/NewbieLandingPages/FourCardFeatureLandingPage.vue')
+    },
   ]
 })
 

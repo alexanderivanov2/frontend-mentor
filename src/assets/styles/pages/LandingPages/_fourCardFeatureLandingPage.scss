@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.four-card-feature-landing-page {
+
+    $orange-red: #EA5454;
+    $light-blue: #44D3D2;
+    $gold: #FCAE4A;
+    $blue: #549EF2;
+    $darken: #4D4F62;
+    $bg-color: #FAFAFA;
+
+    font-family: "Poppins", sans-serif;
+    background-color: $bg-color;
+    min-height: 100vh;
+
+    .four-card-feature-page-wrapper {
+        max-width: 1440px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 8.5rem 0;
+
+        .four-card-feature-page-hero-section,
+        .four-card-feature-card-list-section {
+            max-width: 31rem;
+        }
+
+        .four-card-feature-page-hero-section {
+            color: $darken;
+            margin-bottom: 7.6rem;
+
+            &-heading {
+                font-size: 2.4rem;
+                letter-spacing: 0.17px;
+                font-weight: 200;
+                margin-bottom: 1.3rem;
+
+                strong {
+                    font-weight: 500;
+                }
+            }
+
+            &-description {
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+                letter-spacing: 0.1px;
+                font-weight: 300;
+            }
+        }
+
+        .four-card-feature-card-list-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+
+            .four-card-feature-card-list-item {
+                background-color: white;
+                padding: 2.8rem;
+                border-top: 3.55px solid transparent;
+                border-radius: 4px;
+                box-shadow: 0px 1px 12px 0px rgba(77, 79, 98, 0.5);
+
+                &.gold {
+                    border-color: $gold;
+                }
+
+                &.light-blue {
+                    border-color: $light-blue;
+                }
+
+                &.orange-red {
+                    border-color: $orange-red;
+                }
+
+                &.blue {
+                    border-color: $blue;
+                }
+
+                .four-card-feature-card-list-item-content {
+                    color: $darken;
+                    margin-bottom: 3.3rem;
+                    &-heading {
+                        font-size: 2rem;
+                        font-weight: 600;
+                        line-height: auto;
+                        margin-bottom: 1rem;
+                    }
+
+                    &-description {
+                        font-size: 1.3rem;
+                        letter-spacing: 0.09px;
+                        line-height: 2.3rem;
+                    }
+                }
+
+                .four-card-feature-card-list-item-logo {
+                    display: block;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}
