@@ -46,7 +46,7 @@
                 font-size: 1.5rem;
                 line-height: 2.5rem;
                 letter-spacing: 0.1px;
-                font-weight: 300;
+                font-weight: 200;
             }
         }
 
@@ -110,6 +110,10 @@
                     font-size: 3.6rem;
                     line-height: 5.1rem;
                     margin-bottom: 1.6rem;
+                }
+
+                &-description {
+                    min-height: 5rem;
                 }
             }
 
