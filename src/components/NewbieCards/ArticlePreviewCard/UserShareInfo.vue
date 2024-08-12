@@ -13,13 +13,17 @@
                 }">
                     <p class="share-text-tag">SHARE</p>
                     <div class="user-share-info-links">
-                        <a v-if="shareLinks.facebook" :href="shareLinks.facebook" class="user-share-info-link">
+                        <a v-if="shareLinks.facebook" target="_blank" :href="shareLinks.facebook" class="user-share-info-link">
                             <img :src="iconFacebook" alt="facebook icon">
                         </a>
-                        <a v-if="shareLinks.twitter" :href="shareLinks.twitter" class="user-share-info-link">
+                        <a v-if="shareLinks.twitter" 
+                        target="_blank"
+                        :href="shareLinks.twitter" class="user-share-info-link">
                             <img :src="iconTwitter" alt="twitter icon">
                         </a>
-                        <a v-if="shareLinks.pinterest" :href="shareLinks.pinterest" class="user-share-info-link">
+                        <a v-if="shareLinks.pinterest" 
+                        target="_blank"
+                        :href="shareLinks.pinterest" class="user-share-info-link">
                             <img :src="iconPinterest" alt="pinterest icon">
                         </a>
 

@@ -31,8 +31,8 @@
     }
 
     const shareLinks =  {
-        facebook: 'www.facebook.com',
-        twitter: 'twitter.com',
-        pinterest: 'pinterest.com',
+        facebook: 'https://www.facebook.com',
+        twitter: 'https://www.twitter.com',
+        pinterest: 'https://www.pinterest.com',
     }
 </script>
