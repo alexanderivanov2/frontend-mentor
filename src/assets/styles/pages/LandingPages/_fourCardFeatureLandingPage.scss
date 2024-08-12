@@ -103,6 +103,7 @@
         }
 
         @media screen and (min-width: 925px) {
+            padding: 8rem 0;
             .four-card-feature-page-hero-section {
                 max-width: 54rem;
           
@@ -122,6 +123,7 @@
                 display: grid;
                 grid-template-rows: repeat(4, 125px);
                 grid-template-columns: repeat(3, 1fr);
+                gap: 3rem;
 
                 .four-card-feature-card-list-item {
                     max-width: 35rem;
