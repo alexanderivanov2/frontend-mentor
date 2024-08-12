@@ -27,7 +27,8 @@
                 </div>
                 <button class="user-share-info-share-btn" :class="{
                     'active': isShareOpen,
-                }" @click="toggleIsOpen">
+                }" 
+                @click="toggleIsOpen">
                     <img :src="iconShare" alt="share icon">
                 </button>
             </div>

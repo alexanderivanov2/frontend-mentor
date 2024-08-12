@@ -43,7 +43,7 @@ const data = [
         heading: 'Supervisor',
         description: 'Monitors activity to identify project roadblocks',
         customClass: 'light-blue',
-        img: iconCalculator
+        img: iconSupervisor,
     },
     {
         heading: 'Team Builder',
