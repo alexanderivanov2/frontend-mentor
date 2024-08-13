@@ -120,6 +120,11 @@ const router = createRouter({
       name: 'FourCardFeatureLandingPage',
       component: () => import('../views/NewbiePages/NewbieLandingPages/FourCardFeatureLandingPage.vue')
     },
+    {
+      path: '/newbie/huddle-landing-page',
+      name: 'HuddleLandingPage',
+      component: () => import('../views/NewbiePages/NewbieLandingPages/HuddleLandingPage.vue')
+    },
   ]
 })
 
