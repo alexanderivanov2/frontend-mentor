@@ -6,7 +6,7 @@ const newbieCardsList = [
     {
         cardName: 'Huddle Landing Page',
         routeName: 'HuddleLandingPage',
-        cardImgURL: 'assets/images/challengeCardImages/four-card-feature-landing-page-challenge.webp',
+        cardImgURL: 'assets/images/challengeCardImages/huddle-landing-page-card-challenge.webp',
         difficulty: 1,    
     },
     {
