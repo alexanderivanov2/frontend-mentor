@@ -143,6 +143,16 @@ const newbieCardsList = [
     },
 ]
 
+const juniorCardsList = [
+    {
+        cardName: 'Product List With Cart',
+        routeName: 'ProductListWithCart',
+        cardImgURL: 'assets/images/challengeCardImages/product-card-with-list-card-challenge.webp',
+        difficulty: 2,    
+    },
+]
+
 export {
     newbieCardsList,
+    juniorCardsList,
 }

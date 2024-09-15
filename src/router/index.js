@@ -125,6 +125,11 @@ const router = createRouter({
       name: 'HuddleLandingPage',
       component: () => import('../views/NewbiePages/NewbieLandingPages/HuddleLandingPage.vue')
     },
+    {
+      path: '/junior/product-list-with-cart',
+      name: 'ProductListWithCart',
+      component: () => import('../views/JuniorPages/ProductListWithCart/ProductListWithCartView.vue')
+    },
   ]
 })
 

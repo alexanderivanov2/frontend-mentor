@@ -1,7 +1,7 @@
 <template>
     <div class="embla" ref="emblaRef">
         <div class="embla__container">
-            <div class="embla__slide" v-for="card in newbieCardsList">
+            <div class="embla__slide" v-for="card in cardsList">
                 <ChallengeCard 
                   :title="card.cardName"
                   :imgUrl="card.cardImgURL"
@@ -17,7 +17,20 @@
 import { EmblaOptionsType } from 'embla-carousel'
 import emblaCarouselVue from 'embla-carousel-vue'
 import ChallengeCard from './ChallengeCard.vue';
-import { newbieCardsList } from '../../assets/constants/homePageConstants/newbieCardsConstants' 
+// import { newbieCardsList, juniorCardsList } from '../../assets/constants/homePageConstants/cardsConstants' 
+
+interface CardsList {
+  	cardName: string;
+    routeName: string;
+    cardImgURL: string;
+    difficulty: number;   
+}
+
+interface Props {
+	cardsList: CardsList[]
+}
+
+const props = defineProps<Props>()
 
 const options: EmblaOptionsType = {
   dragFree: false,

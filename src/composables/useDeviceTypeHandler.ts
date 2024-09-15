@@ -1,4 +1,4 @@
-import { ref, onBeforeMount, onBeforeUnmount } from 'vue'
+import { ref, computed, onBeforeMount, onBeforeUnmount } from 'vue'
 
 
 interface devicesTypes {
@@ -46,6 +46,8 @@ export const useDeviceTypeHandler = (deviceParams=defaultDevicesParams) => {
         }
     }
 
+    const getDeviceType = computed(() => isMobile.value ? 'mobile' : isTablet.value ? 'tablet' : 'desktop')
+
 
     onBeforeMount(() => {
         handleResize()
@@ -60,5 +62,6 @@ export const useDeviceTypeHandler = (deviceParams=defaultDevicesParams) => {
         isMobile,
         isTablet,
         isDesktop,
+        getDeviceType,
     }
 }
