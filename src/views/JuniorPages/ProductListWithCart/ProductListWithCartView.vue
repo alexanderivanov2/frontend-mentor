@@ -16,7 +16,10 @@
                 </div>
             </div>
             <div class="product-list-cart-wrapper">
-                <ProductCart />
+                <ProductCart
+                    :cartItems="cartItems"
+                    @erase-cart-item="eraseCartItem"
+                />
             </div>
         </div>
 
@@ -25,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, provide } from 'vue'
+import { ref, provide } from 'vue'
 import ProductCard from './ProductCard.vue'
 import ProductCart from './ProductCart.vue'
 import { useDeviceTypeHandler } from '../../../composables/useDeviceTypeHandler'
@@ -46,18 +49,19 @@ const addCartItem = (id:number, item: CartItemProduct ) => {
 }
 
 const removeCartItem = (id:number) => {
-    if (cartItems.value[id] && cartItems.value[id].quantity == 1) {
-        console.log(cartItems.value)
-        delete cartItems.value[id]
-        console.log(cartItems.value)
-        cartItems.value = { ...cartItems.value }
+    if (cartItems.value[id] && cartItems.value[id].quantity == 1) {        
+        eraseCartItem(id)
         return
     }
 
     cartItems.value[id].quantity -= 1
 }
 
+const eraseCartItem = (id:number) => {
+    delete cartItems.value[id]
+    cartItems.value = { ...cartItems.value }
+}
+
 provide('addCartItem', addCartItem)
 provide('removeCartItem', removeCartItem)
-provide('cartItems', cartItems)
 </script>
