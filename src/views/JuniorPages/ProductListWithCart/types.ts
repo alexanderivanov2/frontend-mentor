@@ -15,6 +15,7 @@ interface CartItemProduct {
     name: string;
     price: number;
     quantity: number;
+    thumbnail: string
 }
 
 interface CartItems {

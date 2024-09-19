@@ -38,6 +38,7 @@ const addItemToCart = () => {
         name: props.product.name,
         price: props.product.price,
         quantity: 0,
+        thumbnail: props.product.image.thumbnail,
     }
 
     addItem(props.product.id, item)

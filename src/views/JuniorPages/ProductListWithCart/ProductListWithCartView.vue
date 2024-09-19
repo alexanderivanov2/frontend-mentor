@@ -18,6 +18,7 @@
             <div class="product-list-cart-wrapper">
                 <ProductCart
                     :cartItems="cartItems"
+                    :device-type="getDeviceType"
                     @erase-cart-item="eraseCartItem"
                 />
             </div>
