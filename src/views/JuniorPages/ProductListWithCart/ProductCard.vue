@@ -4,7 +4,9 @@
         <div class="product-card-image-wrapper">
             <img :src="product.image[deviceType]" 
                 alt="product image"
-                class="product-card-img">
+                class="product-card-img"
+                :class="{ 'with-border': productQuantity}"
+                >
            <ProductCardButton
                 :product="product"
                 :productQuantity="productQuantity"
