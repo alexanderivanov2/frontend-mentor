@@ -1,18 +1,20 @@
 <template>
-    <button 
-        class="product-card-button"
-        :class="[productQuantity ? 'add-remove-btn' : 'add-to-cart-btn']"
-        v-on:click="!productQuantity ? addItemToCart() : null"  
-    >
-    <template v-if="!productQuantity"
-    >
-        <img :src="iconAddToCart" alt="">Add To Cart
-    </template>
-    <template v-else>
-        <img :src="iconDecrement" alt="minus" @click.stop="removeItemFromCart">
-        <p>{{ productQuantity }}</p>
-        <img :src="iconIncrement" alt="plus" @click.stop="addItemToCart">
-    </template>
+    <button class="product-card-button" :class="[productQuantity ? 'add-remove-btn' : 'add-to-cart-btn']"
+        v-on:click="!productQuantity ? addItemToCart() : null">
+        <template v-if="!productQuantity">
+
+            <img :src="iconAddToCart" alt="">Add To Cart
+
+        </template>
+        <template v-else>
+            <div class="img-wrapper">
+                <img :src="iconDecrement" alt="minus" @click.stop="removeItemFromCart">
+            </div>
+            <p>{{ productQuantity }}</p>
+            <div class="img-wrapper">
+                <img :src="iconIncrement" alt="plus" @click.stop="addItemToCart">
+            </div>
+        </template>
     </button>
 </template>
 
@@ -30,8 +32,8 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const addItem = inject<(id: number, item: CartItemProduct ) => void>
-('addCartItem', () => {})
+const addItem = inject<(id: number, item: CartItemProduct) => void>
+    ('addCartItem', () => { })
 
 const addItemToCart = () => {
     const item: CartItemProduct = {
@@ -43,7 +45,7 @@ const addItemToCart = () => {
 
     addItem(props.product.id, item)
 }
-const removeItem = inject<(id: number) => void>('removeCartItem', () => {})
+const removeItem = inject<(id: number) => void>('removeCartItem', () => { })
 
 const removeItemFromCart = () => removeItem(props.product.id)
 

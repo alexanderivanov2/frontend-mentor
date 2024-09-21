@@ -73,6 +73,11 @@ $green: #1EA575;
                                     width: 2rem;
                                     height: 2rem;
                                 }
+
+                                &:hover {
+                                    border-color: $red;
+                                    color: $red;
+                                }
                             }
 
                             &.add-remove-btn {
@@ -80,14 +85,31 @@ $green: #1EA575;
                                 background-color: $red;
                                 color: white;
                                 padding: 1.2rem;
-
-                                img {
+                                
+                                .img-wrapper {
                                     border: 1px solid white;
                                     border-radius: 50%;
-                                    padding: 3px;
-                                    width: 1.5rem;
-                                    height: 1.5rem;
+                                    display: flex;
+                                    transition: all .25s ease-in;
+                                    img {
+                                        padding: 3px;
+                                        width: 1.5rem;
+                                        height: 1.5rem;
+                                    }
+
+
+                                    &:hover {
+
+                                        background-color: white;
+
+                                        img {
+                                            filter: brightness(0) saturate(100%) invert(26%) sepia(85%) saturate(6205%) hue-rotate(19deg) brightness(95%) contrast(88%);
+                                        }
+
+                                    }
                                 }
+
+
                             }
 
                         }
@@ -116,7 +138,6 @@ $green: #1EA575;
             }
         }
     }
-
 
     .product-list-cart-wrapper {
         width: 100%;
@@ -178,9 +199,35 @@ $green: #1EA575;
                         font-weight: 900;
                     }
                 }
+
+                &-with-items-eco-message {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 1.4rem 1rem;
+                    background-color: $rose-50;
+                    border-radius: 8px;
+                    margin-bottom: 2.4rem;
+                    
+                    .carbon-neutral-message {
+                        text-align: center;
+                        font-size: 1.4rem;
+                        
+                        strong {
+                            font-weight: bold;
+                        }
+                    }                    
+                }
+
+                .confirm-order-btn {
+                    transition: background-color .5s ease-in-out;
+                    &:hover {
+                       background-color: darken($red, 10%);
+                    }
+                }
             }
         }
-
     }
 
     @media screen and (min-width: 768px) {
@@ -197,8 +244,6 @@ $green: #1EA575;
                     flex-wrap: wrap;
                     justify-content: center;
                     gap: 2rem;
-
-
 
                     .product-card {
                         flex: 1 1 33.3%;
@@ -227,7 +272,6 @@ $green: #1EA575;
                     }
                 }
             }
-
         }
 
         .product-list-cart-wrapper {
@@ -304,7 +348,7 @@ $green: #1EA575;
         .cart-item:first-child {
             margin-top: 0;
         }
-    
+
         &-footer {
             display: flex;
             justify-content: space-between;
@@ -362,7 +406,7 @@ $green: #1EA575;
         .cart-item-info-overall-price {
             color: $rose-900;
             font-size: 1.6rem;
-            font-weight: 900; 
+            font-weight: 900;
             margin-left: auto;
         }
     }
@@ -370,6 +414,7 @@ $green: #1EA575;
     &-img-wrapper {
         width: 4.8rem;
         height: 4.8rem;
+
         img {
             width: 4.8rem;
             height: 4.8rem;
@@ -429,7 +474,8 @@ $green: #1EA575;
     }
 }
 
-#productListWithCart, .product-cart-modal {
+#productListWithCart,
+.product-cart-modal {
     .btn {
         width: 100%;
         color: $rose-50;

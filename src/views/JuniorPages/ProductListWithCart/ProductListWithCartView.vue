@@ -20,6 +20,7 @@
                     :cartItems="cartItems"
                     :device-type="getDeviceType"
                     @erase-cart-item="eraseCartItem"
+                    @reset-cart-items="resetCartItems"
                 />
             </div>
         </div>
@@ -62,6 +63,8 @@ const eraseCartItem = (id:number) => {
     delete cartItems.value[id]
     cartItems.value = { ...cartItems.value }
 }
+
+const resetCartItems = () => cartItems.value = {}
 
 provide('addCartItem', addCartItem)
 provide('removeCartItem', removeCartItem)

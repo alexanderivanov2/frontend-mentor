@@ -9,8 +9,7 @@ body {
     -webkit-tap-highlight-color: transparent;
 
     &.open-modal {
-        overflow-y: auto;
-        overflow-x: hidden;
+        overflow: hidden;
 
         &::after {
             content: '';
