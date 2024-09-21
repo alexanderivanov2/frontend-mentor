@@ -59,7 +59,6 @@ $green: #1EA575;
                             border-radius: 50px;
                             border: 1px solid $rose-400;
                             font-size: 1.4rem;
-                            font-weight: 600;
                             line-height: auto;
                             cursor: pointer;
                             transition: all ease-in-out .5s;
@@ -232,6 +231,7 @@ $green: #1EA575;
 
     @media screen and (min-width: 768px) {
         .product-list-with-cart-view-content {
+            padding: 4rem;
             .product-list-wrapper {
                 .product-list-category {
                     flex: 1 1 100%;
@@ -285,6 +285,7 @@ $green: #1EA575;
     @media screen and (min-width: 1440px) {
         .product-list-with-cart-view-content {
             flex-direction: row;
+            padding: 8.8rem 11.2rem;
         }
 
         .product-list-wrapper {
