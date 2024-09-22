@@ -130,6 +130,11 @@ const router = createRouter({
       name: 'ProductListWithCart',
       component: () => import('../views/JuniorPages/ProductListWithCart/ProductListWithCartView.vue')
     },
+    {
+      path: '/junior/mortgage-repayment-calculator',
+      name: 'MortgageRepaymentCalculator',
+      component: () => import('../views/JuniorPages/MortgageRepaymentCalculator/MortgageRepaymentCalculatorView.vue')
+    },
   ]
 })
 

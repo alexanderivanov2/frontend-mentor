@@ -145,6 +145,12 @@ const newbieCardsList = [
 
 const juniorCardsList = [
     {
+        cardName: 'Mortgage Repayment Calculator',
+        routeName: 'MortgageRepaymentCalculator',
+        cardImgURL: 'assets/images/challengeCardImages/mortgage-repayment-calculator-card-challenge.webp',
+        difficulty: 2,    
+    },
+    {
         cardName: 'Product List With Cart',
         routeName: 'ProductListWithCart',
         cardImgURL: 'assets/images/challengeCardImages/product-card-with-list-card-challenge.webp',
