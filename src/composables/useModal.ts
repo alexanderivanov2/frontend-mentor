@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { onUnmounted, ref } from 'vue'
 
 const showModalState = ref(false)
 
@@ -13,6 +13,10 @@ export function useModal() {
         showModalState.value = false
 
     }
+
+    onUnmounted(() => {
+        closeModal()
+    })
     return {
         showModalState,
         showModal,
