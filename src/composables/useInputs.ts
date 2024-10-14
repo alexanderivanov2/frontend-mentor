@@ -20,7 +20,6 @@ function useInputs() {
 
     const baseGetErrorMessage = (inputValue: Ref<string | number>, inputValid: Ref<{ message: string, isValid: boolean }>, emptyMessage?: string, invalidMessage?: string) => {
         return (isValid: boolean) => {
-            debugger
             inputValid.value.isValid = isValid && !!inputValue.value
 
             if(inputValid.value.isValid) {
