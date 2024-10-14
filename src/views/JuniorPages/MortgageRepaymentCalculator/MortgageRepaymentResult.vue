@@ -46,6 +46,6 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const monthlyRepay = computed(() => Number(props.mortgageResult).toFixed(2))
-const totalRepay = computed(() => (Number(props.mortgageResult) * Number(props.mortgageTerm)).toFixed(2))
+const totalRepay = computed(() => (Number(props.mortgageResult) * (Number(props.mortgageTerm) * 12)).toFixed(2))
 
 </script>
