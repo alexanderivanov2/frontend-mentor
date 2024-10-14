@@ -14,14 +14,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-const input = ref<HTMLInputElement | null>(null);
+import { InputHTMLAttributes, ref } from 'vue';
+const input = ref<HTMLInputElement | InputHTMLAttributes | null>(null);
 
 const emit = defineEmits(['update:modelValue', 'focusInput', 'blurInput', 'isValid'])
 
 interface Props {
     id: string,
-    modelValue: string,
+    modelValue?: string | null,
     type: string,
     placeholder?: string,
     min?: number,
@@ -46,22 +46,29 @@ const validateInput = (value: string, data?: string | null) => {
     if (value.length > props.max && data) return false  
 
     if (props.validate && value) {
-        console.log(value.length)
         return props.validate.test(value)
     }
 
     return true
 }
 
-const handleInput = (e: InputEvent) => {
+const handleInput = (e: InputEvent | Event ) => {
     const value = (e?.currentTarget as HTMLInputElement)?.value
-    const isValidInput = validateInput(value, e?.data)
+
+    if (props.type === 'radio') {
+        emit('update:modelValue', value)
+        return 
+    }
+
+    const data = e instanceof InputEvent ? e?.data : '' 
+
+    const isValidInput = validateInput(value, data)
     
     if (props.strict) {
         if(isValidInput) {
             emit('update:modelValue', value)
         } else if(input.value) {
-            input.value.value = props.modelValue
+            input.value.value = props.modelValue ? props.modelValue : null
         }
     } else {
         emit('update:modelValue', value)
@@ -71,9 +78,9 @@ const handleInput = (e: InputEvent) => {
 
 const handleBlur = (e: Event) => {
     if (props.formater && typeof props.formater == 'function') {
-        const value = props.formater(props.modelValue) 
+        const value = props.modelValue && props.formater(props.modelValue) 
         emit('update:modelValue', value)
-        if (input.value ) {
+        if (input.value && value) {
             input.value.value = value
         }
     }
