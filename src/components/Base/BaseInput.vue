@@ -1,47 +1,37 @@
 <template>
     <input
         :id="id"
-        ref="input"
         :type="type"
-        :min-length="min"
-        :max-length="max"
-        :placeholder="placeholder"
         :value="modelValue"
-        @input="handleInput"
-        @focus="handleFocus"
-        @blur="handleBlur"
+        :placeholder="placeHolder"
+        @input="useVModel ? handleInput($event) : null"
     >
 </template>
 
 <script setup lang="ts">
-import { InputHTMLAttributes, ref } from 'vue';
-const input = ref<HTMLInputElement | InputHTMLAttributes | null>(null);
-
-const emit = defineEmits(['update:modelValue', 'focusInput', 'blurInput', 'isValid'])
-
+import { Ref } from 'vue'
 interface Props {
     id: string,
-    modelValue?: string | null,
     type: string,
-    placeholder?: string,
-    min?: number,
-    max?: number,
-    required?: boolean,
-    validate?: RegExp,
-    strict?: boolean
-    formater?: (value:string) => string
+    modelValue: string | Ref<string>,
+    placeHolder?: string,
+    useVModel?: boolean,
 }
 
-
-const props = withDefaults(defineProps<Props>(), {
-    type: 'text',
-    placeholder: '',
-    min: 0,
-    max: 30,
-    required: false,
-    strict: true,
+withDefaults(defineProps<Props>(), {
+    modelValue: '',
+    placeHolder: '',
+    useVModel: false,
 })
+const emit = defineEmits(['update:modelValue'])
 
+const handleInput = (e: Event) => {
+    emit('update:modelValue', (e.target as HTMLInputElement).value)
+}
+</script>
+
+
+<!-- 
 const validateInput = (value: string, data?: string | null) => {
     if (value.length > props.max && data) return false  
 
@@ -93,4 +83,4 @@ const handleBlur = (e: Event) => {
 const handleFocus = (e: Event) => {
     emit('focusInput', props.id, props.modelValue)
 }
-</script>
+</script> -->
