@@ -17,6 +17,7 @@ export function useModal() {
     onUnmounted(() => {
         closeModal()
     })
+    
     return {
         showModalState,
         showModal,
