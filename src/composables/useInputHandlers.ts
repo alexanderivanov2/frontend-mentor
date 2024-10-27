@@ -1,9 +1,9 @@
 import { Ref, ref } from "vue";
-import { BaseInput, BaseInputConfig } from "../types/inputTypes";
+import { BaseInputType, BaseInputConfig } from "../types/inputTypes";
 
 const useInputHandlers = () => {
     const createBaseInput = () => {
-        return ref<BaseInput>({
+        return ref<BaseInputType>({
             value: '',
             isValid: true,
             errorMessage: '',
@@ -11,7 +11,7 @@ const useInputHandlers = () => {
     }
     
     const handleInput =
-        (input: Ref<BaseInput>, config?: BaseInputConfig) => (e: Event) => {
+        (input: Ref<BaseInputType>, config?: BaseInputConfig) => (e: Event) => {
             const inputElement = e.currentTarget as HTMLInputElement;
             const value = inputElement.value;
             const validator = config?.validator;
@@ -35,7 +35,7 @@ const useInputHandlers = () => {
         };
 
 
-    const handleFocusInputIntlDeformat = (input: Ref<BaseInput>) => (e: Event) => {
+    const handleFocusInputIntlDeformat = (input: Ref<BaseInputType>) => (e: Event) => {
         const inputElement = e.currentTarget as HTMLInputElement
         if (input.value.isValid) {
             inputElement.value = inputElement.value.replaceAll(',', '')
@@ -46,7 +46,7 @@ const useInputHandlers = () => {
         }
     };
 
-    const handleBlurInputIntlFormat = (input: Ref<BaseInput>) => (e: Event) => {
+    const handleBlurInputIntlFormat = (input: Ref<BaseInputType>) => (e: Event) => {
         const inputElement = e.currentTarget as HTMLInputElement
         if (input.value.isValid) {
             inputElement.value = Intl.NumberFormat("en-US").format(Number(inputElement.value))
