@@ -5,8 +5,10 @@
         <BaseLabel :for="inputField.id" v-if="inputField.label">
             {{ inputField.label }}
         </BaseLabel>
-        <BaseInput :id="inputField.id" :type="type" v-model="input.value" @input="handleInput"
-            @focus="handleFocus" @blur="handleBlur" />
+        <div class="input-wrapper">
+            <BaseInput :id="inputField.id" :type="type" v-model="input.value" @input="handleInput" @focus="handleFocus"
+                @blur="handleBlur" />
+        </div>
         <BaseErrorMessage v-if="!input.isValid">
             <p class="error-message">{{ input.errorMessage }}</p>
         </BaseErrorMessage>
@@ -38,11 +40,11 @@ const props = withDefaults(defineProps<Props>(), {
     type: 'text',
     inputHandlers: () => {
         return {
-           
+
         }
     },
-    handleInput: (e: Event) => {},
-    handleFocus: (e: Event) => {},
-    handleBlur: (e: Event) => {},
+    handleInput: (e: Event) => { },
+    handleFocus: (e: Event) => { },
+    handleBlur: (e: Event) => { },
 });
 </script>
