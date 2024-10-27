@@ -147,8 +147,9 @@
                     }
 
                     &.mortgage-type-fieldset {
-                        .input-radio-wrapper {
+                        #RadioInputField .radio-input-wrapper {
                             display: flex;
+                            flex-direction: c;
                             justify-content: flex-start;
                             align-items: center;
                             gap: 1.6rem;
