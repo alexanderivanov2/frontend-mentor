@@ -1,5 +1,5 @@
 <template>
-    <label>
+    <label :for="for" >
         <slot></slot>
     </label>
 </template>
