@@ -3,6 +3,9 @@
         <label :for="id+'Lable'"> {{ label }}</label>
         <div v-for="(value, key) in radioInputs" :key="value"
             class="radio-input-wrapper"
+            :class="{
+                'checked': value === input.value
+            }"
         >
             <label :for="value">{{ value }}</label>
             <BaseInput
