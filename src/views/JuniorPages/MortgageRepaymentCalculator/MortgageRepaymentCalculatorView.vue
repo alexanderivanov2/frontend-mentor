@@ -2,12 +2,14 @@
     <div id="mortgageRepaymentCalculator">
         <div class="mortgage-repayment-calculator">
             <div class="mortgage-repayment-calculator-form">
-                <h1 class="mortgage-repayment-calculator-form-heading">
-                    Mortgage Calculator
-                </h1>
-                <button class="mortgage-repayment-calculator-form-clear-all-btn" @click="clearAll">
-                    Clear All
-                </button>
+                <div class="mortgage-repayment-calculator-form-head">
+                    <h1 class="mortgage-repayment-calculator-form-heading">
+                        Mortgage Calculator
+                    </h1>
+                    <button class="mortgage-repayment-calculator-form-clear-all-btn" @click="clearAll">
+                        Clear All
+                    </button>
+                </div>
                 <form class="mortgage-repayment-calculator-form-main" @submit="calculateRepayments">
                     <fieldset class="mortgage-amount-fieldset">
                         <BaseFormInput :inputField="{
@@ -32,7 +34,9 @@
                     <fieldset class="mortgage-type-fieldset">
 
                         <BaseRadioInput :id="'mortgageType'" :label="'Mortgage Type'" :radioInputs="mortgageRadioInputs"
-                            :input="mortgageTypeInput" />
+                            :input="mortgageTypeInput"
+                            :handleInput="handleMortgageTypeInput"    
+                        />
                     </fieldset>
                     <button class="mortgage-repayment-calculator-form-main-submit" :class="{
                         'invalid': !isFormInputsValid
@@ -57,7 +61,7 @@ import BaseRadioInput from '../../../components/Base/BaseRadioInput.vue';
 import { useInputHandlers } from '../../../composables/useInputHandlers';
 import useValidator from '../../../composables/useValidator';
 
-const { handleInput, handleFocusInputIntlDeformat, handleBlurInputIntlFormat, createBaseInput } = useInputHandlers()
+const { handleInput, handleRadioInput, handleFocusInputIntlDeformat, handleBlurInputIntlFormat, createBaseInput } = useInputHandlers()
 const { numberValidator } = useValidator();
 
 const inputMortgageAmount = createBaseInput()
@@ -72,6 +76,7 @@ const inputMortgageInterestRate = createBaseInput()
 const handleMortgageInterestRateBaseInput = handleInput(inputMortgageInterestRate, { strict: true, validator: numberValidator })
 
 const mortgageTypeInput = createBaseInput();
+const handleMortgageTypeInput = handleRadioInput(mortgageTypeInput)
 const mortgageRadioInputs = ['repayment', 'interst only'];
 
 const inputs = [inputMortgageAmount, inputMortgageInterestRate, inputMortgageTerm, mortgageTypeInput];
@@ -102,7 +107,7 @@ const isFormInputsValid = computed<boolean>(() => {
 const calculateRepayments = (e: Event) => {
     e.preventDefault()
     const isFormValid = validateForm()
-    debugger
+    
     if (isFormValid) {
         principal.value = Number(inputMortgageAmount.value.value)
         monthlyInterestRate.value = (Number(inputMortgageInterestRate.value.value) / 100) / 12
