@@ -34,6 +34,15 @@ const useInputHandlers = () => {
             inputElement.value = config?.strict ? input.value.value : value;
         };
 
+    const handleRadioInput = (input: Ref<BaseInputType>) => (e: Event) => {
+        const target = e.target as HTMLInputElement;
+        input.value.value = target.value
+
+        if (input?.value.isValid === false) {
+            input.value.isValid = true
+            input.value.errorMessage = ''
+          }
+    }
 
     const handleFocusInputIntlDeformat = (input: Ref<BaseInputType>) => (e: Event) => {
         const inputElement = e.currentTarget as HTMLInputElement
@@ -56,6 +65,7 @@ const useInputHandlers = () => {
 
     return {
         handleInput,
+        handleRadioInput,
         handleFocusInputIntlDeformat,
         handleBlurInputIntlFormat,
         createBaseInput,
