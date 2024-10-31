@@ -15,7 +15,7 @@
                 :value="value"
                 :checked="value === input.value"
                 :model-value="input"
-                @input="updateValue"
+                @input="handleInput"
             />
         </div>
         <BaseErrorMessage v-if="!input.isValid">
@@ -34,17 +34,8 @@ interface Props {
     label: string;
     input: BaseInputType;
     radioInputs: string[];
+    handleInput: (e: Event) => void;
 }
 
 const props = defineProps<Props>()
-
-const updateValue = (event: Event) => {
-  const target = event.target as HTMLInputElement;
-  props.input.value = target.value
-
-  if (props.input?.isValid === false) {
-    props.input.isValid = true
-    props.input.errorMessage = ''
-  }
-}
 </script> 
