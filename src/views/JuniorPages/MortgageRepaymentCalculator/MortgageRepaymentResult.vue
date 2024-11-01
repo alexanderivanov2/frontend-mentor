@@ -14,12 +14,12 @@
                 again.</p>
             <div class="mortgage-repayment-calculator-result-calculations-repays">
                 <div class="monthly">
-                    <p class="monthly-heading">Your monthly {{ mortgageType }}</p>
+                    <p class="monthly-heading">Your monthly {{ mortgageResult.type }}</p>
                     <p class="monthly-repayment"> ${{ monthlyValue }}</p>
                 </div>
                 <div class="break-line"></div>
                 <div class="total">
-                    <p class="total-heading">Total you'll {{ mortgageType }} over the term</p>
+                    <p class="total-heading">Total you'll {{ mortgageResult.type }} over the term</p>
                     <p class="total-repayment"> ${{ totalValue }}</p>
                 </div>
             </div>
@@ -36,7 +36,6 @@ import { computed } from 'vue';
 
 interface Props {
     mortgageResult: mortgageResultType;
-    mortgageType: string;
 }
 
 const props = defineProps<Props>()

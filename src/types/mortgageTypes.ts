@@ -1,6 +1,7 @@
 interface mortgageResultType {
     monthly: number,
     total: number,
+    type: string,
 }
 
 

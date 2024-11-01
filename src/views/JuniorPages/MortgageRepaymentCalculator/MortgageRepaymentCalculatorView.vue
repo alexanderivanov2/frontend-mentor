@@ -47,7 +47,7 @@
                 </form>
             </div>
             <MortgageRepaymentResult 
-                :mortgage-result="mortgageResult" :mortgage-type="mortgageTypeInput.value" />
+                :mortgage-result="mortgageResult" />
         </div>
     </div>
 </template>
@@ -58,9 +58,12 @@ import calculatorIcon from '/assets/images/juniorChallenges/mortgage-repayment-c
 import MortgageRepaymentResult from './MortgageRepaymentResult.vue';
 import BaseFormInput from '../../../components/Base/BaseFormInput.vue';
 import BaseRadioInput from '../../../components/Base/BaseRadioInput.vue';
-import { useInputHandlers } from '../../../composables/useInputHandlers';
 import useValidator from '../../../composables/useValidator';
+import { useInputHandlers } from '../../../composables/useInputHandlers';
+import { useDeviceTypeHandler } from '../../../composables/useDeviceTypeHandler';
+import { mortgageResultType } from '../../../types/mortgageTypes';
 
+const { isDesktop } = useDeviceTypeHandler()
 const { handleInput, handleRadioInput, handleFocusInputIntlDeformat, handleBlurInputIntlFormat, createBaseInput } = useInputHandlers()
 const { numberValidator } = useValidator();
 
@@ -84,9 +87,10 @@ const inputs = [inputMortgageAmount, inputMortgageInterestRate, inputMortgageTer
 const principal = ref<number>(0)
 const monthlyInterestRate = ref<number>(0)
 const numOfPayments = ref<number>(0)
-const mortgageResult = ref({
+const mortgageResult = ref<mortgageResultType>({
     monthly: 0,
     total: 0,
+    type: '',
 })
 
 const clearAll = () => {
@@ -98,6 +102,7 @@ const clearAll = () => {
 
     mortgageResult.value.monthly = 0
     mortgageResult.value.total = 0
+    mortgageResult.value.type = ''
 }
 
 const isFormInputsValid = computed<boolean>(() => {
@@ -114,8 +119,13 @@ const calculateRepayments = (e: Event) => {
         numOfPayments.value = Number(inputMortgageTerm.value.value) * 12
 
         mortgageResult.value.monthly = mortgageTypeInput.value.value === 'repayment' ? repaymentCalculation() : interestOnlyCalculation()
-
         mortgageResult.value.total = mortgageResult.value.monthly * numOfPayments.value
+        mortgageResult.value.type = mortgageTypeInput.value.value
+
+        if(!isDesktop.value) {
+            const element = document.querySelector('.mortgage-repayment-calculator-result');
+            element &&  element.scrollIntoView({behavior: 'smooth'})
+        }
     }
 }
 
