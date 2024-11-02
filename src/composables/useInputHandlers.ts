@@ -21,14 +21,20 @@ const useInputHandlers = () => {
                 if (isValid) {
                     input.value.value = value;
                 }
+            } else {
+                input.value.value = value;
             }
 
-            if (!isValid && config?.errorHandling) {
+            if (!isValid) {
                 input.value.isValid = false;
-                input.value.errorMessage = config?.errorHandling.errorMessage;
+                if (config?.errorHandling) {
+                    input.value.errorMessage = config?.errorHandling.errorMessage;
+                }
             } else if (!input.value.isValid) {
                 input.value.isValid = true;
-                input.value.errorMessage = "";
+                if (config?.errorHandling) {
+                    input.value.errorMessage = "";
+                }
             }
 
             inputElement.value = config?.strict ? input.value.value : value;
@@ -41,7 +47,7 @@ const useInputHandlers = () => {
         if (input?.value.isValid === false) {
             input.value.isValid = true
             input.value.errorMessage = ''
-          }
+        }
     }
 
     const handleFocusInputIntlDeformat = (input: Ref<BaseInputType>) => (e: Event) => {
@@ -57,9 +63,11 @@ const useInputHandlers = () => {
 
     const handleBlurInputIntlFormat = (input: Ref<BaseInputType>) => (e: Event) => {
         const inputElement = e.currentTarget as HTMLInputElement
+        
+        if(inputElement.value === '') return ''
+        
         if (input.value.isValid) {
             inputElement.value = Intl.NumberFormat("en-US").format(Number(inputElement.value))
-
         }
     };
 
