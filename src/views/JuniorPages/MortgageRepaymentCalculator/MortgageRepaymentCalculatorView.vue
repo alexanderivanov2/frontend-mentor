@@ -80,7 +80,7 @@ const handleMortgageInterestRateBaseInput = handleInput(inputMortgageInterestRat
 
 const mortgageTypeInput = createBaseInput();
 const handleMortgageTypeInput = handleRadioInput(mortgageTypeInput)
-const mortgageRadioInputs = ['repayment', 'interst only'];
+const mortgageRadioInputs = ['repayment', 'interest only'];
 
 const inputs = [inputMortgageAmount, inputMortgageInterestRate, inputMortgageTerm, mortgageTypeInput];
 
