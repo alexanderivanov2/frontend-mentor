@@ -16,7 +16,6 @@ const useInputHandlers = () => {
             const value = config?.formatter ? config?.formatter(inputElement.value) : inputElement.value;
             const validator = config?.validator;
             const isValid = validator ? validator(value, config?.validatorConfig) : true;
-            debugger
             if (config?.strict) {
                 if (isValid) {
                     input.value.value = value;
