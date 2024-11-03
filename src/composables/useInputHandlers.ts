@@ -63,11 +63,10 @@ const useInputHandlers = () => {
 
     const handleBlurInputIntlFormat = (input: Ref<BaseInputType>) => (e: Event) => {
         const inputElement = e.currentTarget as HTMLInputElement
-        
-        if(inputElement.value === '') return ''
-        
+            
         if (input.value.isValid) {
-            inputElement.value = Intl.NumberFormat("en-US").format(Number(inputElement.value))
+            const numberFormat = Intl.NumberFormat("en-US").format(Number(inputElement.value))
+            inputElement.value = numberFormat === '0' ? '' : numberFormat
         }
     };
 
