@@ -66,7 +66,7 @@ const useInputHandlers = () => {
             
         if (input.value.isValid) {
             const numberFormat = Intl.NumberFormat("en-US").format(Number(inputElement.value))
-            inputElement.value = numberFormat === '0' ? '' : numberFormat
+            inputElement.value = numberFormat
         }
     };
 
