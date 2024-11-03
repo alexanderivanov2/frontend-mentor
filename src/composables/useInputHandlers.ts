@@ -55,10 +55,6 @@ const useInputHandlers = () => {
         if (input.value.isValid) {
             inputElement.value = inputElement.value.replaceAll(',', '')
         }
-
-        if(!input.value.value) {
-            inputElement.value = ''
-        }
     };
 
     const handleBlurInputIntlFormat = (input: Ref<BaseInputType>) => (e: Event) => {
