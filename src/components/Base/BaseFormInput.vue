@@ -43,8 +43,8 @@ const props = withDefaults(defineProps<Props>(), {
 
         }
     },
-    handleInput: (e: Event) => { },
-    handleFocus: (e: Event) => { },
-    handleBlur: (e: Event) => { },
+    handleInput: (e: Event) => {},
+    handleFocus: (e: Event) => {},
+    handleBlur: (e: Event) => {},
 });
 </script>

@@ -1,5 +1,5 @@
 import { Ref, ref } from "vue";
-import { BaseInputType, BaseInputConfig } from "../types/inputTypes";
+import { BaseInputType, BaseInputConfig, validatorConfig } from "../types/inputTypes";
 
 const useInputHandlers = () => {
     const createBaseInput = () => {
@@ -15,7 +15,7 @@ const useInputHandlers = () => {
             const inputElement = e.currentTarget as HTMLInputElement;
             const value = config?.formatter ? config?.formatter(inputElement.value) : inputElement.value;
             const validator = config?.validator;
-            const isValid = validator ? validator(value) : true;
+            const isValid = validator ? validator(value, config?.validatorConfig) : true;
             debugger
             if (config?.strict) {
                 if (isValid) {
@@ -57,14 +57,41 @@ const useInputHandlers = () => {
         }
     };
 
-    const handleBlurInputIntlFormat = (input: Ref<BaseInputType>) => (e: Event) => {
+    const handleBlurInputIntlFormat = (input: Ref<BaseInputType>, validate?: {
+        validator?: (value: any, config?: validatorConfig) => boolean,
+        validatorConfig?: validatorConfig
+    }) => (e: Event) => {
         const inputElement = e.currentTarget as HTMLInputElement
-            
+        
+        validate?.validator && handleValidation(input, validate)
+
         if (input.value.isValid) {
             const numberFormat = Intl.NumberFormat("en-US").format(Number(inputElement.value))
             inputElement.value = numberFormat === '0' ? '' : numberFormat
         }
     };
+
+    const handleBlurValidation =  (input: Ref<BaseInputType>, validate?: {
+        validator?: (value: any, config?: validatorConfig) => boolean,
+        validatorConfig?: validatorConfig
+    }) => (e: Event) => {
+        validate?.validator && handleValidation(input, validate)
+
+    }
+
+    const handleValidation = (input: Ref<BaseInputType>, validate?: {
+        validator?:(value: any, config?: validatorConfig) => boolean, validatorConfig?: validatorConfig}) => {
+        if (validate?.validator) {
+            const config = validate?.validatorConfig ?? {}
+            const isValid = validate?.validator(input.value.value, config)
+
+            if(isValid && !input.value.isValid) {
+                input.value.isValid = isValid
+                input.value.errorMessage = ''
+            }
+        }
+    }
+
 
     const formatNumberCommaSeparated = (value: string) => value.replaceAll(',', '')
 
@@ -73,6 +100,7 @@ const useInputHandlers = () => {
         handleRadioInput,
         handleFocusInputIntlDeformat,
         handleBlurInputIntlFormat,
+        handleBlurValidation,
         createBaseInput,
         formatNumberCommaSeparated,
     };

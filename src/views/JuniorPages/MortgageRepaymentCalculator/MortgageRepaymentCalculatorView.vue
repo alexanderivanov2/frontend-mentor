@@ -23,20 +23,21 @@
                         <BaseFormInput :inputField="{
                             label: 'Mortgage Term',
                             id: 'mortgageTerm'
-                        }" :input="inputMortgageTerm" :handleInput="handleMortgageTermBaseInput" />
+                        }" :input="inputMortgageTerm" :handleInput="handleMortgageTermBaseInput"
+                            :handleBlur="handleBlurMortgageTermBaseInput" />
                     </fieldset>
                     <fieldset class="mortgage-interest-rate-fieldset">
                         <BaseFormInput :inputField="{
                             label: 'Interest Rate',
                             id: 'interestRate'
-                        }" :input="inputMortgageInterestRate" :handleInput="handleMortgageInterestRateBaseInput" />
+                        }" :input="inputMortgageInterestRate" :handleInput="handleMortgageInterestRateBaseInput" 
+                            :handleBlur="handleBlurMortgageInterestRateBaseInput"
+                        />
                     </fieldset>
                     <fieldset class="mortgage-type-fieldset">
 
                         <BaseRadioInput :id="'mortgageType'" :label="'Mortgage Type'" :radioInputs="mortgageRadioInputs"
-                            :input="mortgageTypeInput"
-                            :handleInput="handleMortgageTypeInput"    
-                        />
+                            :input="mortgageTypeInput" :handleInput="handleMortgageTypeInput" />
                     </fieldset>
                     <button class="mortgage-repayment-calculator-form-main-submit" :class="{
                         'invalid': !isFormInputsValid
@@ -46,8 +47,7 @@
                     </button>
                 </form>
             </div>
-            <MortgageRepaymentResult 
-                :mortgage-result="mortgageResult" />
+            <MortgageRepaymentResult :mortgage-result="mortgageResult" />
         </div>
     </div>
 </template>
@@ -64,41 +64,72 @@ import { useDeviceTypeHandler } from '../../../composables/useDeviceTypeHandler'
 import { mortgageResultType } from '../../../types/mortgageTypes';
 
 const { isDesktop } = useDeviceTypeHandler()
-const { handleInput, handleRadioInput, handleFocusInputIntlDeformat, handleBlurInputIntlFormat, createBaseInput, formatNumberCommaSeparated } = useInputHandlers()
+const { handleInput, handleRadioInput, handleFocusInputIntlDeformat, handleBlurInputIntlFormat, handleBlurValidation, createBaseInput, formatNumberCommaSeparated } = useInputHandlers()
 const { numberValidator } = useValidator();
 
 const inputMortgageAmount = createBaseInput()
-const handleMortgageAmountBaseInput = handleInput(inputMortgageAmount, 
-{ 
-    strict: true, 
-    validator: numberValidator, 
-    formatter: formatNumberCommaSeparated,
-    errorHandling: {
-        'errorMessage': 'Please enter a number'
-    }
-})
+const validatorConfigMortgageAmount = {
+    min: 1,
+    max: 10000000,
+}
+const handleMortgageAmountBaseInput = handleInput(inputMortgageAmount,
+    {
+        strict: true,
+        validator: numberValidator,
+        validatorConfig: validatorConfigMortgageAmount,
+        formatter: formatNumberCommaSeparated,
+        errorHandling: {
+            'errorMessage': 'Must be a number from 1 and 10000000'
+        }
+    })
 const handleMortgageAmountBaseFocusInput = handleFocusInputIntlDeformat(inputMortgageAmount)
-const handleMortgageAmountBlurBaseInput = handleBlurInputIntlFormat(inputMortgageAmount)
+const handleMortgageAmountBlurBaseInput = handleBlurInputIntlFormat(inputMortgageAmount, {
+    validator: numberValidator,
+    validatorConfig: validatorConfigMortgageAmount,
+}
+)
 
 const inputMortgageTerm = createBaseInput()
-const handleMortgageTermBaseInput = handleInput(inputMortgageTerm, 
-{ 
-    strict: true,
+const validatorConfigMortgageTerm = {
+    min: 1,
+    max: 100,
+    maxLength: 5,
+}
+const handleMortgageTermBaseInput = handleInput(inputMortgageTerm,
+    {
+        strict: true,
+        validator: numberValidator,
+        validatorConfig: validatorConfigMortgageTerm,
+        errorHandling: {
+            'errorMessage': 'Must be a number from 1 to 100'
+        }
+    })
+
+const handleBlurMortgageTermBaseInput = handleBlurValidation(inputMortgageTerm, {
     validator: numberValidator,
-    errorHandling: {
-        'errorMessage': 'Please enter a number'
-    }
+    validatorConfig: validatorConfigMortgageTerm,
 })
 
 const inputMortgageInterestRate = createBaseInput()
-const handleMortgageInterestRateBaseInput = handleInput(inputMortgageInterestRate, 
-{ 
-    strict: true,
+const validatorConfigMortgageInterest = {
+    min: 1,
+    max: 100,
+    maxLength: 5,
+}
+const handleMortgageInterestRateBaseInput = handleInput(inputMortgageInterestRate,
+    {
+        strict: true,
+        validator: numberValidator,
+        validatorConfig: validatorConfigMortgageInterest,
+        errorHandling: {
+            'errorMessage': 'Must be a number from 1 to 100'
+        }
+    })
+const handleBlurMortgageInterestRateBaseInput = handleBlurValidation(inputMortgageInterestRate, {
     validator: numberValidator,
-    errorHandling: {
-        'errorMessage': 'Please enter a number'
-    }
+    validatorConfig: validatorConfigMortgageInterest,
 })
+
 
 const mortgageTypeInput = createBaseInput();
 const handleMortgageTypeInput = handleRadioInput(mortgageTypeInput)
@@ -134,7 +165,7 @@ const isFormInputsValid = computed<boolean>(() => {
 const calculateRepayments = (e: Event) => {
     e.preventDefault()
     const isFormValid = validateForm()
-    
+
     if (isFormValid) {
         principal.value = Number(inputMortgageAmount.value.value)
         monthlyInterestRate.value = (Number(inputMortgageInterestRate.value.value) / 100) / 12
@@ -144,9 +175,9 @@ const calculateRepayments = (e: Event) => {
         mortgageResult.value.total = mortgageResult.value.monthly * numOfPayments.value
         mortgageResult.value.type = mortgageTypeInput.value.value
 
-        if(!isDesktop.value) {
+        if (!isDesktop.value) {
             const element = document.querySelector('.mortgage-repayment-calculator-result');
-            element &&  element.scrollIntoView({behavior: 'smooth'})
+            element && element.scrollIntoView({ behavior: 'smooth' })
         }
     }
 }
@@ -167,6 +198,9 @@ const validateForm = () => {
             input.value.isValid = false
             input.value.errorMessage = errorMessageMissingField
             isValid = false
+        } else if (input.value.errorMessage) {
+            input.value.errorMessage = ''
+            input.value.isValid = true
         }
     })
 

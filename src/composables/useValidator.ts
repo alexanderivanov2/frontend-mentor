@@ -1,3 +1,4 @@
+import { validatorConfig } from "../types/inputTypes"
 
 const useValidator = () => {
 
@@ -5,8 +6,24 @@ const useValidator = () => {
         return regEx.test(value)
     }
 
-    const numberValidator = (value: any) => {
-        return !isNaN(Number(value))
+    const numberValidator = (value: any, config={} as validatorConfig) => {
+        const numberValue = Number(value)
+        let isValid = !isNaN(numberValue)
+
+        if (isValid && config?.min) {
+            isValid = numberValue >= config.min
+        }
+        
+        if (isValid && config?.max) {
+            isValid = numberValue <= config.max
+        }
+
+        if (isValid && config?.maxLength) {
+            isValid = String(numberValue).length <= config.maxLength
+        }
+         
+
+        return isValid
     }
 
 
