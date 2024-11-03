@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest'
 import { useInputHandlers } from '../../composables/useInputHandlers'
 import useValidator from '../../composables/useValidator';
-const { createBaseInput, handleInput, handleRadioInput, handleBlurInputIntlFormat, handleFocusInputIntlDeformat } = useInputHandlers()
+const { createBaseInput, handleInput, handleRadioInput, handleBlurInputIntlFormat, handleFocusInputIntlDeformat, formatNumberCommaSeparated } = useInputHandlers()
 const { numberValidator } = useValidator();
 
 describe('createBaseInput function', () => {
@@ -221,5 +221,16 @@ describe('handleBlurInputIntlFormat', () => {
 
         expect(inputElement.value).toBe(expectedResult)
         expect(baseInput.value.value).toBe('')
+    })
+})
+
+describe('formatNumberCommaSeparated', () => {
+    test('Should return plain number', () => {  
+        const value = '333,000'
+        const expectedResult = '333000'
+
+        const result = formatNumberCommaSeparated(value)
+        
+        expect(result).toBe(expectedResult)
     })
 })
