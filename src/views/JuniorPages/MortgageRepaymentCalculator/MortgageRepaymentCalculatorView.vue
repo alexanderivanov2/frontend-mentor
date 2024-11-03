@@ -64,19 +64,41 @@ import { useDeviceTypeHandler } from '../../../composables/useDeviceTypeHandler'
 import { mortgageResultType } from '../../../types/mortgageTypes';
 
 const { isDesktop } = useDeviceTypeHandler()
-const { handleInput, handleRadioInput, handleFocusInputIntlDeformat, handleBlurInputIntlFormat, createBaseInput } = useInputHandlers()
+const { handleInput, handleRadioInput, handleFocusInputIntlDeformat, handleBlurInputIntlFormat, createBaseInput, formatNumberCommaSeparated } = useInputHandlers()
 const { numberValidator } = useValidator();
 
 const inputMortgageAmount = createBaseInput()
-const handleMortgageAmountBaseInput = handleInput(inputMortgageAmount, { strict: true, validator: numberValidator })
+const handleMortgageAmountBaseInput = handleInput(inputMortgageAmount, 
+{ 
+    strict: true, 
+    validator: numberValidator, 
+    formatter: formatNumberCommaSeparated,
+    errorHandling: {
+        'errorMessage': 'Please enter a number'
+    }
+})
 const handleMortgageAmountBaseFocusInput = handleFocusInputIntlDeformat(inputMortgageAmount)
 const handleMortgageAmountBlurBaseInput = handleBlurInputIntlFormat(inputMortgageAmount)
 
 const inputMortgageTerm = createBaseInput()
-const handleMortgageTermBaseInput = handleInput(inputMortgageTerm, { strict: true, validator: numberValidator })
+const handleMortgageTermBaseInput = handleInput(inputMortgageTerm, 
+{ 
+    strict: true,
+    validator: numberValidator,
+    errorHandling: {
+        'errorMessage': 'Please enter a number'
+    }
+})
 
 const inputMortgageInterestRate = createBaseInput()
-const handleMortgageInterestRateBaseInput = handleInput(inputMortgageInterestRate, { strict: true, validator: numberValidator })
+const handleMortgageInterestRateBaseInput = handleInput(inputMortgageInterestRate, 
+{ 
+    strict: true,
+    validator: numberValidator,
+    errorHandling: {
+        'errorMessage': 'Please enter a number'
+    }
+})
 
 const mortgageTypeInput = createBaseInput();
 const handleMortgageTypeInput = handleRadioInput(mortgageTypeInput)
