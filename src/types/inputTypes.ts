@@ -11,6 +11,7 @@ interface BaseInputConfig {
         errorMessage: string
     },
     validator?: (value: any, regEx?: RegExp) => boolean
+    formatter?: (value: any) => any
 }
 
 export type {

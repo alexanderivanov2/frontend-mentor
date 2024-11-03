@@ -13,10 +13,10 @@ const useInputHandlers = () => {
     const handleInput =
         (input: Ref<BaseInputType>, config?: BaseInputConfig) => (e: Event) => {
             const inputElement = e.currentTarget as HTMLInputElement;
-            const value = inputElement.value;
+            const value = config?.formatter ? config?.formatter(inputElement.value) : inputElement.value;
             const validator = config?.validator;
             const isValid = validator ? validator(value) : true;
-
+            debugger
             if (config?.strict) {
                 if (isValid) {
                     input.value.value = value;
@@ -62,9 +62,11 @@ const useInputHandlers = () => {
             
         if (input.value.isValid) {
             const numberFormat = Intl.NumberFormat("en-US").format(Number(inputElement.value))
-            inputElement.value = numberFormat
+            inputElement.value = numberFormat === '0' ? '' : numberFormat
         }
     };
+
+    const formatNumberCommaSeparated = (value: string) => value.replaceAll(',', '')
 
     return {
         handleInput,
@@ -72,6 +74,7 @@ const useInputHandlers = () => {
         handleFocusInputIntlDeformat,
         handleBlurInputIntlFormat,
         createBaseInput,
+        formatNumberCommaSeparated,
     };
 };
 
