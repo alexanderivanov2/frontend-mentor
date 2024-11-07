@@ -15,7 +15,8 @@ const useInputHandlers = () => {
             const inputElement = e.currentTarget as HTMLInputElement;
             const value = config?.formatter ? config?.formatter(inputElement.value) : inputElement.value;
             const validator = config?.validator;
-            const isValid = validator ? validator(value, config?.validatorConfig) : true;
+            const isValid = validator && value ? validator(value, config?.validatorConfig) : true;
+            
             if (config?.strict) {
                 if (isValid) {
                     input.value.value = value;
