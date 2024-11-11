@@ -3,7 +3,7 @@
         :id="id"
         :type="type"
         :value="modelValue"
-        :placeholder="placeHolder"
+        :placeholder="placeholder"
         @input="useVModel ? handleInput($event) : null"
     >
 </template>
@@ -14,13 +14,13 @@ interface Props {
     id: string,
     type: string,
     modelValue: string | BaseInputType,
-    placeHolder?: string,
+    placeholder?: string,
     useVModel?: boolean,
 }
 
 withDefaults(defineProps<Props>(), {
     modelValue: '',
-    placeHolder: '',
+    placeholder: '',
     useVModel: false,
 })
 const emit = defineEmits(['update:modelValue'])

@@ -19,14 +19,18 @@ describe('createBaseInput function', () => {
 
 describe('handleInput function', () => {
     const baseInput = createBaseInput()
-    let handleInputFn = handleInput(baseInput)
-    const ipnutElement = document.createElement('input')
-    ipnutElement.addEventListener('input', handleInputFn)
+    const validatorConfigMortgageAmount = {
+        min: 1,
+        max: 10000000,
+    }
+    let handleInputFn = handleInput(baseInput, { strict: true, validator: numberValidator, validatorConfig: validatorConfigMortgageAmount })
+    const inputElement = document.createElement('input')
+    inputElement.addEventListener('input', handleInputFn)
     
     const reuseEventAttachment = (config={}) => {
-        ipnutElement.removeEventListener('input', handleInputFn)
+        inputElement.removeEventListener('input', handleInputFn)
         handleInputFn = handleInput(baseInput, config)
-        ipnutElement.addEventListener('input', handleInputFn)
+        inputElement.addEventListener('input', handleInputFn)
     }
 
     test('Should inizializate handleInput', () => {
@@ -35,31 +39,47 @@ describe('handleInput function', () => {
 
     test('Should handleInput with no restriction to update value with text', () => {
         const expectedResult = 'test'
-        ipnutElement.value = expectedResult
-        ipnutElement.dispatchEvent(new Event('input'))
+        inputElement.value = expectedResult
+        inputElement.dispatchEvent(new Event('input'))
 
-        expect(ipnutElement.value).toBe(expectedResult)
+        expect(inputElement.value).toBe(expectedResult)
         expect(baseInput.value.value).toBe(expectedResult)
     })
 
     test('Should handleInput with no restriction to update value with numbers', () => {
         const expectedResult = '123'
-        ipnutElement.value = expectedResult
-        ipnutElement.dispatchEvent(new Event('input'))
+        inputElement.value = expectedResult
+        inputElement.dispatchEvent(new Event('input'))
 
-        expect(ipnutElement.value).toBe(expectedResult)
+        expect(inputElement.value).toBe(expectedResult)
         expect(baseInput.value.value).toBe(expectedResult)
     })
 
-    reuseEventAttachment({ validator: numberValidator})
+    test('Should delete last digit and allow input to be empty', () => {
+        const firstResult = '1'
+        inputElement.value = firstResult
+        inputElement.dispatchEvent(new Event('input'))
+   
+        expect(inputElement.value).toBe(firstResult)
+        expect(baseInput.value.value).toBe(firstResult)
+
+        const expectedResult = ''
+        inputElement.value = expectedResult
+        inputElement.dispatchEvent(new Event('input'))
+
+        expect(inputElement.value).toBe(expectedResult)
+        expect(baseInput.value.value).toBe(expectedResult)
+    })
+
+    reuseEventAttachment({validator: numberValidator, validatorConfig: validatorConfigMortgageAmount })
 
     test('Should set isValid to be false', () => {
 
         const expectedResult = 'test'
-        ipnutElement.value = expectedResult
-        ipnutElement.dispatchEvent(new Event('input'))
+        inputElement.value = expectedResult
+        inputElement.dispatchEvent(new Event('input'))
 
-        expect(ipnutElement.value).toBe(expectedResult)
+        expect(inputElement.value).toBe(expectedResult)
         expect(baseInput.value.value).toBe(expectedResult)
         expect(baseInput.value.isValid).toBeFalsy()
     })
@@ -67,26 +87,26 @@ describe('handleInput function', () => {
     test('Should set isValid to be true', () => {
         expect(baseInput.value.isValid).toBeFalsy()
         const expectedResult = '123'
-        ipnutElement.value = expectedResult
+        inputElement.value = expectedResult
 
-        ipnutElement.dispatchEvent(new Event('input'))
+        inputElement.dispatchEvent(new Event('input'))
 
-        expect(ipnutElement.value).toBe(expectedResult)
+        expect(inputElement.value).toBe(expectedResult)
         expect(baseInput.value.value).toBe(expectedResult)
         expect(baseInput.value.isValid).toBeTruthy()
     })
 
-    reuseEventAttachment({ validator: numberValidator, errorHandling: { errorMessage: 'error'}})
+    reuseEventAttachment({ validator: numberValidator, validatorConfig: validatorConfigMortgageAmount, errorHandling: { errorMessage: 'error'}})
     
     test('Should set errorMessage', () => {
         expect(baseInput.value.isValid).toBeTruthy()
         const errorMessage = 'error'
         const expectedResult = '123e'
-        ipnutElement.value = expectedResult
+        inputElement.value = expectedResult
 
-        ipnutElement.dispatchEvent(new Event('input'))
+        inputElement.dispatchEvent(new Event('input'))
 
-        expect(ipnutElement.value).toBe(expectedResult)
+        expect(inputElement.value).toBe(expectedResult)
         expect(baseInput.value.value).toBe(expectedResult)
         expect(baseInput.value.isValid).toBeFalsy()
         expect(baseInput.value.errorMessage).toBe(errorMessage)
@@ -96,11 +116,11 @@ describe('handleInput function', () => {
         expect(baseInput.value.isValid).toBeFalsy()
         const errorMessage = ''
         const expectedResult = '123'
-        ipnutElement.value = expectedResult
+        inputElement.value = expectedResult
 
-        ipnutElement.dispatchEvent(new Event('input'))
+        inputElement.dispatchEvent(new Event('input'))
 
-        expect(ipnutElement.value).toBe(expectedResult)
+        expect(inputElement.value).toBe(expectedResult)
         expect(baseInput.value.value).toBe(expectedResult)
         expect(baseInput.value.isValid).toBeTruthy()
         expect(baseInput.value.errorMessage).toBe(errorMessage)
@@ -109,11 +129,11 @@ describe('handleInput function', () => {
     test('Should not update value if input is invalid', () => {
         reuseEventAttachment({ strict: true, validator: numberValidator, errorHandling: { errorMessage: 'error'}})
         const expectedResult = '123e'
-        ipnutElement.value = expectedResult
+        inputElement.value = expectedResult
 
-        ipnutElement.dispatchEvent(new Event('input'))
+        inputElement.dispatchEvent(new Event('input'))
 
-        expect(ipnutElement.value).not.toBe(expectedResult)
+        expect(inputElement.value).not.toBe(expectedResult)
         expect(baseInput.value.value).not.toBe(expectedResult)
     })
 
@@ -121,11 +141,11 @@ describe('handleInput function', () => {
         reuseEventAttachment({ strict: true, validator: numberValidator, errorHandling: { errorMessage: 'error'}})
         const expectedResult = '123e'
         const errorMessage = 'error'
-        ipnutElement.value = expectedResult
+        inputElement.value = expectedResult
 
-        ipnutElement.dispatchEvent(new Event('input'))
+        inputElement.dispatchEvent(new Event('input'))
 
-        expect(ipnutElement.value).not.toBe(expectedResult)
+        expect(inputElement.value).not.toBe(expectedResult)
         expect(baseInput.value.value).not.toBe(expectedResult)
         expect(baseInput.value.errorMessage).toBe(errorMessage)
     })
@@ -134,11 +154,11 @@ describe('handleInput function', () => {
         reuseEventAttachment({ strict: true, validator: numberValidator, errorHandling: { errorMessage: 'error'}})
         const expectedResult = '123'
         const errorMessage = ''
-        ipnutElement.value = expectedResult
+        inputElement.value = expectedResult
 
-        ipnutElement.dispatchEvent(new Event('input'))
+        inputElement.dispatchEvent(new Event('input'))
 
-        expect(ipnutElement.value).toBe(expectedResult)
+        expect(inputElement.value).toBe(expectedResult)
         expect(baseInput.value.value).toBe(expectedResult)
         expect(baseInput.value.errorMessage).toBe(errorMessage)
     })
