@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it} from 'vitest'
 import BaseInput from '../../../components/Base/BaseInput.vue'
 import { useInputHandlers } from '../../../composables/useInputHandlers'
 
@@ -18,7 +18,6 @@ describe('BaseInput', () => {
     })
 
     it('Should render BaseInput component', () => {
-        console.log(wrapper.html())
         expect(wrapper.find('input').exists()).toBeTruthy()
     })
 
@@ -61,4 +60,3 @@ describe('BaseInput', () => {
           expect(emittedEvents['update:modelValue'][0]).toEqual(['test value']);
       });
 })
-
