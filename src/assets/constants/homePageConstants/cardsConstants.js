@@ -145,6 +145,12 @@ const newbieCardsList = [
 
 const juniorCardsList = [
     {
+        cardName: 'Age Calculator',
+        routeName: 'AgeCalculator',
+        cardImgURL: 'assets/images/challengeCardImages/age-calculator-card-challenge.webp',
+        difficulty: 2,    
+    },
+    {
         cardName: 'Mortgage Repayment Calculator',
         routeName: 'MortgageRepaymentCalculator',
         cardImgURL: 'assets/images/challengeCardImages/mortgage-repayment-calculator-card-challenge.webp',

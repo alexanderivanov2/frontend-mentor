@@ -135,6 +135,11 @@ const router = createRouter({
       name: 'MortgageRepaymentCalculator',
       component: () => import('../views/JuniorPages/MortgageRepaymentCalculator/MortgageRepaymentCalculatorView.vue')
     },
+    {
+      path: '/junior/age-calculator',
+      name: 'AgeCalculator',
+      component: () => import('../views/JuniorPages/AgeCalculator/AgeCalculatorView.vue')
+    },
   ]
 })
 
