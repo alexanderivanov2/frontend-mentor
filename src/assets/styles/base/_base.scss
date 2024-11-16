@@ -24,3 +24,14 @@ body {
         }
     }
 }
+
+input, 
+input:-internal-autofill-selected,
+input:autofill,
+input:-webkit-autofill,
+input:-webkit-autofill::first-line
+{
+    background-color: white !important;
+    box-shadow: 0 0 0px 1000px white inset;
+
+}
