@@ -6,7 +6,7 @@
                     <BaseFormInput class="base-form-input" :input-field="{
                         label: 'day',
                         id: 'dayInput'
-                    }" :input="dayInput" :handle-input="handleInputDays" :handle-blur="validateDayLeapYear" />
+                    }" :input="dayInput" :handle-input="handleInputDays" :handle-blur="handleBlur" />
                     <BaseFormInput class="base-form-input" :input-field="{
                         label: 'month',
                         id: 'monthInput'
@@ -89,20 +89,69 @@ const handleInputYear = handleInput(yearInput, {
 
 const handleBlur = () => {
     validateDayLeapYear()
+    validateInputs()
 }
 
-const isInputsValid = computed(() => {
+const validateInputs = () => {
+    validateDay()
+    validateMonth()
+    validateYear()
+}
+
+const validateDay = () => {
+    const day = Number(dayInput.value.value)
+    let maxDay = 31
+    const month = Number(monthInput.value.value)
+    const year = Number(yearInput.value.value)
+
+    if (!day) return
+
+    if (month && month !== 2) {
+        maxDay = new Date(year || 2024, month, 0).getDate()
+    } else if (month === 2 && year) {
+        maxDay = new Date(year, 2, 0).getDate()
+    } else {
+        return
+    }
+
+    const isDayInRange = day >= 0 && day <= maxDay
+
+    if (month) {
+        dayInput.value.isValid = isDayInRange ? true : false
+        dayInput.value.errorMessage = isDayInRange ? '' : 'Must be a valid day'
+    }
+}
+
+const validateMonth = () => {
+    const month = Number(monthInput.value.value)
+    if (!month) return
+    const isValidMonth = month >= 1 && month <= 12
+
+    monthInput.value.isValid = isValidMonth ? true : false
+    monthInput.value.errorMessage = isValidMonth ? '' : 'Must be a valid month'
+}
+
+const validateYear = () => {
+    const year = Number(yearInput.value.value)
+
+    if (!year) return
+    const isValidYear = year <= currentDate.getFullYear()
+    yearInput.value.isValid = isValidYear ? true : false
+    yearInput.value.errorMessage = isValidYear ? '' : 'Must be a valid year'
+}
+
+const isInputsValid = () => {
     const isFilled = yearInput.value.value && monthInput.value.value && dayInput.value.value
     const isValid = isFilled && yearInput.value.isValid && monthInput.value.isValid && dayInput.value.isValid
 
-    return isFilled && isValid
-})
+    return Boolean(isFilled && isValid)
+}
 
 
 const validateDayLeapYear = () => {
     let isValid = true;
-
-    if (isInputsValid.value && Number(monthInput.value.value) === 2 && Number(dayInput.value.value) > 28) {
+    const isInputsAreValid = isInputsValid()
+    if (isInputsAreValid && Number(monthInput.value.value) === 2 && Number(dayInput.value.value) > 28) {
         const februaryDays = new Date(Number(yearInput.value.value), 2, 0)
 
         isValid = februaryDays.getDate() >= Number(dayInput.value.value)
@@ -110,15 +159,37 @@ const validateDayLeapYear = () => {
         dayInput.value.isValid = isValid,
             dayInput.value.errorMessage = isValid ? '' : 'Must be a valid day'
     }
+}
 
+const makeInputsInvalid = () => {
+    dayInput.value.isValid = false;
+    monthInput.value.isValid = false;
+    yearInput.value.isValid = false;
+
+    if (!dayInput.value.value) {
+        dayInput.value.errorMessage = 'Must be a valid day'
+    }
+
+    if (!monthInput.value.value) {
+        monthInput.value.errorMessage = 'Must be a valid month'
+    }
+
+    if (!yearInput.value.value) {
+        yearInput.value.errorMessage = 'Must be a valid year'
+    }
 }
 
 const calculateAge = (e: Event) => {
     e.preventDefault()
 
-    validateDayLeapYear()
+    validateInputs()
 
-    if (!isInputsValid.value) return
+    const isInputsAreValid = isInputsValid()
+    if (!isInputsAreValid) {
+        makeInputsInvalid()
+
+        return
+    }
 
     const birthYear = Number(yearInput.value.value)
     const birthMonth = Number(monthInput.value.value) - 1
