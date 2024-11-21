@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang=ts>
-import { ref, computed, nextTick } from 'vue'
+import { ref } from 'vue'
 import BaseFormInput from '../../../components/Base/BaseFormInput.vue'
 import arrowIcon from '/assets/images/juniorChallenges/age-calculator/icon-arrow.svg'
 import { useInputHandlers } from '../../../composables/useInputHandlers'
@@ -60,7 +60,7 @@ const validatorConfigMonth = {
 }
 
 const validatorConfigYear = {
-    min: 0, max: currentDate.getFullYear(),
+    min: 0, max: currentDate.getUTCFullYear(),
 }
 
 const handleInputDays = handleInput(dayInput, {
@@ -107,9 +107,9 @@ const validateDay = () => {
     if (!day) return
 
     if (month && month !== 2) {
-        maxDay = new Date(year || 2024, month, 0).getDate()
+        maxDay = new Date(Date.UTC(year || 2024, month, 0)).getUTCDate()
     } else if (month === 2 && year) {
-        maxDay = new Date(year, 2, 0).getDate()
+        maxDay = new Date(Date.UTC(year, 2, 0)).getUTCDate()
     } else {
         return
     }
@@ -135,7 +135,7 @@ const validateYear = () => {
     const year = Number(yearInput.value.value)
 
     if (!year) return
-    const isValidYear = year <= currentDate.getFullYear()
+    const isValidYear = year <= currentDate.getUTCFullYear()
     yearInput.value.isValid = isValidYear ? true : false
     yearInput.value.errorMessage = isValidYear ? '' : 'Must be a valid year'
 }
@@ -152,9 +152,9 @@ const validateDayLeapYear = () => {
     let isValid = true;
     const isInputsAreValid = isInputsValid()
     if (isInputsAreValid && Number(monthInput.value.value) === 2 && Number(dayInput.value.value) > 28) {
-        const februaryDays = new Date(Number(yearInput.value.value), 2, 0)
+        const februaryDays = new Date(Date.UTC(Number(yearInput.value.value), 2, 0))
 
-        isValid = februaryDays.getDate() >= Number(dayInput.value.value)
+        isValid = februaryDays.getUTCDate() >= Number(dayInput.value.value)
 
         dayInput.value.isValid = isValid,
             dayInput.value.errorMessage = isValid ? '' : 'Must be a valid day'
@@ -194,20 +194,20 @@ const calculateAge = (e: Event) => {
     const birthYear = Number(yearInput.value.value)
     const birthMonth = Number(monthInput.value.value) - 1
     const birthDay = Number(dayInput.value.value)
-    const birthDate = new Date(birthYear, birthMonth, birthDay)
+    const birthDate = new Date(Date.UTC(birthYear, birthMonth, birthDay))
 
     if (birthDate.getTime() > currentDate.getTime()) return
 
-    let years = currentDate.getFullYear() - birthDate.getFullYear()
-    let months = currentDate.getMonth() - birthDate.getMonth()
-    let days = currentDate.getDate() - birthDate.getDate()
+    let years = currentDate.getUTCFullYear() - birthDate.getUTCFullYear()
+    let months = currentDate.getUTCMonth() - birthDate.getUTCMonth()
+    let days = currentDate.getUTCDate() - birthDate.getUTCDate()
 
 
     if (days < 0) {
         months -= 1;
 
-        const lastMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
-        days += lastMonth.getDate()
+        const lastMonth = new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), 0));
+        days += lastMonth.getUTCDate()
     }
 
     if (months < 0) {
@@ -219,7 +219,5 @@ const calculateAge = (e: Event) => {
     resultAge.value.years = years
     resultAge.value.months = months
     resultAge.value.days = days
-
 }
-
 </script>
