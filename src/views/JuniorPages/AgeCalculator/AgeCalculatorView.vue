@@ -5,15 +5,18 @@
                 <div class="age-calculator-form-inputs-wrapper">
                     <BaseFormInput class="base-form-input" :input-field="{
                         label: 'day',
-                        id: 'dayInput'
+                        id: 'dayInput',
+                        placeholder: 'DD',
                     }" :input="dayInput" :handle-input="handleInputDays" :handle-blur="handleBlur" />
                     <BaseFormInput class="base-form-input" :input-field="{
                         label: 'month',
-                        id: 'monthInput'
+                        id: 'monthInput',
+                        placeholder: 'MM',
                     }" :input="monthInput" :handle-input="handleInputMonths" :handle-blur="handleBlur" />
                     <BaseFormInput class="base-form-input" :input-field="{
                         label: 'year',
-                        id: 'yearInput'
+                        id: 'yearInput',
+                        placeholder: 'YYYY',
                     }" :input="yearInput" :handle-input="handleInputYear" :handle-blur="handleBlur" />
                 </div>
                 <div class="age-calculator-form-submit">
@@ -51,6 +54,9 @@ const yearInput = createBaseInput()
 const resultAge = ref<{ calculated?: boolean, years?: number, months?: number, days?: number }>({})
 const currentDate = new Date()
 
+const handleInputConfigRegexDays = /^(0|0[1-9]|[1-9]|[12][0-9]|3[01])$/
+const handleInputConfigRegexMonths = /^(0|0[1-9]|1[0-2])$/
+
 const validatorConfigDay = {
     min: 1, max: 31,
 }
@@ -65,7 +71,7 @@ const validatorConfigYear = {
 
 const handleInputDays = handleInput(dayInput, {
     validator: numberValidator,
-    validatorConfig: validatorConfigDay,
+    validatorConfig: { ...validatorConfigDay, handleInputRegex: handleInputConfigRegexDays},
     errorHandling: {
         errorMessage: 'Must be a valid day'
     }
@@ -73,7 +79,7 @@ const handleInputDays = handleInput(dayInput, {
 
 const handleInputMonths = handleInput(monthInput, {
     validator: numberValidator,
-    validatorConfig: validatorConfigMonth,
+    validatorConfig: { ...validatorConfigMonth, handleInputRegex: handleInputConfigRegexMonths },
     errorHandling: {
         errorMessage: 'Must be a valid month'
     }

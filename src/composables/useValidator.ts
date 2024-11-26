@@ -7,8 +7,16 @@ const useValidator = () => {
     }
 
     const numberValidator = (value: any, config={} as validatorConfig) => {
+        
+        if(config?.handleInputRegex) {
+            return config.handleInputRegex.test(value.toString())
+        }
+
+
         const numberValue = Number(value)
         let isValid = !isNaN(numberValue)
+
+         
 
         if (isValid && config?.min) {
             isValid = numberValue >= config.min
@@ -20,6 +28,10 @@ const useValidator = () => {
 
         if (isValid && config?.maxLength) {
             isValid = String(numberValue).length <= config.maxLength
+        }
+
+        if(config?.handleInputRegex) {
+            isValid = config.handleInputRegex.test(numberValue.toString())
         }
          
 

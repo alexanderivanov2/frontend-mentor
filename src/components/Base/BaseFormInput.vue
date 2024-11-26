@@ -7,7 +7,7 @@
         </BaseLabel>
         <div class="input-wrapper">
             <BaseInput :id="inputField.id" :type="type" v-model="input.value" @input="handleInput" @focus="handleFocus"
-                @blur="handleBlur" />
+                @blur="handleBlur"  :placeholder="inputField.placeholder"/>
         </div>
         <BaseErrorMessage v-if="!input.isValid">
             <p class="error-message">{{ input.errorMessage }}</p>
@@ -25,6 +25,7 @@ interface Props {
     inputField: {
         id: string;
         label: string;
+        placeholder?: string;
     },
     type?: string;
     input: BaseInputType;
@@ -35,7 +36,7 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
     inputField: () => {
-        return { id: '123', label: '1231', type: 'text', } // Default value for 'type'
+        return { id: '', label: '', type: 'text', placeholder: '' }
     },
     type: 'text',
     inputHandlers: () => {
