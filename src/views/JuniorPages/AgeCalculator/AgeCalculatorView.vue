@@ -55,7 +55,7 @@ const resultAge = ref<{ calculated?: boolean, years?: number, months?: number, d
 const currentDate = new Date()
 
 const handleInputConfigRegexDays = /^(0|0[1-9]|[1-9]|[12][0-9]|3[01])$/
-const handleInputConfigRegexMonths = /^(0|0[1-9]|1[0-2])$/
+const handleInputConfigRegexMonths = /^(0|[1-9]|0[1-9]|1[0-2])$/
 
 const validatorConfigDay = {
     min: 1, max: 31,
