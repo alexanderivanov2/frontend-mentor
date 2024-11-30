@@ -11,6 +11,8 @@ interface validatorConfig {
     max?: number,
     minLength?: number
     maxLength?: number,
+    handleInputRegex?: RegExp,
+    isInteger?: boolean,
 }
 
 interface BaseInputConfig {

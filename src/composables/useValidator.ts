@@ -16,7 +16,9 @@ const useValidator = () => {
         const numberValue = Number(value)
         let isValid = !isNaN(numberValue)
 
-         
+        if(isValid && config?.isInteger) {
+            isValid = numberValue % 1 === 0;
+        }
 
         if (isValid && config?.min) {
             isValid = numberValue >= config.min
