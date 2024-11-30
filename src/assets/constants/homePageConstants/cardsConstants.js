@@ -145,6 +145,12 @@ const newbieCardsList = [
 
 const juniorCardsList = [
     {
+        cardName: 'Tip Calculator',
+        routeName: 'TipCalculator',
+        cardImgURL: 'assets/images/challengeCardImages/tip-calculator-card-challenge.webp',
+        difficulty: 2,    
+    },
+    {
         cardName: 'Age Calculator',
         routeName: 'AgeCalculator',
         cardImgURL: 'assets/images/challengeCardImages/age-calculator-card-challenge.webp',

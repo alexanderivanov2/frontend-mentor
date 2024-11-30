@@ -140,6 +140,11 @@ const router = createRouter({
       name: 'AgeCalculator',
       component: () => import('../views/JuniorPages/AgeCalculator/AgeCalculatorView.vue')
     },
+    {
+      path: '/junior/tip-calculator',
+      name: 'TipCalculator',
+      component: () => import('../views/JuniorPages/TipCalculator/TipCalculatorView.vue')
+    },
   ]
 })
 
