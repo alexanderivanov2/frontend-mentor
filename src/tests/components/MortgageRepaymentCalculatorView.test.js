@@ -113,9 +113,6 @@ describe("MortgageRepaymentCalculator functionality", () => {
 
     it('should correctly handle input value changes and trigger validation', async () => {
       wrapper.vm.inputMortgageAmount.value = '125000';
-  
-      console.log(wrapper.vm.inputMortgageAmount); 
-  
       expect(wrapper.vm.inputMortgageAmount.value).toBe('125000');
       expect(wrapper.vm.inputMortgageAmount.isValid).toBe(true); 
       expect(wrapper.vm.inputMortgageAmount.errorMessage).toBe('');
