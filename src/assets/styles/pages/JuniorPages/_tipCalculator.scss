@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');    
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 #tipCalculatorPage {
     $teal-green: #00474B;
@@ -46,13 +46,13 @@
                 flex-direction: column;
                 gap: 3.2rem;
             }
-            
+
             label {
                 font-size: 1.6rem;
                 font-weight: bold;
                 color: $gray-muted;
             }
-            
+
             input {
                 outline-color: $teal-bright;
             }
@@ -90,6 +90,7 @@
 
                 &.error-input-field {
                     position: relative;
+
                     .input-wrapper {
 
                         #billInput,
@@ -129,6 +130,7 @@
                     display: flex;
                     flex-wrap: wrap;
                     gap: 1.6rem;
+
                     label[for=selectTipLable] {
                         display: block;
                         flex: 1 1 100%;
@@ -147,6 +149,7 @@
 
                         &:hover {
                             background-color: $teal-bright-light;
+
                             label {
                                 color: $teal-green;
                             }
@@ -159,13 +162,13 @@
                                 color: $teal-green;
                             }
                         }
-                        
+
                         label {
                             color: white;
                             font-size: 2.4rem;
-                            font-weight: bold; 
+                            font-weight: bold;
                             transition: all .3s ease-in-out;
-                            
+
                             &::after {
                                 content: '%';
                             }
@@ -182,7 +185,7 @@
                             z-index: 5;
                             opacity: 0;
                             cursor: pointer;
-                        } 
+                        }
                     }
                 }
 
@@ -216,6 +219,7 @@
 
                 &-label {
                     font-weight: bold;
+
                     &-main {
                         color: white;
                         font-size: 1.6rem;
@@ -227,6 +231,7 @@
                         font-size: 1.3rem;
                     }
                 }
+
                 &-value {
                     color: $teal-bright;
                     font-size: 3.2rem;
@@ -237,6 +242,7 @@
             &-button-reset {
                 margin-top: 3.2rem;
                 width: 100%;
+                text-transform: uppercase;
                 border: none;
                 border-radius: 5px;
                 outline: none;
@@ -261,20 +267,52 @@
     }
 
     @media screen and (min-width: 940px) {
-        
+
         #tipCalculator {
             width: 100%;
             max-width: 92rem;
             flex-direction: row;
 
-            .tip-calculator-form-wrapper  {
+            .tip-calculator-form-wrapper {
                 flex: 1 1 50%;
+
+                #radioInputWrapper {
+                    #RadioInputField {
+                        .radio-input-wrapper {
+                            flex: 0 0 calc(33.33% - 1.6rem);
+                        }
+                    }
+
+                    #customSelectTip {
+                        width: calc(33.33% - 1.6rem);
+                        right: 1.6rem;
+                    }
+                }
             }
 
             .tip-calculator-result {
                 flex: 1 1 50%;
                 display: flex;
                 flex-direction: column;
+
+                &-presentation {
+                    align-items: center;
+                    margin-bottom: 2.5rem;
+
+                    &-label {
+                        &-main {
+                            font-size: 1.6rem;
+                        }
+
+                        &-sub {
+                            font-size: 1.4rem;
+                        }
+                    }
+
+                    &-value {
+                        font-size: 4.8rem;
+                    }
+                }
 
                 &-button-reset {
                     margin-top: auto;
