@@ -1,29 +1,42 @@
-# frontend-mentor
+# Frontend Mentor Challenge
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a solution to a **Frontend Mentor** challenge. Frontend Mentor provides realistic projects to help improve frontend development skills.
 
-## Recommended IDE Setup
+## 🚀 Live Demo
+🔗 [Live Site](https://frontend-mentor-seven-green.vercel.app/)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 🛠️ Built With
+- **HTML5**
+- **CSS3** / SCSS
+- **JavaScript** / TypeScript
+- **Vue.js 3**
+- **Vite** (if applicable)
 
-## Customize configuration
+## 📌 Features
+- Responsive design for mobile & desktop
+- Dynamic UI interactions
+- Optimized performance
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## 📂 Project Setup
+To run the project locally:
 
-## Project Setup
+```bash
+# Clone the repository
+git clone https://github.com/your-username/your-repo.git
 
-```sh
+# Navigate to project folder
+cd your-repo
+
+# Install dependencies
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# Start the development server
 npm run dev
 ```
 
-### Compile and Minify for Production
+## 📖 Lessons Learned
+- Briefly mention what you learned while building this project.
 
-```sh
-npm run build
-```
+## 🤝 Acknowledgments
+- Challenge by [Frontend Mentor](https://www.frontendmentor.io/)
+- Any other resources you found helpful
