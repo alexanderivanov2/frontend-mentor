@@ -34,9 +34,6 @@ npm install
 npm run dev
 ```
 
-## 📖 Lessons Learned
-- Briefly mention what you learned while building this project.
 
 ## 🤝 Acknowledgments
 - Challenge by [Frontend Mentor](https://www.frontendmentor.io/)
-- Any other resources you found helpful
